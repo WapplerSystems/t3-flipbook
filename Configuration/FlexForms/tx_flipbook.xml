@@ -41,14 +41,7 @@
                                 LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.options.download
                             </label>
                             <config>
-                                <type>group</type>
-                                <internal_type>file</internal_type>
-                                <allowed>pdf</allowed>
-                                <max_size>1</max_size>
-                                <maxitems>1</maxitems>
-                                <minitems>1</minitems>
-                                <autoSizeMax>1</autoSizeMax>
-                                <show_thumbs>1</show_thumbs>
+                                <type>link</type>
                             </config>
                         </TCEforms>
                     </settings.download>
@@ -143,6 +136,7 @@
                             <onChange>reload</onChange>
                             <config>
                                 <type>select</type>
+                                <renderType>selectSingle</renderType>
                                 <items type="array">
                                     <numIndex index="0" type="array">
                                         <numIndex index="0">Create Flipbook from folders</numIndex>
@@ -198,14 +192,7 @@
                             </label>
                             <displayCond>FIELD:settings.mode:=:pdf</displayCond>
                             <config>
-                                <type>group</type>
-                                <internal_type>file</internal_type>
-                                <allowed>pdf</allowed>
-                                <max_size>1</max_size>
-                                <maxitems>1</maxitems>
-                                <minitems>1</minitems>
-                                <autoSizeMax>1</autoSizeMax>
-                                <show_thumbs>1</show_thumbs>
+                                <type>link</type>
                             </config>
                         </TCEforms>
                     </settings.pdfUrl>
@@ -283,6 +270,7 @@
                             </label>
                             <config>
                                 <type>select</type>
+                                <renderType>selectSingle</renderType>
                                 <items type="array">
                                     <numIndex index="0" type="array">
                                         <numIndex index="0">---</numIndex>
@@ -312,6 +300,7 @@
                             </label>
                             <config>
                                 <type>select</type>
+                                <renderType>selectSingle</renderType>
                                 <items type="array">
                                     <numIndex index="0" type="array">
                                         <numIndex index="0">---</numIndex>
@@ -352,6 +341,7 @@
                             </label>
                             <config>
                                 <type>select</type>
+                                <renderType>selectSingle</renderType>
                                 <items type="array">
                                     <numIndex index="0" type="array">
                                         <numIndex index="0">---</numIndex>
@@ -392,6 +382,7 @@
                             </label>
                             <config>
                                 <type>select</type>
+                                <renderType>selectSingle</renderType>
                                 <items type="array">
                                     <numIndex index="0" type="array">
                                         <numIndex index="0">---</numIndex>
@@ -468,6 +459,7 @@
                             </label>
                             <config>
                                 <type>select</type>
+                                <renderType>selectSingle</renderType>
                                 <items type="array">
                                     <numIndex index="0" type="array">
                                         <numIndex index="0">---</numIndex>
@@ -496,6 +488,7 @@
                             </label>
                             <config>
                                 <type>select</type>
+                                <renderType>selectSingle</renderType>
                                 <items type="array">
                                     <numIndex index="0" type="array">
                                         <numIndex index="0">---</numIndex>
@@ -524,6 +517,7 @@
                             </label>
                             <config>
                                 <type>select</type>
+                                <renderType>selectSingle</renderType>
                                 <items type="array">
                                     <numIndex index="0" type="array">
                                         <numIndex index="0">---</numIndex>
@@ -566,6 +560,7 @@
                             </label>
                             <config>
                                 <type>select</type>
+                                <renderType>selectSingle</renderType>
                                 <items type="array">
                                     <numIndex index="0" type="array">
                                         <numIndex index="0">---</numIndex>
@@ -594,6 +589,7 @@
                             </label>
                             <config>
                                 <type>select</type>
+                                <renderType>selectSingle</renderType>
                                 <items type="array">
                                     <numIndex index="0" type="array">
                                         <numIndex index="0">---</numIndex>
@@ -622,6 +618,7 @@
                             </label>
                             <config>
                                 <type>select</type>
+                                <renderType>selectSingle</renderType>
                                 <items type="array">
                                     <numIndex index="0" type="array">
                                         <numIndex index="0">---</numIndex>
@@ -650,6 +647,7 @@
                             </label>
                             <config>
                                 <type>select</type>
+                                <renderType>selectSingle</renderType>
                                 <items type="array">
                                     <numIndex index="0" type="array">
                                         <numIndex index="0">---</numIndex>
@@ -678,6 +676,7 @@
                             </label>
                             <config>
                                 <type>select</type>
+                                <renderType>selectSingle</renderType>
                                 <items type="array">
                                     <numIndex index="0" type="array">
                                         <numIndex index="0">---</numIndex>
@@ -706,6 +705,7 @@
                             </label>
                             <config>
                                 <type>select</type>
+                                <renderType>selectSingle</renderType>
                                 <items type="array">
                                     <numIndex index="0" type="array">
                                         <numIndex index="0">---</numIndex>
@@ -734,6 +734,7 @@
                             </label>
                             <config>
                                 <type>select</type>
+                                <renderType>selectSingle</renderType>
                                 <items type="array">
                                     <numIndex index="0" type="array">
                                         <numIndex index="0">---</numIndex>
@@ -762,6 +763,7 @@
                             </label>
                             <config>
                                 <type>select</type>
+                                <renderType>selectSingle</renderType>
                                 <items type="array">
                                     <numIndex index="0" type="array">
                                         <numIndex index="0">---</numIndex>
@@ -790,6 +792,7 @@
                             </label>
                             <config>
                                 <type>select</type>
+                                <renderType>selectSingle</renderType>
                                 <items type="array">
                                     <numIndex index="0" type="array">
                                         <numIndex index="0">---</numIndex>
@@ -818,6 +821,7 @@
                             </label>
                             <config>
                                 <type>select</type>
+                                <renderType>selectSingle</renderType>
                                 <items type="array">
                                     <numIndex index="0" type="array">
                                         <numIndex index="0">---</numIndex>
@@ -860,6 +864,7 @@
                             </label>
                             <config>
                                 <type>select</type>
+                                <renderType>selectSingle</renderType>
                                 <items type="array">
                                     <numIndex index="0" type="array">
                                         <numIndex index="0">---</numIndex>
@@ -888,6 +893,7 @@
                             </label>
                             <config>
                                 <type>select</type>
+                                <renderType>selectSingle</renderType>
                                 <items type="array">
                                     <numIndex index="0" type="array">
                                         <numIndex index="0">---</numIndex>
@@ -916,6 +922,7 @@
                             </label>
                             <config>
                                 <type>select</type>
+                                <renderType>selectSingle</renderType>
                                 <items type="array">
                                     <numIndex index="0" type="array">
                                         <numIndex index="0">---</numIndex>
@@ -944,6 +951,7 @@
                             </label>
                             <config>
                                 <type>select</type>
+                                <renderType>selectSingle</renderType>
                                 <items type="array">
                                     <numIndex index="0" type="array">
                                         <numIndex index="0">---</numIndex>
@@ -972,6 +980,7 @@
                             </label>
                             <config>
                                 <type>select</type>
+                                <renderType>selectSingle</renderType>
                                 <items type="array">
                                     <numIndex index="0" type="array">
                                         <numIndex index="0">---</numIndex>

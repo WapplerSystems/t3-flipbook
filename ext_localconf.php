@@ -2,16 +2,17 @@
 
 
 use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
-use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Extbase\Utility\ExtensionUtility;
+use WapplerSystems\Flipbook\Controller\FlipbookController;
 
 ExtensionUtility::configurePlugin(
-    'flipbook',
-    'Pi1',
+    'Flipbook',
+    'Show',
     [
-        'Flipbook' => 'show',
+        FlipbookController::class => 'show',
     ],
-    []
+    [],
+    ExtensionUtility::PLUGIN_TYPE_CONTENT_ELEMENT
 );
 
 
@@ -20,13 +21,12 @@ ExtensionManagementUtility::addPageTSConfig(trim(
 		mod.wizards.newContentElement.wizardItems {
 			plugins {
 				elements {
-					flipbook_pi1 {
+					flipbook {
 						title = Flipbook
 						description =  Show flipbook from PDF
-						iconIdentifier = tx-flipbook-plugin-pi1
+						iconIdentifier = tx-flipbook
 						tt_content_defValues {
-							CType = list
-							list_type = flipbook_pi1
+							CType = flipbook
 						}
 					}
 				}
@@ -34,15 +34,3 @@ ExtensionManagementUtility::addPageTSConfig(trim(
 		}
 
 	'));
-
-
-/*
-if ((float)TYPO3_version >= 7.0) { // bugfix for inline fal images in flexforms (only after record with flexform has been saved)
-    $GLOBALS['TYPO3_CONF_VARS']['SYS']['formEngine']['formDataGroup']['inlineParentRecord'][\TYPO3\CMS\Backend\Form\FormDataProvider\DatabaseEditRow::class] = array();
-    $GLOBALS['TYPO3_CONF_VARS']['SYS']['formEngine']['formDataGroup']['inlineParentRecord'][\TYPO3\CMS\Backend\Form\FormDataProvider\InitializeProcessedTca::class] = array(
-        'depends' => array(
-            \TYPO3\CMS\Backend\Form\FormDataProvider\DatabaseEditRow::class,
-        )
-    );
-}
-*/

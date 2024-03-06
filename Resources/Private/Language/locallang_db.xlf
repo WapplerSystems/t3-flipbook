@@ -5,6 +5,10 @@
         <header/>
         <body>
 
+            <trans-unit id="plugin.flipbook.title">
+                <source>Flipbook</source>
+            </trans-unit>
+
             <trans-unit id="flexform.sheet.folder">
                 <source>Options</source>
             </trans-unit>

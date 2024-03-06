@@ -25,22 +25,20 @@ namespace WapplerSystems\Flipbook\Controller;
  *  This copyright notice MUST APPEAR in all copies of the script!
  ***************************************************************/
 
+use Psr\Http\Message\ResponseInterface;
 use TYPO3\CMS\Core\Resource\FileReference;
 use TYPO3\CMS\Core\Resource\FileRepository;
 use TYPO3\CMS\Core\Resource\ResourceFactory;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Extbase\Configuration\ConfigurationManagerInterface;
 use TYPO3\CMS\Extbase\Domain\Model\Folder;
+use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
 
 
 /**
  *
- *
- * @package products
- * @license http://www.gnu.org/licenses/gpl.html GNU General Public License, version 3 or later
- *
  */
-class FlipbookController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
+class FlipbookController extends ActionController
 {
 
     /**
@@ -69,9 +67,9 @@ class FlipbookController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControl
         if (isset($tsSettings['overrideFlexformSettingsIfEmpty']) && $tsSettings['overrideFlexformSettingsIfEmpty'] == 1) {
             // if flexform setting is empty and value is available in TS
             foreach ($tsSettings as $key => $value) {
-                if ($key == 'img.') continue;
-                if ($key == 'assets.') continue;
-                if ($key == 'deepLinking.') continue;
+                if ($key === 'img.') continue;
+                if ($key === 'assets.') continue;
+                if ($key === 'deepLinking.') continue;
 
                 if (!$originalSettings[$key] && isset($value)) {
                     $originalSettings[$key] = $value;
@@ -102,7 +100,7 @@ class FlipbookController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControl
      *
      * @return void
      */
-    public function showAction()
+    public function showAction() : ResponseInterface
     {
 
         /** @var string $bigImageFolder */
@@ -134,7 +132,8 @@ class FlipbookController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControl
             ->assign('settings', $this->settings);
 
         $code = $this->view->render();
-        return $this->sanitize_output($code);
+
+        return $this->htmlResponse($this->sanitize_output($code));
     }
 
 

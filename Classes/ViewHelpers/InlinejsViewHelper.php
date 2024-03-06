@@ -30,6 +30,7 @@ use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Extbase\Mvc\Web\Routing\UriBuilder;
 use TYPO3\CMS\Extbase\Utility\LocalizationUtility;
 use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractTagBasedViewHelper;
+use TYPO3\CMS\Core\Resource\Folder;
 
 
 /**
@@ -56,7 +57,7 @@ class InlinejsViewHelper extends AbstractTagBasedViewHelper
         $this->registerArgument('uid', 'int', 'Uid of the Content Element', true);
         $this->registerArgument('files', 'array', 'Files');
         $this->registerArgument('settings', 'array', 'Settings', true);
-        $this->registerArgument('thumbfolder', '\TYPO3\CMS\Core\Resource\Folder', 'Thumbnails folder');
+        $this->registerArgument('thumbfolder', Folder::class, 'Thumbnails folder');
 
     }
 
