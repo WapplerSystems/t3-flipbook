@@ -9,11 +9,11 @@
 plugin.tx_flipbook {
     view {
         # cat=rfliptemplates/file; type=string; label=Path to template root (FE)
-        templateRootPath = EXT:rflipbook/Resources/Private/Templates/
+        templateRootPath = EXT:flipbook/Resources/Private/Templates/
         # cat=rfliptemplates/file; type=string; label=Path to template partials (FE)
-        partialRootPath = EXT:rflipbook/Resources/Private/Partials/
+        partialRootPath = EXT:flipbook/Resources/Private/Partials/
         # cat=rfliptemplates/file; type=string; label=Path to template layouts (FE)
-        layoutRootPath = EXT:rflipbook/Resources/Private/Layouts/
+        layoutRootPath = EXT:flipbook/Resources/Private/Layouts/
     }
 
     settings {
@@ -35,15 +35,15 @@ plugin.tx_flipbook {
 
         assets {
             # cat=rflipassets/settings/10; type=string; label=Preloader
-            preloader = typo3conf/ext/rflipbook/Resources/Public/images/preloader.jpg
+            preloader = typo3conf/ext/flipbook/Resources/Public/Images/preloader.jpg
             # cat=rflipassets/settings/20; type=string; label=Left
-            left = typo3conf/ext/rflipbook/Resources/Public/images/left.png
+            left = typo3conf/ext/flipbook/Resources/Public/Images/left.png
             # cat=rflipassets/settings/30; type=string; label=Right
-            right = typo3conf/ext/rflipbook/Resources/Public/images/right.png
+            right = typo3conf/ext/flipbook/Resources/Public/Images/right.png
             # cat=rflipassets/settings/40; type=string; label=Overlay
-            overlay = typo3conf/ext/rflipbook/Resources/Public/images/overlay.jpg
+            overlay = typo3conf/ext/flipbook/Resources/Public/Images/overlay.jpg
             # cat=rflipassets/settings/50; type=string; label=MP3 on flip
-            flipMp3 = typo3conf/ext/rflipbook/Resources/Public/mp3/turnPage.mp3
+            flipMp3 = typo3conf/ext/flipbook/Resources/Public/Audio/turnPage.mp3
         }
 
 

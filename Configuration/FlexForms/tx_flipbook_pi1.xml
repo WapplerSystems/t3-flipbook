@@ -7,9 +7,9 @@
         <options>
             <ROOT>
                 <TCEforms>
-                    <sheetTitle>LLL:EXT:rflipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.options
+                    <sheetTitle>LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.options
                     </sheetTitle>
-                    <cshFile>LLL:EXT:rflipbook/Resources/Private/Language/locallang_csh_flexform_pi1.xlf</cshFile>
+                    <cshFile>LLL:EXT:flipbook/Resources/Private/Language/locallang_csh_flexform_pi1.xlf</cshFile>
                 </TCEforms>
                 <type>array</type>
                 <el>
@@ -25,7 +25,7 @@
                     <settings.header type="array">
                         <TCEforms type="array">
                             <label>
-                                LLL:EXT:rflipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.options.header
+                                LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.options.header
                             </label>
                             <config type="array">
                                 <type>input</type>
@@ -38,7 +38,7 @@
                     <settings.download>
                         <TCEforms>
                             <label>
-                                LLL:EXT:rflipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.options.download
+                                LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.options.download
                             </label>
                             <config>
                                 <type>group</type>
@@ -57,7 +57,7 @@
                     <settings.preview>
                         <TCEforms>
                             <label>
-                                LLL:EXT:rflipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.options.thumb
+                                LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.options.thumb
                             </label>
                             <config>
                                 <type>inline</type>
@@ -115,7 +115,7 @@
                                 <rows>5</rows>
                             </config>
                             <label>
-                                LLL:EXT:rflipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.options.description
+                                LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.options.description
                             </label>
                             <defaultExtras>richtext[*]:rte_transform[flag=rte_enabled|mode=ts_css]</defaultExtras>
                         </TCEforms>
@@ -129,7 +129,7 @@
         <sDEF>
             <ROOT>
                 <TCEforms>
-                    <sheetTitle>LLL:EXT:rflipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.folder
+                    <sheetTitle>LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.folder
                     </sheetTitle>
                 </TCEforms>
                 <type>array</type>
@@ -138,7 +138,7 @@
                     <settings.mode type="array">
                         <TCEforms type="array">
                             <label>
-                                LLL:EXT:rflipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.options.mode
+                                LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.options.mode
                             </label>
                             <onChange>reload</onChange>
                             <config>
@@ -160,7 +160,7 @@
                     <settings.folder>
                         <TCEforms>
                             <label>
-                                LLL:EXT:rflipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.folder.bigimages
+                                LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.folder.bigimages
                             </label>
                             <displayCond>FIELD:settings.mode:=:folders</displayCond>
                             <config>
@@ -177,7 +177,7 @@
                     <settings.thumbs>
                         <TCEforms>
                             <label>
-                                LLL:EXT:rflipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.folder.smallimages
+                                LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.folder.smallimages
                             </label>
                             <displayCond>FIELD:settings.mode:=:folders</displayCond>
                             <config>
@@ -194,7 +194,7 @@
                     <settings.pdfUrl>
                         <TCEforms>
                             <label>
-                                LLL:EXT:rflipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.pdf.file
+                                LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.pdf.file
                             </label>
                             <displayCond>FIELD:settings.mode:=:pdf</displayCond>
                             <config>
@@ -218,7 +218,7 @@
         <toc>
             <ROOT>
                 <TCEforms>
-                    <sheetTitle>LLL:EXT:rflipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.toc
+                    <sheetTitle>LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.toc
                     </sheetTitle>
                 </TCEforms>
                 <type>array</type>
@@ -226,13 +226,13 @@
                     <settings.toc type="array">
                         <type>array</type>
                         <section>1</section>
-                        <label>LLL:EXT:rflipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.toc.index
+                        <label>LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.toc.index
                         </label>
                         <el type="array">
                             <field_toc_entry type="array">
                                 <type>array</type>
                                 <label>
-                                    LLL:EXT:rflipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.toc.chapter
+                                    LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.toc.chapter
                                 </label>
                                 <el type="array">
                                     <field_toc_label type="array">
@@ -243,7 +243,7 @@
                                                 <eval>trim</eval>
                                             </config>
                                             <label>
-                                                LLL:EXT:rflipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.toc.chapterlabel
+                                                LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.toc.chapterlabel
                                             </label>
                                         </TCEforms>
                                     </field_toc_label>
@@ -255,7 +255,7 @@
                                                 <eval>trim,int</eval>
                                             </config>
                                             <label>
-                                                LLL:EXT:rflipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.toc.page
+                                                LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.toc.page
                                             </label>
                                         </TCEforms>
                                     </field_toc_page>
@@ -271,7 +271,7 @@
             <ROOT>
                 <TCEforms>
                     <sheetTitle>
-                        LLL:EXT:rflipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.pluginSettings
+                        LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.pluginSettings
                     </sheetTitle>
                 </TCEforms>
                 <type>array</type>
@@ -279,7 +279,7 @@
                     <settings.hideMenu>
                         <TCEforms>
                             <label>
-                                LLL:EXT:rflipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.pluginSettings.hideMenu
+                                LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.pluginSettings.hideMenu
                             </label>
                             <config>
                                 <type>select</type>
@@ -290,13 +290,13 @@
                                     </numIndex>
                                     <numIndex index="1" type="array">
                                         <numIndex index="0">
-                                            LLL:EXT:rflipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.pluginSettings.hideMenu.true
+                                            LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.pluginSettings.hideMenu.true
                                         </numIndex>
                                         <numIndex index="1">enabled</numIndex>
                                     </numIndex>
                                     <numIndex index="2" type="array">
                                         <numIndex index="0">
-                                            LLL:EXT:rflipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.pluginSettings.hideMenu.false
+                                            LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.pluginSettings.hideMenu.false
                                         </numIndex>
                                         <numIndex index="1">disabled</numIndex>
                                     </numIndex>
@@ -308,7 +308,7 @@
                     <settings.sideNavigationButtons>
                         <TCEforms>
                             <label>
-                                LLL:EXT:rflipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.pluginSettings.sideNavigationButtons
+                                LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.pluginSettings.sideNavigationButtons
                             </label>
                             <config>
                                 <type>select</type>
@@ -319,13 +319,13 @@
                                     </numIndex>
                                     <numIndex index="1" type="array">
                                         <numIndex index="0">
-                                            LLL:EXT:rflipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.pluginSettings.sideNavigationButtons.true
+                                            LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.pluginSettings.sideNavigationButtons.true
                                         </numIndex>
                                         <numIndex index="1">enabled</numIndex>
                                     </numIndex>
                                     <numIndex index="2" type="array">
                                         <numIndex index="0">
-                                            LLL:EXT:rflipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.pluginSettings.sideNavigationButtons.false
+                                            LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.pluginSettings.sideNavigationButtons.false
                                         </numIndex>
                                         <numIndex index="1">disabled</numIndex>
                                     </numIndex>
@@ -336,7 +336,7 @@
                     <settings.pdfPageScale>
                         <TCEforms>
                             <label>
-                                LLL:EXT:rflipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.pluginSettings.pdfPageScale
+                                LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.pluginSettings.pdfPageScale
                             </label>
                             <config>
                                 <type>input</type>
@@ -348,7 +348,7 @@
                     <settings.skin>
                         <TCEforms type="array">
                             <label>
-                                LLL:EXT:rflipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.pluginSettings.skin
+                                LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.pluginSettings.skin
                             </label>
                             <config>
                                 <type>select</type>
@@ -359,13 +359,13 @@
                                     </numIndex>
                                     <numIndex index="1" type="array">
                                         <numIndex index="0">
-                                            LLL:EXT:rflipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.pluginSettings.skin.light
+                                            LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.pluginSettings.skin.light
                                         </numIndex>
                                         <numIndex index="1">light</numIndex>
                                     </numIndex>
                                     <numIndex index="2" type="array">
                                         <numIndex index="0">
-                                            LLL:EXT:rflipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.pluginSettings.skin.dark
+                                            LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.pluginSettings.skin.dark
                                         </numIndex>
                                         <numIndex index="1">dark</numIndex>
                                     </numIndex>
@@ -376,7 +376,7 @@
                     <settings.startPage>
                         <TCEforms>
                             <label>
-                                LLL:EXT:rflipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.pluginSettings.startPage
+                                LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.pluginSettings.startPage
                             </label>
                             <config>
                                 <type>input</type>
@@ -388,7 +388,7 @@
                     <settings.sounds>
                         <TCEforms>
                             <label>
-                                LLL:EXT:rflipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.pluginSettings.sounds
+                                LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.pluginSettings.sounds
                             </label>
                             <config>
                                 <type>select</type>
@@ -399,13 +399,13 @@
                                     </numIndex>
                                     <numIndex index="1" type="array">
                                         <numIndex index="0">
-                                            LLL:EXT:rflipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.pluginSettings.sounds.enable
+                                            LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.pluginSettings.sounds.enable
                                         </numIndex>
                                         <numIndex index="1">enabled</numIndex>
                                     </numIndex>
                                     <numIndex index="2" type="array">
                                         <numIndex index="0">
-                                            LLL:EXT:rflipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.pluginSettings.sounds.disable
+                                            LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.pluginSettings.sounds.disable
                                         </numIndex>
                                         <numIndex index="1">disabled</numIndex>
                                     </numIndex>
@@ -416,7 +416,7 @@
                     <settings.pageWidth>
                         <TCEforms>
                             <label>
-                                LLL:EXT:rflipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.pluginSettings.pageWidth
+                                LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.pluginSettings.pageWidth
                             </label>
                             <config>
                                 <type>input</type>
@@ -428,7 +428,7 @@
                     <settings.pageHeight>
                         <TCEforms>
                             <label>
-                                LLL:EXT:rflipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.pluginSettings.pageHeight
+                                LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.pluginSettings.pageHeight
                             </label>
                             <config>
                                 <type>input</type>
@@ -440,7 +440,7 @@
                     <settings.thumbnailWidth>
                         <TCEforms>
                             <label>
-                                LLL:EXT:rflipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.pluginSettings.thumbnailWidth
+                                LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.pluginSettings.thumbnailWidth
                             </label>
                             <config>
                                 <type>input</type>
@@ -452,7 +452,7 @@
                     <settings.thumbnailHeight>
                         <TCEforms>
                             <label>
-                                LLL:EXT:rflipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.pluginSettings.thumbnailHeight
+                                LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.pluginSettings.thumbnailHeight
                             </label>
                             <config>
                                 <type>input</type>
@@ -464,7 +464,7 @@
                     <settings.contentOnStart>
                         <TCEforms>
                             <label>
-                                LLL:EXT:rflipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.pluginSettings.contentOnStart
+                                LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.pluginSettings.contentOnStart
                             </label>
                             <config>
                                 <type>select</type>
@@ -475,13 +475,13 @@
                                     </numIndex>
                                     <numIndex index="1" type="array">
                                         <numIndex index="0">
-                                            LLL:EXT:rflipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.pluginSettings.contentOnStart.true
+                                            LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.pluginSettings.contentOnStart.true
                                         </numIndex>
                                         <numIndex index="1">enabled</numIndex>
                                     </numIndex>
                                     <numIndex index="2" type="array">
                                         <numIndex index="0">
-                                            LLL:EXT:rflipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.pluginSettings.contentOnStart.false
+                                            LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.pluginSettings.contentOnStart.false
                                         </numIndex>
                                         <numIndex index="1">disabled</numIndex>
                                     </numIndex>
@@ -492,7 +492,7 @@
                     <settings.thumbnailsOnStart>
                         <TCEforms>
                             <label>
-                                LLL:EXT:rflipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.pluginSettings.thumbnailsOnStart
+                                LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.pluginSettings.thumbnailsOnStart
                             </label>
                             <config>
                                 <type>select</type>
@@ -503,13 +503,13 @@
                                     </numIndex>
                                     <numIndex index="1" type="array">
                                         <numIndex index="0">
-                                            LLL:EXT:rflipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.pluginSettings.thumbnailsOnStart.true
+                                            LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.pluginSettings.thumbnailsOnStart.true
                                         </numIndex>
                                         <numIndex index="1">enabled</numIndex>
                                     </numIndex>
                                     <numIndex index="2" type="array">
                                         <numIndex index="0">
-                                            LLL:EXT:rflipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.pluginSettings.thumbnailsOnStart.false
+                                            LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.pluginSettings.thumbnailsOnStart.false
                                         </numIndex>
                                         <numIndex index="1">disabled</numIndex>
                                     </numIndex>
@@ -520,7 +520,7 @@
                     <settings.singlePageMode>
                         <TCEforms>
                             <label>
-                                LLL:EXT:rflipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.pluginSettings.singlePageMode
+                                LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.pluginSettings.singlePageMode
                             </label>
                             <config>
                                 <type>select</type>
@@ -531,13 +531,13 @@
                                     </numIndex>
                                     <numIndex index="1" type="array">
                                         <numIndex index="0">
-                                            LLL:EXT:rflipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.pluginSettings.singlePageMode.true
+                                            LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.pluginSettings.singlePageMode.true
                                         </numIndex>
                                         <numIndex index="1">enabled</numIndex>
                                     </numIndex>
                                     <numIndex index="2" type="array">
                                         <numIndex index="0">
-                                            LLL:EXT:rflipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.pluginSettings.singlePageMode.false
+                                            LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.pluginSettings.singlePageMode.false
                                         </numIndex>
                                         <numIndex index="1">disabled</numIndex>
                                     </numIndex>
@@ -554,7 +554,7 @@
             <ROOT>
                 <TCEforms>
                     <sheetTitle>
-                        LLL:EXT:rflipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.mobileSettings
+                        LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.mobileSettings
                     </sheetTitle>
                 </TCEforms>
                 <type>array</type>
@@ -562,7 +562,7 @@
                     <settings.singlePageModeIfMobile>
                         <TCEforms>
                             <label>
-                                LLL:EXT:rflipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.mobileSettings.singlePageModeIfMobile
+                                LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.mobileSettings.singlePageModeIfMobile
                             </label>
                             <config>
                                 <type>select</type>
@@ -573,13 +573,13 @@
                                     </numIndex>
                                     <numIndex index="1" type="array">
                                         <numIndex index="0">
-                                            LLL:EXT:rflipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.mobileSettings.singlePageModeIfMobile.true
+                                            LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.mobileSettings.singlePageModeIfMobile.true
                                         </numIndex>
                                         <numIndex index="1">enabled</numIndex>
                                     </numIndex>
                                     <numIndex index="2" type="array">
                                         <numIndex index="0">
-                                            LLL:EXT:rflipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.mobileSettings.singlePageModeIfMobile.false
+                                            LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.mobileSettings.singlePageModeIfMobile.false
                                         </numIndex>
                                         <numIndex index="1">disabled</numIndex>
                                     </numIndex>
@@ -590,7 +590,7 @@
                     <settings.pdfBrowserViewerIfMobile>
                         <TCEforms>
                             <label>
-                                LLL:EXT:rflipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.mobileSettings.pdfBrowserViewerIfMobile
+                                LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.mobileSettings.pdfBrowserViewerIfMobile
                             </label>
                             <config>
                                 <type>select</type>
@@ -601,13 +601,13 @@
                                     </numIndex>
                                     <numIndex index="1" type="array">
                                         <numIndex index="0">
-                                            LLL:EXT:rflipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.mobileSettings.pdfBrowserViewerIfMobile.true
+                                            LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.mobileSettings.pdfBrowserViewerIfMobile.true
                                         </numIndex>
                                         <numIndex index="1">enabled</numIndex>
                                     </numIndex>
                                     <numIndex index="2" type="array">
                                         <numIndex index="0">
-                                            LLL:EXT:rflipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.mobileSettings.pdfBrowserViewerIfMobile.false
+                                            LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.mobileSettings.pdfBrowserViewerIfMobile.false
                                         </numIndex>
                                         <numIndex index="1">disabled</numIndex>
                                     </numIndex>
@@ -618,7 +618,7 @@
                     <settings.btnTocIfMobile>
                         <TCEforms>
                             <label>
-                                LLL:EXT:rflipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.mobileSettings.btnTocIfMobile
+                                LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.mobileSettings.btnTocIfMobile
                             </label>
                             <config>
                                 <type>select</type>
@@ -629,13 +629,13 @@
                                     </numIndex>
                                     <numIndex index="1" type="array">
                                         <numIndex index="0">
-                                            LLL:EXT:rflipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.mobileSettings.btnTocIfMobile.true
+                                            LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.mobileSettings.btnTocIfMobile.true
                                         </numIndex>
                                         <numIndex index="1">enabled</numIndex>
                                     </numIndex>
                                     <numIndex index="2" type="array">
                                         <numIndex index="0">
-                                            LLL:EXT:rflipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.mobileSettings.btnTocIfMobile.false
+                                            LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.mobileSettings.btnTocIfMobile.false
                                         </numIndex>
                                         <numIndex index="1">disabled</numIndex>
                                     </numIndex>
@@ -646,7 +646,7 @@
                     <settings.btnThumbsIfMobile>
                         <TCEforms>
                             <label>
-                                LLL:EXT:rflipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.mobileSettings.btnThumbsIfMobile
+                                LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.mobileSettings.btnThumbsIfMobile
                             </label>
                             <config>
                                 <type>select</type>
@@ -657,13 +657,13 @@
                                     </numIndex>
                                     <numIndex index="1" type="array">
                                         <numIndex index="0">
-                                            LLL:EXT:rflipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.mobileSettings.btnThumbsIfMobile.true
+                                            LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.mobileSettings.btnThumbsIfMobile.true
                                         </numIndex>
                                         <numIndex index="1">enabled</numIndex>
                                     </numIndex>
                                     <numIndex index="2" type="array">
                                         <numIndex index="0">
-                                            LLL:EXT:rflipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.mobileSettings.btnThumbsIfMobile.false
+                                            LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.mobileSettings.btnThumbsIfMobile.false
                                         </numIndex>
                                         <numIndex index="1">disabled</numIndex>
                                     </numIndex>
@@ -674,7 +674,7 @@
                     <settings.btnShareIfMobile>
                         <TCEforms>
                             <label>
-                                LLL:EXT:rflipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.mobileSettings.btnShareIfMobile
+                                LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.mobileSettings.btnShareIfMobile
                             </label>
                             <config>
                                 <type>select</type>
@@ -685,13 +685,13 @@
                                     </numIndex>
                                     <numIndex index="1" type="array">
                                         <numIndex index="0">
-                                            LLL:EXT:rflipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.mobileSettings.btnShareIfMobile.true
+                                            LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.mobileSettings.btnShareIfMobile.true
                                         </numIndex>
                                         <numIndex index="1">enabled</numIndex>
                                     </numIndex>
                                     <numIndex index="2" type="array">
                                         <numIndex index="0">
-                                            LLL:EXT:rflipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.mobileSettings.btnShareIfMobile.false
+                                            LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.mobileSettings.btnShareIfMobile.false
                                         </numIndex>
                                         <numIndex index="1">disabled</numIndex>
                                     </numIndex>
@@ -702,7 +702,7 @@
                     <settings.btnDownloadPagesIfMobile>
                         <TCEforms>
                             <label>
-                                LLL:EXT:rflipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.mobileSettings.btnDownloadPagesIfMobile
+                                LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.mobileSettings.btnDownloadPagesIfMobile
                             </label>
                             <config>
                                 <type>select</type>
@@ -713,13 +713,13 @@
                                     </numIndex>
                                     <numIndex index="1" type="array">
                                         <numIndex index="0">
-                                            LLL:EXT:rflipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.mobileSettings.btnDownloadPagesIfMobile.true
+                                            LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.mobileSettings.btnDownloadPagesIfMobile.true
                                         </numIndex>
                                         <numIndex index="1">enabled</numIndex>
                                     </numIndex>
                                     <numIndex index="2" type="array">
                                         <numIndex index="0">
-                                            LLL:EXT:rflipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.mobileSettings.btnDownloadPagesIfMobile.false
+                                            LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.mobileSettings.btnDownloadPagesIfMobile.false
                                         </numIndex>
                                         <numIndex index="1">disabled</numIndex>
                                     </numIndex>
@@ -730,7 +730,7 @@
                     <settings.btnDownloadPdfIfMobile>
                         <TCEforms>
                             <label>
-                                LLL:EXT:rflipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.mobileSettings.btnDownloadPdfIfMobile
+                                LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.mobileSettings.btnDownloadPdfIfMobile
                             </label>
                             <config>
                                 <type>select</type>
@@ -741,13 +741,13 @@
                                     </numIndex>
                                     <numIndex index="1" type="array">
                                         <numIndex index="0">
-                                            LLL:EXT:rflipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.mobileSettings.btnDownloadPdfIfMobile.true
+                                            LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.mobileSettings.btnDownloadPdfIfMobile.true
                                         </numIndex>
                                         <numIndex index="1">enabled</numIndex>
                                     </numIndex>
                                     <numIndex index="2" type="array">
                                         <numIndex index="0">
-                                            LLL:EXT:rflipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.mobileSettings.btnDownloadPdfIfMobile.false
+                                            LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.mobileSettings.btnDownloadPdfIfMobile.false
                                         </numIndex>
                                         <numIndex index="1">disabled</numIndex>
                                     </numIndex>
@@ -758,7 +758,7 @@
                     <settings.btnSoundIfMobile>
                         <TCEforms>
                             <label>
-                                LLL:EXT:rflipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.mobileSettings.btnSoundIfMobile
+                                LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.mobileSettings.btnSoundIfMobile
                             </label>
                             <config>
                                 <type>select</type>
@@ -769,13 +769,13 @@
                                     </numIndex>
                                     <numIndex index="1" type="array">
                                         <numIndex index="0">
-                                            LLL:EXT:rflipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.mobileSettings.btnSoundIfMobile.true
+                                            LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.mobileSettings.btnSoundIfMobile.true
                                         </numIndex>
                                         <numIndex index="1">enabled</numIndex>
                                     </numIndex>
                                     <numIndex index="2" type="array">
                                         <numIndex index="0">
-                                            LLL:EXT:rflipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.mobileSettings.btnSoundIfMobile.false
+                                            LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.mobileSettings.btnSoundIfMobile.false
                                         </numIndex>
                                         <numIndex index="1">disabled</numIndex>
                                     </numIndex>
@@ -786,7 +786,7 @@
                     <settings.btnExpandIfMobile>
                         <TCEforms>
                             <label>
-                                LLL:EXT:rflipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.mobileSettings.btnExpandIfMobile
+                                LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.mobileSettings.btnExpandIfMobile
                             </label>
                             <config>
                                 <type>select</type>
@@ -797,13 +797,13 @@
                                     </numIndex>
                                     <numIndex index="1" type="array">
                                         <numIndex index="0">
-                                            LLL:EXT:rflipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.mobileSettings.btnExpandIfMobile.true
+                                            LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.mobileSettings.btnExpandIfMobile.true
                                         </numIndex>
                                         <numIndex index="1">enabled</numIndex>
                                     </numIndex>
                                     <numIndex index="2" type="array">
                                         <numIndex index="0">
-                                            LLL:EXT:rflipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.mobileSettings.btnExpandIfMobile.false
+                                            LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.mobileSettings.btnExpandIfMobile.false
                                         </numIndex>
                                         <numIndex index="1">disabled</numIndex>
                                     </numIndex>
@@ -814,7 +814,7 @@
                     <settings.btnPrintIfMobile>
                         <TCEforms>
                             <label>
-                                LLL:EXT:rflipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.mobileSettings.btnPrintIfMobile
+                                LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.mobileSettings.btnPrintIfMobile
                             </label>
                             <config>
                                 <type>select</type>
@@ -825,13 +825,13 @@
                                     </numIndex>
                                     <numIndex index="1" type="array">
                                         <numIndex index="0">
-                                            LLL:EXT:rflipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.mobileSettings.btnPrintIfMobile.true
+                                            LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.mobileSettings.btnPrintIfMobile.true
                                         </numIndex>
                                         <numIndex index="1">enabled</numIndex>
                                     </numIndex>
                                     <numIndex index="2" type="array">
                                         <numIndex index="0">
-                                            LLL:EXT:rflipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.mobileSettings.btnPrintIfMobile.false
+                                            LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.mobileSettings.btnPrintIfMobile.false
                                         </numIndex>
                                         <numIndex index="1">disabled</numIndex>
                                     </numIndex>
@@ -848,7 +848,7 @@
             <ROOT>
                 <TCEforms>
                     <sheetTitle>
-                        LLL:EXT:rflipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.socialshare
+                        LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.socialshare
                     </sheetTitle>
                 </TCEforms>
                 <type>array</type>
@@ -856,7 +856,7 @@
                     <settings.google_plus>
                         <TCEforms>
                             <label>
-                                LLL:EXT:rflipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.socialshare.google_plus
+                                LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.socialshare.google_plus
                             </label>
                             <config>
                                 <type>select</type>
@@ -867,13 +867,13 @@
                                     </numIndex>
                                     <numIndex index="1" type="array">
                                         <numIndex index="0">
-                                            LLL:EXT:rflipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.socialshare.google_plus.true
+                                            LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.socialshare.google_plus.true
                                         </numIndex>
                                         <numIndex index="1">enabled</numIndex>
                                     </numIndex>
                                     <numIndex index="2" type="array">
                                         <numIndex index="0">
-                                            LLL:EXT:rflipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.socialshare.google_plus.false
+                                            LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.socialshare.google_plus.false
                                         </numIndex>
                                         <numIndex index="1">disabled</numIndex>
                                     </numIndex>
@@ -884,7 +884,7 @@
                     <settings.twitter>
                         <TCEforms>
                             <label>
-                                LLL:EXT:rflipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.socialshare.twitter
+                                LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.socialshare.twitter
                             </label>
                             <config>
                                 <type>select</type>
@@ -895,13 +895,13 @@
                                     </numIndex>
                                     <numIndex index="1" type="array">
                                         <numIndex index="0">
-                                            LLL:EXT:rflipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.socialshare.twitter.true
+                                            LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.socialshare.twitter.true
                                         </numIndex>
                                         <numIndex index="1">enabled</numIndex>
                                     </numIndex>
                                     <numIndex index="2" type="array">
                                         <numIndex index="0">
-                                            LLL:EXT:rflipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.socialshare.twitter.false
+                                            LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.socialshare.twitter.false
                                         </numIndex>
                                         <numIndex index="1">disabled</numIndex>
                                     </numIndex>
@@ -912,7 +912,7 @@
                     <settings.facebook>
                         <TCEforms>
                             <label>
-                                LLL:EXT:rflipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.socialshare.facebook
+                                LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.socialshare.facebook
                             </label>
                             <config>
                                 <type>select</type>
@@ -923,13 +923,13 @@
                                     </numIndex>
                                     <numIndex index="1" type="array">
                                         <numIndex index="0">
-                                            LLL:EXT:rflipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.socialshare.facebook.true
+                                            LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.socialshare.facebook.true
                                         </numIndex>
                                         <numIndex index="1">enabled</numIndex>
                                     </numIndex>
                                     <numIndex index="2" type="array">
                                         <numIndex index="0">
-                                            LLL:EXT:rflipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.socialshare.facebook.false
+                                            LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.socialshare.facebook.false
                                         </numIndex>
                                         <numIndex index="1">disabled</numIndex>
                                     </numIndex>
@@ -940,7 +940,7 @@
                     <settings.pinterest>
                         <TCEforms>
                             <label>
-                                LLL:EXT:rflipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.socialshare.pinterest
+                                LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.socialshare.pinterest
                             </label>
                             <config>
                                 <type>select</type>
@@ -951,13 +951,13 @@
                                     </numIndex>
                                     <numIndex index="1" type="array">
                                         <numIndex index="0">
-                                            LLL:EXT:rflipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.socialshare.pinterest.true
+                                            LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.socialshare.pinterest.true
                                         </numIndex>
                                         <numIndex index="1">enabled</numIndex>
                                     </numIndex>
                                     <numIndex index="2" type="array">
                                         <numIndex index="0">
-                                            LLL:EXT:rflipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.socialshare.pinterest.false
+                                            LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.socialshare.pinterest.false
                                         </numIndex>
                                         <numIndex index="1">disabled</numIndex>
                                     </numIndex>
@@ -968,7 +968,7 @@
                     <settings.email>
                         <TCEforms>
                             <label>
-                                LLL:EXT:rflipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.socialshare.email
+                                LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.socialshare.email
                             </label>
                             <config>
                                 <type>select</type>
@@ -979,13 +979,13 @@
                                     </numIndex>
                                     <numIndex index="1" type="array">
                                         <numIndex index="0">
-                                            LLL:EXT:rflipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.socialshare.email.true
+                                            LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.socialshare.email.true
                                         </numIndex>
                                         <numIndex index="1">enabled</numIndex>
                                     </numIndex>
                                     <numIndex index="2" type="array">
                                         <numIndex index="0">
-                                            LLL:EXT:rflipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.socialshare.email.false
+                                            LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.socialshare.email.false
                                         </numIndex>
                                         <numIndex index="1">disabled</numIndex>
                                     </numIndex>

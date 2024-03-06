@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <xliff version="1.0">
     <file source-language="en" datatype="plaintext" original="messages" date="2014-05-28T07:44:03Z"
-          product-name="rflipbook">
+          product-name="flipbook">
         <header/>
         <body>
             <trans-unit id="settings.pdfPageScale.description">

@@ -1,10 +1,12 @@
 <?php
 
 
-use TYPO3\CMS\Core\Utility\VersionNumberUtility;
+use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
+use TYPO3\CMS\Core\Utility\GeneralUtility;
+use TYPO3\CMS\Extbase\Utility\ExtensionUtility;
 
-\TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
-    'WapplerSystems.' . $_EXTKEY,
+ExtensionUtility::configurePlugin(
+    'flipbook',
     'Pi1',
     [
         'Flipbook' => 'show',
@@ -13,35 +15,25 @@ use TYPO3\CMS\Core\Utility\VersionNumberUtility;
 );
 
 
-
-    /** @var \TYPO3\CMS\Core\Imaging\IconRegistry $iconRegistry */
-    $iconRegistry = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(\TYPO3\CMS\Core\Imaging\IconRegistry::class);
-    $iconRegistry->registerIcon(
-        'tx-rflipbook-plugin-pi1',
-        \TYPO3\CMS\Core\Imaging\IconProvider\BitmapIconProvider::class,
-        ['source' => 'EXT:rflipbook/ext_icon-7.png']
-    );
-
-
-    \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPageTSConfig(
-        '
+ExtensionManagementUtility::addPageTSConfig(trim(
+    '
 		mod.wizards.newContentElement.wizardItems {
 			plugins {
 				elements {
-					rflipbook_pi1 {
+					flipbook_pi1 {
 						title = Flipbook
 						description =  Show flipbook from PDF
-						iconIdentifier = tx-rflipbook-plugin-pi1
+						iconIdentifier = tx-flipbook-plugin-pi1
 						tt_content_defValues {
 							CType = list
-							list_type = rflipbook_pi1
+							list_type = flipbook_pi1
 						}
 					}
 				}
 			}
 		}
 
-	');
+	'));
 
 
 /*

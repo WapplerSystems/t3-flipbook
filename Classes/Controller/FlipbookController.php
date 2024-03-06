@@ -62,7 +62,7 @@ class FlipbookController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControl
         $tsSettings = $this->configurationManager->getConfiguration(
             ConfigurationManagerInterface::CONFIGURATION_TYPE_FULL_TYPOSCRIPT
         );
-        $tsSettings = $tsSettings['plugin.']['rflipbook.']['settings.'];
+        $tsSettings = $tsSettings['plugin.']['flipbook.']['settings.'];
         $originalSettings = $this->configurationManager->getConfiguration(
             ConfigurationManagerInterface::CONFIGURATION_TYPE_SETTINGS
         );

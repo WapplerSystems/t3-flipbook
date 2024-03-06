@@ -1,4 +1,4 @@
-plugin.rflipbook {
+plugin.flipbook {
     view {
         templateRootPath = {$plugin.tx_flipbook.view.templateRootPath}
         partialRootPath = {$plugin.tx_flipbook.view.partialRootPath}
@@ -123,32 +123,36 @@ plugin.rflipbook {
 }
 
 
-[globalVar = LIT:1 = {$plugin.tx_flipbook.settings.includeJqueryHeader}]
-    page.includeJSlibs.jQueryRflipBook = EXT:rflipbook/Resources/Public/js/jQuery-1.10.0.min.js
+[{$plugin.tx_flipbook.settings.includeJqueryHeader} == 1]
+    page.includeJSlibs.jQueryRflipBook = EXT:flipbook/Resources/Public/JavaScript/jquery-3.4.1.min.js
     page.includeJSlibs.jQueryRflipBook.excludeFromConcatenation = 1
     page.includeJSlibs.jQueryRflipBook.disableCompression = 1
-[global]
+[END]
 
-[globalVar = LIT:1 = {$plugin.tx_flipbook.settings.includeJqueryFooter}]
-    page.includeJSFooterlibs.jQueryRflipBook = EXT:rflipbook/Resources/Public/js/jQuery-1.10.0.min.js
+[{$plugin.tx_flipbook.settings.includeJqueryFooter} == 1]
+    page.includeJSFooterlibs.jQueryRflipBook = EXT:flipbook/Resources/Public/JavaScript/jquery-3.4.1.min.js
     page.includeJSFooterlibs.jQueryRflipBook.excludeFromConcatenation = 1
     page.includeJSFooterlibs.jQueryRflipBook.disableCompression = 1
-[global]
+[END]
 
-page.includeCSS.flipbook = EXT:rflipbook/Resources/Public/css/flipbook.style.css
-page.includeCSS.flipbook.excludeFromConcatenation = 1
-page.includeCSS.flipbook.disableCompression = 1
+page.includeCSS {
 
-page.includeCSS.flipbookFa = EXT:rflipbook/Resources/Public/css/font-awesome.css
-page.includeCSS.flipbookFa.excludeFromConcatenation = 1
-page.includeCSS.flipbookFa.disableCompression = 1
+    flipbook = EXT:flipbook/Resources/Public/CSS/flipbook.style.css
+    flipbook.excludeFromConcatenation = 1
+    flipbook.disableCompression = 1
+
+    flipbookFa = EXT:flipbook/Resources/Public/CSS/font-awesome.css
+    flipbookFa.excludeFromConcatenation = 1
+    flipbookFa.disableCompression = 1
+
+}
 
 
-page.includeJSFooter.flipbook = EXT:rflipbook/Resources/Public/js/flipbook.min.js
+page.includeJSFooter.flipbook = EXT:flipbook/Resources/Public/JavaScript/flipbook.min.js
 page.includeJSFooter.flipbook.excludeFromConcatenation = 1
 page.includeJSFooter.flipbook.disableCompression = 1
 
 
-page.includeJSFooter.flipbookStarter = EXT:rflipbook/Resources/Public/js/flipbook.starter.js
+page.includeJSFooter.flipbookStarter = EXT:flipbook/Resources/Public/JavaScript/flipbook.starter.js
 page.includeJSFooter.flipbookStarter.excludeFromConcatenation = 1
 page.includeJSFooter.flipbookStarter.disableCompression = 1

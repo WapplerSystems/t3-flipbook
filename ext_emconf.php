@@ -1,7 +1,7 @@
 <?php
 
 /***************************************************************
- * Extension Manager/Repository config file for ext: "rflipbook"
+ * Extension Manager/Repository config file for ext: "flipbook"
  *
  *
  * Manual updates:
@@ -9,33 +9,18 @@
  * "version" and "dependencies" must not be touched!
  ***************************************************************/
 
-$EM_CONF[$_EXTKEY] = array(
+$EM_CONF['flipbook'] = [
     'title' => 'Flipbook',
     'description' => 'Show flipbook from PDF',
     'category' => 'plugin',
-    'author' => '',
-    'author_email' => '',
-    'author_company' => '',
-    'shy' => '',
-    'priority' => '',
-    'module' => '',
     'state' => 'stable',
-    'internal' => '',
-    'uploadfolder' => '1',
-    'createDirs' => '',
-    'modify_tables' => '',
-    'clearCacheOnLoad' => 0,
     'lockType' => '',
-    'version' => '2.0.3',
-    'constraints' => array(
-        'depends' => array(
-            'extbase' => '8.7.0-9.5.99',
-            'fluid' => '8.7.0-9.5.99',
-            'typo3' => '8.7.0-9.5.99',
-        ),
-        'conflicts' => array(),
-        'suggests' => array(),
-    ),
-);
-
-?>
+    'version' => '12.0.0',
+    'constraints' => [
+        'depends' => [
+            'typo3' => '12.4.0-12.4.99',
+        ],
+        'conflicts' => [],
+        'suggests' => [],
+    ],
+];

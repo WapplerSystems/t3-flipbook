@@ -18,6 +18,6 @@ $TCA['tt_content']['types']['list']['subtypes_addlist'][$pluginSignature] = 'pi_
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPiFlexFormValue($pluginSignature, 'FILE:EXT:' . $_EXTKEY . '/Configuration/FlexForms/tx_flipbook_pi1.xml');
 
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addLLrefForTCAdescr(
-    'tt_content.pi_flexform.rflipbook_pi1.list',
-    'EXT:rflipbook/Resources/Private/Language/locallang_csh_flexform_pi1.xlf'
+    'tt_content.pi_flexform.flipbook_pi1.list',
+    'EXT:flipbook/Resources/Private/Language/locallang_csh_flexform_pi1.xlf'
 );
