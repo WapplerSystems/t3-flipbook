@@ -1,0 +1,78 @@
+<div xmlns="http://www.w3.org/1999/xhtml" lang="en" xmlns:f="http://typo3.org/ns/fluid/ViewHelpers">
+
+    <f:layout name="Default"/>
+    <f:section name="main">
+
+        <f:if condition="{settings.fullbook}">
+            <f:then>
+                <div id="container_{uid}" class="fullbook-container"></div>
+            </f:then>
+            <f:else>
+                <f:if condition="{settings.header}">
+                    <h2>{settings.header}</h2>
+                </f:if>
+                <div class="row">
+                    <div class="medium-3 column">
+                        <f:if condition="{preview}">
+                            <figure style="position: relative">
+                                <f:image src="{preview.uid}" id="container_{uid}" class="rflip-border" maxWidth="{settings.previewMaxWidth}" height="{settings.previewMaxHeight}" alt="" treatIdAsReference="1"/>
+                                <f:if condition="{preview.description}">
+                                    <figcaption>{preview.description}</figcaption>
+                                </f:if>
+                            </figure>
+                        </f:if>
+
+                    </div>
+                    <div class="medium-9 column">
+
+                        <f:if condition="{settings.description}">
+                            <f:format.html>{settings.description}</f:format.html>
+                        </f:if>
+                    </div>
+                </div>
+            </f:else>
+        </f:if>
+
+        <f:render partial="InlineJs.html" arguments="{uid:uid, files:files, settings:settings, thumbfolder:thumbfolder}" section="main"/>
+
+        <f:if condition="{settings.fullbook}">
+            <style>
+                html, body {
+                    height: 100%;
+                }
+
+                .fullbook-container {
+                    height: 100%;
+                }
+            </style>
+        </f:if>
+        <style>
+            #container_ {
+                uid
+            }
+
+            .loading {
+                -webkit-animation-name: pulse;
+                -webkit-animation-duration: 0.8s;
+                -webkit-animation-iteration-count: 20;
+            }
+
+            @-webkit-keyframes pulse {
+                from {
+                    -webkit-transform: scale(1.0);
+                    opacity: 0.25;
+                }
+                50% {
+                    -webkit-transform: scale(1.03);
+                    opacity: .5;
+                }
+                to {
+                    -webkit-transform: scale(1.0);
+                    opacity: 0.25;
+                }
+            }
+
+
+        </style>
+    </f:section>
+</div>

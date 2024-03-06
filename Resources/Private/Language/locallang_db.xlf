@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+    <file source-language="en" datatype="plaintext" original="messages" date="2014-02-05T10:44:57Z"
+          product-name="rflipbook">
+        <header/>
+        <body>
+
+            <trans-unit id="flexform.sheet.folder">
+                <source>Options</source>
+            </trans-unit>
+            <trans-unit id="flexform.sheet.folder.bigimages">
+                <source>Select the folder with the big images (pages view, required)</source>
+            </trans-unit>
+            <trans-unit id="flexform.sheet.folder.smallimages">
+                <source>Select the folder with the small images (overview, not required)</source>
+            </trans-unit>
+
+
+            <trans-unit id="flexform.sheet.pdf">
+                <source>Options for mode: pdf</source>
+            </trans-unit>
+            <trans-unit id="flexform.sheet.pdf.file">
+                <source>Select the pdf file where the pages are created</source>
+            </trans-unit>
+
+            <trans-unit id="flexform.sheet.toc">
+                <source>Table of content</source>
+            </trans-unit>
+            <trans-unit id="flexform.sheet.toc.chapter">
+                <source>Chapter</source>
+            </trans-unit>
+            <trans-unit id="flexform.sheet.toc.chapterlabel">
+                <source>Chapter label</source>
+            </trans-unit>
+            <trans-unit id="flexform.sheet.toc.page">
+                <source>Pagenumber</source>
+            </trans-unit>
+            <trans-unit id="flexform.sheet.toc.index">
+                <source>Table of content</source>
+            </trans-unit>
+
+
+            <trans-unit id="flexform.sheet.options">
+                <source>General</source>
+            </trans-unit>
+
+            <trans-unit id="flexform.sheet.options.mode">
+                <source>Select a plugin mode</source>
+            </trans-unit>
+
+            <trans-unit id="flexform.sheet.options.header">
+                <source>Header for use in template (not required)</source>
+            </trans-unit>
+            <trans-unit id="flexform.sheet.options.download">
+                <source>PDF file for the download link</source>
+            </trans-unit>
+            <trans-unit id="flexform.sheet.options.thumb">
+                <source>Preview image, shown in content (for the opener link)</source>
+            </trans-unit>
+            <trans-unit id="flexform.sheet.options.description">
+                <source>Description</source>
+            </trans-unit>
+
+            <trans-unit id="flexform.sheet.pluginSettings">
+                <source>Plugin settings (override TS)</source>
+            </trans-unit>
+            <trans-unit id="flexform.sheet.pluginSettings.hideMenu">
+                <source>Show or hide the complete menu bar</source>
+            </trans-unit>
+            <trans-unit id="flexform.sheet.pluginSettings.hideMenu.true">
+                <source>Hide</source>
+            </trans-unit>
+            <trans-unit id="flexform.sheet.pluginSettings.hideMenu.false">
+                <source>Show</source>
+            </trans-unit>
+
+            <trans-unit id="flexform.sheet.pluginSettings.sideNavigationButtons">
+                <source>Select between side or bottom navigation</source>
+            </trans-unit>
+            <trans-unit id="flexform.sheet.pluginSettings.sideNavigationButtons.true">
+                <source>Side navigation</source>
+            </trans-unit>
+            <trans-unit id="flexform.sheet.pluginSettings.sideNavigationButtons.false">
+                <source>Bottom navigation</source>
+            </trans-unit>
+            <trans-unit id="flexform.sheet.pluginSettings.pdfPageScale">
+                <source>PDF page scale (default: 1.5)</source>
+            </trans-unit>
+            <trans-unit id="flexform.sheet.pluginSettings.skin">
+                <source>Skin</source>
+            </trans-unit>
+            <trans-unit id="flexform.sheet.pluginSettings.skin.light">
+                <source>Light</source>
+            </trans-unit>
+            <trans-unit id="flexform.sheet.pluginSettings.skin.dark">
+                <source>Dark</source>
+            </trans-unit>
+            <trans-unit id="flexform.sheet.pluginSettings.startPage">
+                <source>Start page</source>
+            </trans-unit>
+            <trans-unit id="flexform.sheet.pluginSettings.sounds">
+                <source>Sounds</source>
+            </trans-unit>
+            <trans-unit id="flexform.sheet.pluginSettings.sounds.enable">
+                <source>Enabled</source>
+            </trans-unit>
+            <trans-unit id="flexform.sheet.pluginSettings.sounds.disable">
+                <source>Disabled</source>
+            </trans-unit>
+            <trans-unit id="flexform.sheet.pluginSettings.pageWidth">
+                <source>Page width</source>
+            </trans-unit>
+            <trans-unit id="flexform.sheet.pluginSettings.pageHeight">
+                <source>Page height</source>
+            </trans-unit>
+            <trans-unit id="flexform.sheet.pluginSettings.thumbnailWidth">
+                <source>Thumbnail width</source>
+            </trans-unit>
+            <trans-unit id="flexform.sheet.pluginSettings.thumbnailHeight">
+                <source>Thumbnail height</source>
+            </trans-unit>
+            <trans-unit id="flexform.sheet.pluginSettings.contentOnStart">
+                <source>Show Table of Content on start</source>
+            </trans-unit>
+            <trans-unit id="flexform.sheet.pluginSettings.contentOnStart.true">
+                <source>Enabled</source>
+            </trans-unit>
+            <trans-unit id="flexform.sheet.pluginSettings.contentOnStart.false">
+                <source>Disabled</source>
+            </trans-unit>
+            <trans-unit id="flexform.sheet.pluginSettings.thumbnailsOnStart">
+                <source>Show thumbnails on start</source>
+            </trans-unit>
+            <trans-unit id="flexform.sheet.pluginSettings.thumbnailsOnStart.true">
+                <source>Enabled</source>
+            </trans-unit>
+            <trans-unit id="flexform.sheet.pluginSettings.thumbnailsOnStart.false">
+                <source>Disabled</source>
+            </trans-unit>
+            <trans-unit id="flexform.sheet.pluginSettings.singlePageMode">
+                <source>Singlepage mode</source>
+            </trans-unit>
+            <trans-unit id="flexform.sheet.pluginSettings.singlePageMode.true">
+                <source>Enabled</source>
+            </trans-unit>
+            <trans-unit id="flexform.sheet.pluginSettings.singlePageMode.false">
+                <source>Disabled</source>
+            </trans-unit>
+
+            <trans-unit id="flexform.sheet.mobileSettings">
+                <source>Mobile settings (override TS)</source>
+            </trans-unit>
+            <trans-unit id="flexform.sheet.mobileSettings.singlePageModeIfMobile">
+                <source>Singlepage mode if mobile</source>
+            </trans-unit>
+            <trans-unit id="flexform.sheet.mobileSettings.singlePageModeIfMobile.true">
+                <source>Enabled</source>
+            </trans-unit>
+            <trans-unit id="flexform.sheet.mobileSettings.singlePageModeIfMobile.false">
+                <source>Disabled</source>
+            </trans-unit>
+            <trans-unit id="flexform.sheet.mobileSettings.pdfBrowserViewerIfMobile">
+                <source>Open PDF in App</source>
+            </trans-unit>
+            <trans-unit id="flexform.sheet.mobileSettings.pdfBrowserViewerIfMobile.true">
+                <source>Enabled</source>
+            </trans-unit>
+            <trans-unit id="flexform.sheet.mobileSettings.pdfBrowserViewerIfMobile.false">
+                <source>Disabled</source>
+            </trans-unit>
+            <trans-unit id="flexform.sheet.mobileSettings.btnTocIfMobile">
+                <source>Show button "Table of content"</source>
+            </trans-unit>
+            <trans-unit id="flexform.sheet.mobileSettings.btnTocIfMobile.true">
+                <source>Enabled</source>
+            </trans-unit>
+            <trans-unit id="flexform.sheet.mobileSettings.btnTocIfMobile.false">
+                <source>Disabled</source>
+            </trans-unit>
+            <trans-unit id="flexform.sheet.mobileSettings.btnThumbsIfMobile">
+                <source>Show button "Thumbnails"</source>
+            </trans-unit>
+            <trans-unit id="flexform.sheet.mobileSettings.btnThumbsIfMobile.true">
+                <source>Enabled</source>
+            </trans-unit>
+            <trans-unit id="flexform.sheet.mobileSettings.btnThumbsIfMobile.false">
+                <source>Disabled</source>
+            </trans-unit>
+            <trans-unit id="flexform.sheet.mobileSettings.btnShareIfMobile">
+                <source>Show button "Social share icons"</source>
+            </trans-unit>
+            <trans-unit id="flexform.sheet.mobileSettings.btnShareIfMobile.true">
+                <source>Enabled</source>
+            </trans-unit>
+            <trans-unit id="flexform.sheet.mobileSettings.btnShareIfMobile.false">
+                <source>Disabled</source>
+            </trans-unit>
+            <trans-unit id="flexform.sheet.mobileSettings.btnDownloadPagesIfMobile">
+                <source>Show button "Download pages"</source>
+            </trans-unit>
+            <trans-unit id="flexform.sheet.mobileSettings.btnDownloadPagesIfMobile.true">
+                <source>Enabled</source>
+            </trans-unit>
+            <trans-unit id="flexform.sheet.mobileSettings.btnDownloadPagesIfMobile.false">
+                <source>Disabled</source>
+            </trans-unit>
+            <trans-unit id="flexform.sheet.mobileSettings.btnDownloadPdfIfMobile">
+                <source>Show button "Download PDF"</source>
+            </trans-unit>
+            <trans-unit id="flexform.sheet.mobileSettings.btnDownloadPdfIfMobile.true">
+                <source>Enabled</source>
+            </trans-unit>
+            <trans-unit id="flexform.sheet.mobileSettings.btnDownloadPdfIfMobile.false">
+                <source>Disabled</source>
+            </trans-unit>
+            <trans-unit id="flexform.sheet.mobileSettings.btnSoundIfMobile">
+                <source>Show button "Sound"</source>
+            </trans-unit>
+            <trans-unit id="flexform.sheet.mobileSettings.btnSoundIfMobile.true">
+                <source>Enabled</source>
+            </trans-unit>
+            <trans-unit id="flexform.sheet.mobileSettings.btnSoundIfMobile.false">
+                <source>Disabled</source>
+            </trans-unit>
+            <trans-unit id="flexform.sheet.mobileSettings.btnExpandIfMobile">
+                <source>Show button "Fullscreen"</source>
+            </trans-unit>
+            <trans-unit id="flexform.sheet.mobileSettings.btnExpandIfMobile.true">
+                <source>Enabled</source>
+            </trans-unit>
+            <trans-unit id="flexform.sheet.mobileSettings.btnExpandIfMobile.false">
+                <source>Disabled</source>
+            </trans-unit>
+            <trans-unit id="flexform.sheet.mobileSettings.btnPrintIfMobile">
+                <source>Show button "Print"</source>
+            </trans-unit>
+            <trans-unit id="flexform.sheet.mobileSettings.btnPrintIfMobile.true">
+                <source>Enabled</source>
+            </trans-unit>
+            <trans-unit id="flexform.sheet.mobileSettings.btnPrintIfMobile.false">
+                <source>Disabled</source>
+            </trans-unit>
+
+            <trans-unit id="flexform.sheet.socialshare">
+                <source>Social Share buttons (override TS)</source>
+            </trans-unit>
+            <trans-unit id="flexform.sheet.socialshare.google_plus">
+                <source>Google Plus</source>
+            </trans-unit>
+            <trans-unit id="flexform.sheet.socialshare.google_plus.true">
+                <source>Enabled</source>
+            </trans-unit>
+            <trans-unit id="flexform.sheet.socialshare.google_plus.false">
+                <source>Disabled</source>
+            </trans-unit>
+            <trans-unit id="flexform.sheet.socialshare.twitter">
+                <source>Twitter</source>
+            </trans-unit>
+            <trans-unit id="flexform.sheet.socialshare.twitter.true">
+                <source>Enabled</source>
+            </trans-unit>
+            <trans-unit id="flexform.sheet.socialshare.twitter.false">
+                <source>Disabled</source>
+            </trans-unit>
+            <trans-unit id="flexform.sheet.socialshare.facebook">
+                <source>Facebook</source>
+            </trans-unit>
+            <trans-unit id="flexform.sheet.socialshare.facebook.true">
+                <source>Enabled</source>
+            </trans-unit>
+            <trans-unit id="flexform.sheet.socialshare.facebook.false">
+                <source>Disabled</source>
+            </trans-unit>
+            <trans-unit id="flexform.sheet.socialshare.pinterest">
+                <source>pinterest</source>
+            </trans-unit>
+            <trans-unit id="flexform.sheet.socialshare.pinterest.true">
+                <source>Enabled</source>
+            </trans-unit>
+            <trans-unit id="flexform.sheet.socialshare.pinterest.false">
+                <source>Disabled</source>
+            </trans-unit>
+            <trans-unit id="flexform.sheet.socialshare.email">
+                <source>Email</source>
+            </trans-unit>
+            <trans-unit id="flexform.sheet.socialshare.email.true">
+                <source>Enabled</source>
+            </trans-unit>
+            <trans-unit id="flexform.sheet.socialshare.email.false">
+                <source>Disabled</source>
+            </trans-unit>
+
+        </body>
+    </file>
+</xliff>

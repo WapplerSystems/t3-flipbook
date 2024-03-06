@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+    <file source-language="en" datatype="plaintext" original="messages" date="2014-05-28T07:44:03Z"
+          product-name="rflipbook">
+        <header/>
+        <body>
+            <trans-unit id="settings.pdfPageScale.description">
+                <source>scale of pdf pages that will be rendered to images, default : 1.5</source>
+            </trans-unit>
+            <trans-unit id="settings.skin.description">
+                <source>"light" or "dark", default : "light"</source>
+            </trans-unit>
+            <trans-unit id="settings.startPage.description">
+                <source>Page that will be displayed when the book starts, default:1</source>
+            </trans-unit>
+            <trans-unit id="settings.sounds.description">
+                <source>Defines if the sounds are enabled</source>
+            </trans-unit>
+            <trans-unit id="settings.pageWidth.description">
+                <source>Page width in pixels (should be the same size as the page image width, default: 1000</source>
+            </trans-unit>
+            <trans-unit id="settings.pageHeight.description">
+                <source>Page height in pixels (should be the same size as the page image height, default: 1414</source>
+            </trans-unit>
+            <trans-unit id="settings.thumbnailWidth.description">
+                <source>Thumbnail width in pixels (should be the same size as the thumbnail image width, default: 100
+                </source>
+            </trans-unit>
+            <trans-unit id="settings.thumbnailHeight.description">
+                <source>Thumbnail height in pixels (should be the same size as the thumbnail image height, default:
+                    141
+                </source>
+            </trans-unit>
+            <trans-unit id="settings.contentOnStart.description">
+                <source>If the table of content will be displayed on start, default : false</source>
+            </trans-unit>
+            <trans-unit id="settings.thumbnailsOnStart.description">
+                <source>if the thumbnails will be displayed on start, default : false</source>
+            </trans-unit>
+            <trans-unit id="settings.singlePageMode.description">
+                <source>If single page layout will be used instead of standard double page layout, default : false
+                </source>
+            </trans-unit>
+            <trans-unit id="settings.singlePageModeIfMobile.description">
+                <source>If the single page view will be forced on mobile devices, default : false</source>
+            </trans-unit>
+            <trans-unit id="settings.pdfBrowserViewerIfMobile.description">
+                <source>if instead of flipbook app browser will open pdf directly in its own default pdf viewer. For
+                    this option PDF url must be set. default : false
+                </source>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

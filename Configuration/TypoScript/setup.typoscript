@@ -1,0 +1,154 @@
+plugin.rflipbook {
+    view {
+        templateRootPath = {$plugin.tx_flipbook.view.templateRootPath}
+        partialRootPath = {$plugin.tx_flipbook.view.partialRootPath}
+        layoutRootPath = {$plugin.tx_flipbook.view.layoutRootPath}
+    }
+
+    persistence {
+        storagePid =
+    }
+
+    features {
+        # uncomment the following line to enable the new Property Mapper.
+        rewrittenPropertyMapper = 1
+    }
+
+    settings {
+        overrideFlexformSettingsIfEmpty = 1
+        pdfUrl = {$plugin.tx_flipbook.settings.pdfUrl}
+        download = {$plugin.tx_flipbook.settings.download}
+        zipUrl = {$plugin.tx_flipbook.settings.zipUrl}
+        pdfPageScale = {$plugin.tx_flipbook.settings.pdfPageScale}
+        skin = {$plugin.tx_flipbook.settings.skin}
+        assets {
+            preloader = {$plugin.tx_flipbook.settings.assets.preloader}
+            left = {$plugin.tx_flipbook.settings.assets.left}
+            right = {$plugin.tx_flipbook.settings.assets.right}
+            overlay = {$plugin.tx_flipbook.settings.assets.overlay}
+            flipMp3 = {$plugin.tx_flipbook.settings.assets.flipMp3}
+        }
+
+        rightToLeft = {$plugin.tx_flipbook.settings.rightToLeft}
+        startPage = {$plugin.tx_flipbook.settings.startPage}
+        sounds = {$plugin.tx_flipbook.settings.sounds}
+        pageWidth = {$plugin.tx_flipbook.settings.pageWidth}
+        pageHeight = {$plugin.tx_flipbook.settings.pageHeight}
+        thumbnailWidth = {$plugin.tx_flipbook.settings.thumbnailWidth}
+        thumbnailHeight = {$plugin.tx_flipbook.settings.thumbnailHeight}
+        contentOnStart = {$plugin.tx_flipbook.settings.contentOnStart}
+        thumbnailsOnStart = {$plugin.tx_flipbook.settings.thumbnailsOnStart}
+        singlePageMode = {$plugin.tx_flipbook.settings.singlePageMode}
+        pageShadow1 = {$plugin.tx_flipbook.settings.pageShadow1}
+        pageShadow2 = {$plugin.tx_flipbook.settings.pageShadow2}
+        pageShadow3 = {$plugin.tx_flipbook.settings.pageShadow3}
+        deepLinking.enabled = {$plugin.tx_flipbook.settings.deepLinking.enabled}
+        deepLinking.prefix = {$plugin.tx_flipbook.settings.deepLinking.prefix}
+        pageFlipDuration = {$plugin.tx_flipbook.settings.pageFlipDuration}
+        singlePageModeIfMobile = {$plugin.tx_flipbook.settings.singlePageModeIfMobile}
+        pdfBrowserViewerIfMobile = {$plugin.tx_flipbook.settings.pdfBrowserViewerIfMobile}
+        btnTocIfMobile = {$plugin.tx_flipbook.settings.btnTocIfMobile}
+        btnThumbsIfMobile = {$plugin.tx_flipbook.settings.btnThumbsIfMobile}
+        btnShareIfMobile = {$plugin.tx_flipbook.settings.btnShareIfMobile}
+        btnSoundIfMobile = {$plugin.tx_flipbook.settings.btnSoundIfMobile}
+        btnExpandIfMobile = {$plugin.tx_flipbook.settings.btnExpandIfMobile}
+        btnPrintIfMobile = {$plugin.tx_flipbook.settings.btnPrintIfMobile}
+        hideMenu = {$plugin.tx_flipbook.settings.hideMenu}
+        sideNavigationButtons = {$plugin.tx_flipbook.settings.sideNavigationButtons}
+        currentPage = {$plugin.tx_flipbook.settings.currentPage}
+        btnNext = {$plugin.tx_flipbook.settings.btnNext}
+        btnLast = {$plugin.tx_flipbook.settings.btnLast}
+        btnPrev = {$plugin.tx_flipbook.settings.btnPrev}
+        btnFirst = {$plugin.tx_flipbook.settings.btnFirst}
+        btnZoomIn = {$plugin.tx_flipbook.settings.btnZoomIn}
+        btnZoomOut = {$plugin.tx_flipbook.settings.btnZoomOut}
+        btnToc = {$plugin.tx_flipbook.settings.btnToc}
+        btnThumbs = {$plugin.tx_flipbook.settings.btnThumbs}
+        btnDownloadPages = {$plugin.tx_flipbook.settings.btnDownloadPages}
+        btnDownloadPdf = {$plugin.tx_flipbook.settings.btnDownloadPdf}
+        btnSound = {$plugin.tx_flipbook.settings.btnSound}
+        btnExpand = {$plugin.tx_flipbook.settings.btnExpand}
+        btnExpandLightbox = {$plugin.tx_flipbook.settings.btnExpandLightbox}
+        btnPrint = {$plugin.tx_flipbook.settings.btnPrint}
+        btnShare = {$plugin.tx_flipbook.settings.btnShare}
+        google_plus = {$plugin.tx_flipbook.settings.google_plus}
+        twitter = {$plugin.tx_flipbook.settings.twitter}
+        facebook = {$plugin.tx_flipbook.settings.facebook}
+        pinterest = {$plugin.tx_flipbook.settings.pinterest}
+        email = {$plugin.tx_flipbook.settings.email}
+        webgl = {$plugin.tx_flipbook.settings.webgl}
+        cameraDistance = {$plugin.tx_flipbook.settings.cameraDistance}
+        pan = {$plugin.tx_flipbook.settings.pan}
+        panMax = {$plugin.tx_flipbook.settings.panMax}
+        panMin = {$plugin.tx_flipbook.settings.panMin}
+        bookX = {$plugin.tx_flipbook.settings.bookX}
+        bookY = {$plugin.tx_flipbook.settings.bookY}
+        bookZ = {$plugin.tx_flipbook.settings.bookZ}
+        pageMaterial = {$plugin.tx_flipbook.settings.pageMaterial}
+        pageShadow = {$plugin.tx_flipbook.settings.pageShadow}
+        pageHardness = {$plugin.tx_flipbook.settings.pageHardness}
+        coverHardness = {$plugin.tx_flipbook.settings.coverHardness}
+        pageSegmentsW = {$plugin.tx_flipbook.settings.pageSegmentsW}
+        pageSegmentsH = {$plugin.tx_flipbook.settings.pageSegmentsH}
+        pageShininess = {$plugin.tx_flipbook.settings.pageShininess}
+        pageFlipDuration = {$plugin.tx_flipbook.settings.pageFlipDuration}
+        previewMaxWidth = {$plugin.tx_flipbook.settings.previewMaxWidth}
+        previewMaxHeight = {$plugin.tx_flipbook.settings.previewMaxHeight}
+        pointLight = {$plugin.tx_flipbook.settings.pointLight}
+        pointLightX = {$plugin.tx_flipbook.settings.pointLightX}
+        pointLightY = {$plugin.tx_flipbook.settings.pointLightY}
+        pointLightZ = {$plugin.tx_flipbook.settings.pointLightZ}
+        pointLightColor = {$plugin.tx_flipbook.settings.pointLightColor}
+        pointLightIntensity = {$plugin.tx_flipbook.settings.pointLightIntensity}
+        directionalLight = {$plugin.tx_flipbook.settings.directionalLight}
+        directionalLightX = {$plugin.tx_flipbook.settings.directionalLightX}
+        directionalLightY = {$plugin.tx_flipbook.settings.directionalLightY}
+        directionalLightZ = {$plugin.tx_flipbook.settings.directionalLightZ}
+        directionalLightColor = {$plugin.tx_flipbook.settings.directionalLightColor}
+        directionalLightIntensity = {$plugin.tx_flipbook.settings.directionalLightIntensity}
+        ambientLight = {$plugin.tx_flipbook.settings.ambientLight}
+        ambientLightColor = {$plugin.tx_flipbook.settings.ambientLightColor}
+        ambientLightIntensity = {$plugin.tx_flipbook.settings.ambientLightIntensity}
+        spotLight = {$plugin.tx_flipbook.settings.spotLight}
+        spotLightX = {$plugin.tx_flipbook.settings.spotLightX}
+        spotLightY = {$plugin.tx_flipbook.settings.spotLightY}
+        spotLightZ = {$plugin.tx_flipbook.settings.spotLightZ}
+        spotLightColor = {$plugin.tx_flipbook.settings.spotLightColor}
+        spotLightIntensity = {$plugin.tx_flipbook.settings.spotLightIntensity}
+        spotLightShadowCameraNear = {$plugin.tx_flipbook.settings.spotLightShadowCameraNear}
+        spotLightShadowCameraFar = {$plugin.tx_flipbook.settings.spotLightShadowCameraFar}
+        spotLightCastShadow = {$plugin.tx_flipbook.settings.spotLightCastShadow}
+        spotLightShadowDarkness = {$plugin.tx_flipbook.settings.spotLightShadowDarkness}
+    }
+}
+
+
+[globalVar = LIT:1 = {$plugin.tx_flipbook.settings.includeJqueryHeader}]
+    page.includeJSlibs.jQueryRflipBook = EXT:rflipbook/Resources/Public/js/jQuery-1.10.0.min.js
+    page.includeJSlibs.jQueryRflipBook.excludeFromConcatenation = 1
+    page.includeJSlibs.jQueryRflipBook.disableCompression = 1
+[global]
+
+[globalVar = LIT:1 = {$plugin.tx_flipbook.settings.includeJqueryFooter}]
+    page.includeJSFooterlibs.jQueryRflipBook = EXT:rflipbook/Resources/Public/js/jQuery-1.10.0.min.js
+    page.includeJSFooterlibs.jQueryRflipBook.excludeFromConcatenation = 1
+    page.includeJSFooterlibs.jQueryRflipBook.disableCompression = 1
+[global]
+
+page.includeCSS.flipbook = EXT:rflipbook/Resources/Public/css/flipbook.style.css
+page.includeCSS.flipbook.excludeFromConcatenation = 1
+page.includeCSS.flipbook.disableCompression = 1
+
+page.includeCSS.flipbookFa = EXT:rflipbook/Resources/Public/css/font-awesome.css
+page.includeCSS.flipbookFa.excludeFromConcatenation = 1
+page.includeCSS.flipbookFa.disableCompression = 1
+
+
+page.includeJSFooter.flipbook = EXT:rflipbook/Resources/Public/js/flipbook.min.js
+page.includeJSFooter.flipbook.excludeFromConcatenation = 1
+page.includeJSFooter.flipbook.disableCompression = 1
+
+
+page.includeJSFooter.flipbookStarter = EXT:rflipbook/Resources/Public/js/flipbook.starter.js
+page.includeJSFooter.flipbookStarter.excludeFromConcatenation = 1
+page.includeJSFooter.flipbookStarter.disableCompression = 1

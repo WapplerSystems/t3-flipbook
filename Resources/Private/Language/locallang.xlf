@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+    <file source-language="en" datatype="plaintext" original="messages" date="2014-02-05T10:44:57Z"
+          product-name="rflipbook">
+        <header/>
+        <body>
+
+            <trans-unit id="currentPage">
+                <source>Current page</source>
+            </trans-unit>
+            <trans-unit id="btnNext">
+                <source>Next page</source>
+            </trans-unit>
+            <trans-unit id="btnPrev">
+                <source>Previous page</source>
+            </trans-unit>
+            <trans-unit id="btnZoomIn">
+                <source>Zoom in</source>
+            </trans-unit>
+            <trans-unit id="btnZoomOut">
+                <source>Zoom out</source>
+            </trans-unit>
+            <trans-unit id="btnToc">
+                <source>Table of content</source>
+            </trans-unit>
+            <trans-unit id="btnThumbs">
+                <source>Pages</source>
+            </trans-unit>
+            <trans-unit id="btnShare">
+                <source>Share</source>
+            </trans-unit>
+            <trans-unit id="btnDownloadPages">
+                <source>Download pages</source>
+            </trans-unit>
+            <trans-unit id="btnDownloadPdf">
+                <source>Download PDF</source>
+            </trans-unit>
+            <trans-unit id="btnSound">
+                <source>Volume</source>
+            </trans-unit>
+            <trans-unit id="btnExpand">
+                <source>Toggle fullscreen</source>
+            </trans-unit>
+            <trans-unit id="btnPrint">
+                <source>Print</source>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

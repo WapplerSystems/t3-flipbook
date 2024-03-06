@@ -1,0 +1,245 @@
+# customcategory=rflipbasic=TYPO3 Flipbook Basic options
+# customcategory=rflipmobile=TYPO3 Flipbook Mobile options
+# customcategory=rfliptemplates=TYPO3 Flipbook Template Paths
+# customcategory=rflipassets=TYPO3 Flipbook Assets
+# customcategory=rflipmenu=TYPO3 Flipbook Menu settings
+# customcategory=rflipsocial=TYPO3 Flipbook Social share button
+# customcategory=rflipwebgl=TYPO3 Flipbook WebGL Settings
+
+plugin.tx_flipbook {
+    view {
+        # cat=rfliptemplates/file; type=string; label=Path to template root (FE)
+        templateRootPath = EXT:rflipbook/Resources/Private/Templates/
+        # cat=rfliptemplates/file; type=string; label=Path to template partials (FE)
+        partialRootPath = EXT:rflipbook/Resources/Private/Partials/
+        # cat=rfliptemplates/file; type=string; label=Path to template layouts (FE)
+        layoutRootPath = EXT:rflipbook/Resources/Private/Layouts/
+    }
+
+    settings {
+        # cat=rfliptemplates/other; type=boolean; label=Include jQuery in header
+        includeJqueryHeader = 0
+        # cat=rfliptemplates/other; type=boolean; label=Include jQuery in footer
+        includeJqueryFooter = 0
+
+        # cat=rflipbasic/settings/0011; type=string; label=PDF url: The url of the PDF file. If options.pages is empty, it will use the pdf to generate the pages at runtime.
+        pdfUrl =
+        # cat=rflipbasic/settings/0012; type=string; label=PDF Download for download Icon
+        download =
+        # cat=rflipbasic/settings/0020; type=string; label=Page Scale: Scale of pdf pages that will be rendered to images, default is 1.5
+        pdfPageScale =
+        # cat=rflipbasic/settings/0025; type=string; label=ZIP Url, for Download button. ZIP contains all images
+        zipUrl =
+        # cat=rflipbasic/settings/0030; type=string; label=Skin: "light"  or "dark", default is "light"
+        skin =
+
+        assets {
+            # cat=rflipassets/settings/10; type=string; label=Preloader
+            preloader = typo3conf/ext/rflipbook/Resources/Public/images/preloader.jpg
+            # cat=rflipassets/settings/20; type=string; label=Left
+            left = typo3conf/ext/rflipbook/Resources/Public/images/left.png
+            # cat=rflipassets/settings/30; type=string; label=Right
+            right = typo3conf/ext/rflipbook/Resources/Public/images/right.png
+            # cat=rflipassets/settings/40; type=string; label=Overlay
+            overlay = typo3conf/ext/rflipbook/Resources/Public/images/overlay.jpg
+            # cat=rflipassets/settings/50; type=string; label=MP3 on flip
+            flipMp3 = typo3conf/ext/rflipbook/Resources/Public/mp3/turnPage.mp3
+        }
+
+
+        # cat=rflipbasic/settings/0040; type=options[Left to right=disabled,Right  to left=enabled]; label=LTR/RTL :Defines if the book mode is normal left to right or right to left for eastern countries, default is Left to Right
+        rightToLeft =
+        # cat=rflipbasic/settings/0050; type=string; label=Starting page: page that will be displayed when the book starts, default is 1
+        startPage =
+        # cat=rflipbasic/settings/0060; type=options[Disabled=disabled,Enabled=enabled]; label=Sounds: defines if the sounds are enabled, default is Enabled
+        sounds =
+        # cat=rflipbasic/settings/0070; type=string; label=Page width: page width in pixels (should be the same size as the page image width, default is 1000
+        pageWidth =
+        # cat=rflipbasic/settings/0080; type=string; label=Page height: page height in pixels (should be the same size as the page image height, default is 1414
+        pageHeight =
+        # cat=rflipbasic/settings/0090; type=string; label=Thumbnail width: thumbnail width in pixels (should be the same size as the thumbnail image width, default is 100
+        thumbnailWidth =
+        # cat=rflipbasic/settings/0100; type=string; label=Thumbnail height: thumbnail height in pixels (should be the same size as the thumbnail image height, default is 141
+        thumbnailHeight =
+        # cat=rflipbasic/settings/0110; type=options[Disabled=disabled,Enabled=enabled]; label=Open TOC: if the table of content will be displayed on start, default is disabled
+        contentOnStart =
+        # cat=rflipbasic/settings/0120; type=options[Disabled=disabled,Enabled=enabled]; label=Open Thumbnails: if the thumbnails will be displayed on start, default is disabled
+        thumbnailsOnStart =
+        # cat=rflipbasic/settings/0130; type=options[Disabled=disabled,Enabled=enabled]; label=Single Page Layout: if single page layout will be used instead of standard double page layout
+        singlePageMode =
+        # cat=rflipbasic/settings/0140; type=options[Disabled=disabled,Enabled=enabled]; label=Page shadow 1: if the shadow of currently flipping page will be displayed
+        pageShadow1 =
+        # cat=rflipbasic/settings/0150; type=options[Disabled=disabled,Enabled=enabled]; label=Page shadow 2: if the shadow of next and previous pages will be displayed
+        pageShadow2 =
+        # cat=rflipbasic/settings/0160; type=options[Disabled=disabled,Enabled=enabled]; label=Page shadow 3:  another light and shadow overlay
+        pageShadow3 =
+        # cat=rflipbasic/settings/0180; type=options[Disabled=disabled,Enabled=enabled]; label=Deeplinking:  if deeplinking will be used. With deeplining any page can be opened directly from the url.
+        deepLinking.enabled =
+        # cat=rflipbasic/settings/0190; type=string; label=Deeplinking prefix:  instead of default deeplinking hash page_number it can be defined custom prefix so the hash will be prefixpage_number.
+        deepLinking.prefix =
+        # cat=rflipbasic/settings/0200; type=string; label=Page flip duration
+        pageFlipDuration =
+        # cat=rflipbasic/settings/0210; type=string; label=Preview Image maxWidth
+        previewMaxWidth = 350
+        # cat=rflipbasic/settings/0230; type=string; label=Preview Image maxHeight
+        previewMaxHeight = 350
+
+
+        # cat=rflipmobile/settings/0010; type=options[Disabled=disabled,Enabled=enabled]; label=Single Page: if the single page view will be forced on mobile devices
+        singlePageModeIfMobile =
+        # cat=rflipmobile/settings/0020; type=options[Disabled=disabled,Enabled=enabled]; label=PDF in App: if instead of flipbook app browser will open pdf directly in its own default pdf viewer. For this option PDF url must be set.
+        pdfBrowserViewerIfMobile =
+        # cat=rflipmobile/settings/0030; type=options[Disabled=disabled,Enabled=enabled]; label=Show button "Table of contents"
+        btnTocIfMobile =
+        # cat=rflipmobile/settings/0040; type=options[Disabled=disabled,Enabled=enabled]; label=Show button "Thumbnails"
+        btnThumbsIfMobile =
+        # cat=rflipmobile/settings/0050; type=options[Disabled=disabled,Enabled=enabled]; label=Show Share buttons
+        btnShareIfMobile =
+        # cat=rflipmobile/settings/0060; type=options[Disabled=disabled,Enabled=enabled]; label=Show sound button
+        btnSoundIfMobile =
+        # cat=rflipmobile/settings/0070; type=options[Disabled=disabled,Enabled=enabled]; label=Show fullscreen button
+        btnExpandIfMobile =
+        # cat=rflipmobile/settings/0080; type=options[Disabled=disabled,Enabled=enabled]; label=Show print button
+        btnPrintIfMobile =
+
+
+        # cat=rflipmenu/settings/0005; type=options[Menu is visible=disabled,Menu is hidden=enabled]; label=Show or hide the complete menu bar
+        hideMenu = disabled
+        # cat=rflipmenu/settings/0010; type=options[Off=disabled,On=enabled]; label=Navigation type: if the side navigation buttons will be used instead of navigation buttons in bottom menu
+        sideNavigationButtons =
+        # cat=rflipmenu/settings/0020; type=options[Disabled=disabled,Enabled=enabled]; label=Show current Page
+        currentPage = enabled
+        # cat=rflipmenu/settings/0030; type=options[Disabled=disabled,Enabled=enabled]; label=Show "next" button
+        btnNext = enabled
+        # cat=rflipmenu/settings/0040; type=options[Disabled=disabled,Enabled=enabled]; label=Show "last" button
+        btnLast = enabled
+        # cat=rflipmenu/settings/0050; type=options[Disabled=disabled,Enabled=enabled]; label=Show "prev" button
+        btnPrev = enabled
+        # cat=rflipmenu/settings/0060; type=options[Disabled=disabled,Enabled=enabled]; label=Show "First" button
+        btnFirst = enabled
+        # cat=rflipmenu/settings/0070; type=options[Disabled=disabled,Enabled=enabled]; label=Show Zoom in button
+        btnZoomIn = enabled
+        # cat=rflipmenu/settings/0080; type=options[Disabled=disabled,Enabled=enabled]; label=Show Zoom out button
+        btnZoomOut = enabled
+        # cat=rflipmenu/settings/0090; type=options[Disabled=disabled,Enabled=enabled]; label=Show ToC Button
+        btnToc = enabled
+        # cat=rflipmenu/settings/0100; type=options[Disabled=disabled,Enabled=enabled]; label=Show thumbnails button
+        btnThumbs = enabled
+        # cat=rflipmenu/settings/0110; type=options[Disabled=disabled,Enabled=enabled]; label=Show download button
+        btnDownloadPages = enabled
+        # cat=rflipmenu/settings/0120; type=options[Disabled=disabled,Enabled=enabled]; label=Show download PDF button
+        btnDownloadPdf = enabled
+        # cat=rflipmenu/settings/0130; type=options[Disabled=disabled,Enabled=enabled]; label=Show sound button
+        btnSound = enabled
+        # cat=rflipmenu/settings/0140; type=options[Disabled=disabled,Enabled=enabled]; label=Show fullscreen button
+        btnExpand = enabled
+        # cat=rflipmenu/settings/0150; type=options[Disabled=disabled,Enabled=enabled]; label=Show minimize button in fullscreen
+        btnExpandLightbox = enabled
+        # cat=rflipmenu/settings/0160; type=options[Disabled=disabled,Enabled=enabled]; label=Show print button
+        btnPrint = enabled
+
+
+        # cat=rflipsocial/settings/0010; type=options[Disabled=disabled,Enabled=enabled]; label=Show Share buttons
+        btnShare = enabled
+        # cat=rflipsocial/settings/0020; type=options[Disabled=disabled,Enabled=enabled]; label=Google plus
+        google_plus = enabled
+        # cat=rflipsocial/settings/0030; type=options[Disabled=disabled,Enabled=enabled]; label=Twitter
+        twitter = enabled
+        # cat=rflipsocial/settings/0040; type=options[Disabled=disabled,Enabled=enabled]; label=Facebook
+        facebook = enabled
+        # cat=rflipsocial/settings/0050; type=options[Disabled=disabled,Enabled=enabled]; label=Pinteres
+        pinterest = enabled
+        # cat=rflipsocial/settings/0060; type=options[Disabled=disabled,Enabled=enabled]; label=Email
+        email = enabled
+
+        # cat=rflipwebgl/settings/0010; type=options[Disabled=disabled,Enabled=enabled]; Label= Enable WEBGL
+        webgl = enabled
+        # cat=rflipwebgl/settings/0011; type=string; Label= Camera distance, default is 2800
+        cameraDistance =
+
+        # cat=rflipwebgl/settings/0020; type=string; Label= pan, default is 0
+        pan =
+        # cat=rflipwebgl/settings/0030; type=string; Label= panMax, default is 20
+        panMax =
+        # cat=rflipwebgl/settings/0040; type=string; Label= panMin, default is -20
+        panMin =
+        # cat=rflipwebgl/settings/0050; type=string; Label= bookX, default is 0
+        bookX =
+        # cat=rflipwebgl/settings/0060; type=string; Label= bookY, default is 0
+        bookY =
+        # cat=rflipwebgl/settings/0070; type=string; Label= bookZ, default is 0
+        bookZ =
+
+        # cat=rflipwebgl/settings/0080; type=options[phong,lambert,basic]; label=page material, 'phong', 'lambert' or 'basic'
+        pageMaterial = phong
+        # cat=rflipwebgl/settings/0090; type=options[Disabled=disabled,Enabled=enabled]; label=pageShadow
+        pageShadow =
+        # cat=rflipwebgl/settings/0100; type=string; Label= pageHardness, default is 1
+        pageHardness =
+        # cat=rflipwebgl/settings/0110; type=string; Label= coverHardness, default is 4
+        coverHardness =
+        # cat=rflipwebgl/settings/0120; type=string; Label= pageSegmentsW, default is 8
+        pageSegmentsW =
+        # cat=rflipwebgl/settings/0130; type=string; Label= pageSegmentsH, default is 1
+        pageSegmentsH =
+        # cat=rflipwebgl/settings/0140; type=string; Label= pageShininess, default is 20
+        pageShininess =
+
+        # cat=rflipwebgl/settings/0160; type=options[Disabled=disabled,Enabled=enabled]; label=point light enabled, default is disabled
+        pointLight =
+        # cat=rflipwebgl/settings/0170; type=string; Label= point light x position, default is 0
+        pointLightX =
+        # cat=rflipwebgl/settings/0180; type=string; Label= point light y position, default is 0
+        pointLightY =
+        # cat=rflipwebgl/settings/0190; type=string; Label= point light z position, default is 2000
+        pointLightZ =
+        # cat=rflipwebgl/settings/0200; type=string; Label= point light color, default is 0xFFFFFF
+        pointLightColor =
+        # cat=rflipwebgl/settings/0210; type=string; Label= point light intensity, default is 0.1
+        pointLightIntensity =
+
+        # cat=rflipwebgl/settings/0220; type=options[Disabled=disabled,Enabled=enabled]; label=directional light enabled, default is enabled
+        directionalLight =
+        # cat=rflipwebgl/settings/0230; type=string; Label= directional light x position, default is 0
+        directionalLightX =
+        # cat=rflipwebgl/settings/0240; type=string; Label= directional light y position, default is 0
+        directionalLightY =
+        # cat=rflipwebgl/settings/0250; type=string; Label= directional light z position, default is 1000
+        directionalLightZ =
+        # cat=rflipwebgl/settings/0260; type=string; Label= directional light color, default is 0xffffff
+        directionalLightColor =
+        # cat=rflipwebgl/settings/0270; type=string; Label= directional light intensity, default is 0.1
+        directionalLightIntensity =
+
+        # cat=rflipwebgl/settings/0280; type=options[Disabled=disabled,Enabled=enabled]; label=ambient light enabled, default is enabled
+        ambientLight =
+        # cat=rflipwebgl/settings/0290; type=string; Label= ambient light color, default is 0xeeeeee
+        ambientLightColor =
+        # cat=rflipwebgl/settings/0300; type=string; Label= ambient light intensity, default is 0.1
+        ambientLightIntensity =
+
+        # cat=rflipwebgl/settings/0310; type=options[Disabled=disabled,Enabled=enabled]; label=spot light enabled, default is disabled
+        spotLight =
+        # cat=rflipwebgl/settings/0320; type=string; Label= spot light x position, default is 0
+        spotLightX =
+        # cat=rflipwebgl/settings/0330; type=string; Label= spot light y position, default is 0
+        spotLightY =
+        # cat=rflipwebgl/settings/0340; type=string; Label= spot light z position, default is 3000
+        spotLightZ =
+        # cat=rflipwebgl/settings/0350; type=string; Label= spot light color, default is 0xffffff
+        spotLightColor =
+        # cat=rflipwebgl/settings/0360; type=string; Label= dspot light intensity, default is 0.05
+        spotLightIntensity =
+
+        # cat=rflipwebgl/settings/0370; type=string; Label= spot light shadow near limit, default is 0.1
+        spotLightShadowCameraNear =
+        # cat=rflipwebgl/settings/0380; type=string; Label= spot light shadow far limit, default is 1000
+        spotLightShadowCameraFar =
+        # cat=rflipwebgl/settings/0390; type=options[Disabled=disabled,Enabled=enabled]; label=spot light casting shadows, default is disabled
+        spotLightCastShadow =
+        # cat=rflipwebgl/settings/0400; type=string; Label= spot light shadow darkness, default is 0.5
+        spotLightShadowDarkness =
+
+    }
+}
+
