@@ -54,13 +54,9 @@ class FlipbookController extends ActionController
      */
     public function injectConfigurationManager(ConfigurationManagerInterface $configurationManager)
     {
-        /** @var ConfigurationManagerInterface configurationManager */
-        $this->configurationManager = $configurationManager;
+        parent::injectConfigurationManager($configurationManager);
 
-        $tsSettings = $this->configurationManager->getConfiguration(
-            ConfigurationManagerInterface::CONFIGURATION_TYPE_FULL_TYPOSCRIPT
-        );
-        $tsSettings = $tsSettings['plugin.']['flipbook.']['settings.'];
+        $tsSettings = $this->settings['plugin.']['flipbook.']['settings.'];
         $originalSettings = $this->configurationManager->getConfiguration(
             ConfigurationManagerInterface::CONFIGURATION_TYPE_SETTINGS
         );
@@ -96,9 +92,7 @@ class FlipbookController extends ActionController
 
 
     /**
-     * action show
      *
-     * @return void
      */
     public function showAction() : ResponseInterface
     {
@@ -106,7 +100,7 @@ class FlipbookController extends ActionController
         /** @var string $bigImageFolder */
         $bigImageFolder = $this->settings['folder'];
         /** @var ResourceFactory $factory */
-        $factory = $this->objectManager->get(ResourceFactory::class);
+        $factory = GeneralUtility::makeInstance(ResourceFactory::class);
         /** @var Folder $folder */
         $folder = $factory->getFolderObjectFromCombinedIdentifier($bigImageFolder);
 

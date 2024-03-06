@@ -94,7 +94,7 @@ class InlinejsViewHelper extends AbstractTagBasedViewHelper
 
         switch ($this->settings['mode']) {
             case 'pdf':
-                $content .= 'pdfUrl: "' . $this->uriPage($this->settings['pdfUrl']) . '",';
+                $content .= 'pdfUrl: "' . $this->settings['pdfUrl'] . '",';
                 if (!empty($this->settings['pdfPageScale']))
                     $content .= 'pdfPageScale: ' . (float)$this->settings['pdfPageScale'] . ',';
 
@@ -178,13 +178,11 @@ class InlinejsViewHelper extends AbstractTagBasedViewHelper
      * @param string $addQueryStringMethod Set which parameters will be kept. Only active if $addQueryString = TRUE
      * @return string Rendered page URI
      */
-    public function uriPage($pageUid = NULL, array $additionalParams = array(), $pageType = 0, $noCache = FALSE, $noCacheHash = FALSE, $section = '', $linkAccessRestrictedPages = FALSE, $absolute = FALSE, $addQueryString = FALSE, array $argumentsToBeExcludedFromQueryString = array(), $addQueryStringMethod = NULL)
+    public function uriPage(int $pageUid, array $additionalParams = array(), $pageType = 0, $noCache = FALSE, $noCacheHash = FALSE, $section = '', $linkAccessRestrictedPages = FALSE, $absolute = FALSE, $addQueryString = FALSE, array $argumentsToBeExcludedFromQueryString = array(), $addQueryStringMethod = NULL)
     {
 
-        /** @var ObjectManager $objectManager */
-        $objectManager = GeneralUtility::makeInstance(ObjectManager::class);
         /** @var UriBuilder $uriBuilder */
-        $uriBuilder = $objectManager->get(UriBuilder::class);
+        $uriBuilder = GeneralUtility::makeInstance(UriBuilder::class);
         $uri = $uriBuilder->setTargetPageUid($pageUid)->setTargetPageType($pageType)->setNoCache($noCache)->setUseCacheHash(!$noCacheHash)->setSection($section)->setLinkAccessRestrictedPages($linkAccessRestrictedPages)->setArguments($additionalParams)->setCreateAbsoluteUri($absolute)->setAddQueryString($addQueryString)->setArgumentsToBeExcludedFromQueryString($argumentsToBeExcludedFromQueryString)->setAddQueryStringMethod($addQueryStringMethod)->build();
         return $uri;
     }
@@ -241,7 +239,7 @@ class InlinejsViewHelper extends AbstractTagBasedViewHelper
         ];
 
         foreach ($buttons as $button => $value) {
-            if ($this->settings[$button] == 'enabled') {
+            if ($this->settings[$button] === 'enabled') {
                 $content .= $button . ': {';
 
                 $content .= 'enabled: true,';
@@ -277,7 +275,7 @@ class InlinejsViewHelper extends AbstractTagBasedViewHelper
 
         $content = 'assets: {';
 
-        if (strlen($this->settings['assets']['preloader']) > 0) {
+        if ($this->settings['assets']['preloader'] !== null && $this->settings['assets']['preloader'] !== '') {
             $content .= 'preloader: "' . $this->uriPage($this->settings['assets']['preloader']) . '",';
         }
         if (strlen($this->settings['assets']['left']) > 0) {
