@@ -1,6 +1,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xmlns:f="http://typo3.org/ns/fluid/ViewHelpers" data-namespace-typo3-fluid="true">
 
     <f:layout name="Default"/>
+
+
     <f:section name="main">
 
         <f:if condition="{settings.fullbook}">
@@ -14,8 +16,8 @@
                 <div class="row">
                     <div class="medium-3 column">
                         <f:if condition="{preview}">
-                            <figure style="position: relative">
-                                <f:image src="{preview.uid}" id="container_{uid}" class="rflip-border" maxWidth="{settings.previewMaxWidth}" height="{settings.previewMaxHeight}" alt="" treatIdAsReference="1"/>
+                            <figure>
+                                <f:image src="{preview.uid}" id="container_{uid}" class="rflip-border img-fluid" maxWidth="{settings.previewMaxWidth}" height="{settings.previewMaxHeight}" alt="" treatIdAsReference="1"/>
                                 <f:if condition="{preview.description}">
                                     <figcaption>{preview.description}</figcaption>
                                 </f:if>
@@ -37,9 +39,6 @@
 
         <f:if condition="{settings.fullbook}">
             <style>
-                html, body {
-                    height: 100%;
-                }
 
                 .fullbook-container {
                     height: 100%;
@@ -47,9 +46,6 @@
             </style>
         </f:if>
         <style>
-            #container_ {
-                uid
-            }
 
             .loading {
                 -webkit-animation-name: pulse;

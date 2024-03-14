@@ -4,7 +4,7 @@
     bottom: 0;
     left: 0;
     right: 0;
-    background: url('../images/overlay_lightbox.png') repeat;
+    background: url('../Images/overlay_lightbox.png') repeat;
     z-index: 2147483646 !important;
 }
 

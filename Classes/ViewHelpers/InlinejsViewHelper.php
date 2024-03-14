@@ -275,7 +275,7 @@ class InlinejsViewHelper extends AbstractTagBasedViewHelper
 
         $content = 'assets: {';
 
-        if ($this->settings['assets']['preloader'] !== null && $this->settings['assets']['preloader'] !== '') {
+        if (($this->settings['assets']['preloader'] ?? '') !== '') {
             $content .= 'preloader: "' . $this->uriPage($this->settings['assets']['preloader']) . '",';
         }
         if (strlen($this->settings['assets']['left']) > 0) {
