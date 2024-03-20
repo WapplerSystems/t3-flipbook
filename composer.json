@@ -8,7 +8,6 @@
 		"CMS"
 	],
 	"replace": {
-		"rflipbook": "self.version",
 		"rbiz/rflipbook": "self.version"
 	},
 	"require": {
