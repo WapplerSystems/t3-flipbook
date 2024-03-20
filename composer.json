@@ -1,35 +1,39 @@
 {
-  "name": "wapplersystems/flipbook",
-  "type": "typo3-cms-extension",
-  "description": "flipbook for TYPO3, based on rflipbook",
-  "version": "12.0.0",
-  "keywords": [
-    "TYPO3",
-    "CMS"
-  ],
-  "replace": {
-    "rflipbook": "self.version",
-    "rbiz/rflipbook": "self.version"
-  },
-  "require": {
-    "typo3/cms-core": "^12",
-    "php": ">=8.0.0"
-  },
-  "autoload": {
-    "psr-4": {
-      "WapplerSystems\\Flipbook\\": "Classes"
-    }
-  },
-  "authors": [
-    {
-      "name": "Sven Wappler",
-      "email": "typo3@wappler.systems",
-      "homepage": "https://wappler.systems/"
-    }
-  ],
-  "extra": {
-    "typo3/cms": {
-      "extension-key": "flipbook"
-    }
-  }
+	"name": "wapplersystems/flipbook",
+	"type": "typo3-cms-extension",
+	"description": "flipbook for TYPO3, based on rflipbook",
+	"version": "12.0.0",
+	"keywords": [
+		"TYPO3",
+		"CMS"
+	],
+	"replace": {
+		"rflipbook": "self.version",
+		"rbiz/rflipbook": "self.version"
+	},
+	"require": {
+		"typo3/cms-core": "^12",
+		"php": ">=8.0.0"
+	},
+	"autoload": {
+		"psr-4": {
+			"WapplerSystems\\Flipbook\\": "Classes"
+		}
+	},
+	"authors": [
+		{
+			"name": "Sven Wappler",
+			"email": "typo3@wappler.systems",
+			"homepage": "https://wappler.systems/"
+		},
+		{
+			"name": "Manfred Rutschmann",
+			"homepage": "https://www.rutschmann.biz/"
+		}
+	],
+	"extra": {
+		"typo3/cms": {
+			"extension-key": "flipbook"
+		}
+	}
 }
