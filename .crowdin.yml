@@ -1,0 +1,4 @@
+commit_message: 'Fix: New translations %original_file_name% from Crowdin'
+files:
+  - source: /Resources/Private/Language/locallang*.xlf
+    translation: /%original_path%/%two_letters_code%.%original_file_name%
