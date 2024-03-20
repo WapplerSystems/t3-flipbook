@@ -1,0 +1,14 @@
+{
+	"name": "template",
+	"version": "1.0.0",
+	"description": "",
+	"scripts": {
+		"fantasticon": "fantasticon --normalize true Resources/Public/Icons/IconFont -o Resources/Public/Fonts -g css -p flipbook-icon -n flipbook"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"dependencies": {
+		"@twbs/fantasticon": "^2.8.0"
+	}
+}

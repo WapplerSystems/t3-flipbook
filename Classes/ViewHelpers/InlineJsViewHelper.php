@@ -25,8 +25,10 @@ namespace WapplerSystems\Flipbook\ViewHelpers;
  *  This copyright notice MUST APPEAR in all copies of the script!
  ***************************************************************/
 
+use TYPO3\CMS\Core\Resource\Exception\InvalidFileException;
 use TYPO3\CMS\Core\Resource\File;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
+use TYPO3\CMS\Core\Utility\PathUtility;
 use TYPO3\CMS\Extbase\Mvc\Web\Routing\UriBuilder;
 use TYPO3\CMS\Extbase\Utility\LocalizationUtility;
 use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractTagBasedViewHelper;
@@ -40,7 +42,7 @@ use TYPO3\CMS\Core\Resource\Folder;
  * @license http://www.gnu.org/licenses/gpl.html GNU General Public License, version 3 or later
  *
  */
-class InlinejsViewHelper extends AbstractTagBasedViewHelper
+class InlineJsViewHelper extends AbstractTagBasedViewHelper
 {
 
     /**
@@ -84,7 +86,7 @@ class InlinejsViewHelper extends AbstractTagBasedViewHelper
                 " . $this->renderTrueFalseOptions() . "
             ";
 
-        if ($this->settings['fullbook'] == 1) {
+        if ((int)$this->settings['fullbook'] === 1) {
             $content .= 'lightBox: false,';
         } else {
             $content .= 'lightBox: true,';
@@ -132,25 +134,25 @@ class InlinejsViewHelper extends AbstractTagBasedViewHelper
 
         $content .= $this->renderToc();
 
-        if ($this->settings['pageShadow'] == 'pageShadow') {
+        if ($this->settings['pageShadow'] === 'pageShadow') {
             $content .= 'pageShadow:true,';
         } else {
             $content .= 'pageShadow:false,';
         }
 
-        if ($this->settings['pointLight'] == 'pointLight') {
+        if ($this->settings['pointLight'] === 'pointLight') {
             $content .= 'pointLight:true,';
         } else {
             $content .= 'pointLight:false,';
         }
 
-        if ($this->settings['directionalLight'] == 'directionalLight') {
+        if ($this->settings['directionalLight'] === 'directionalLight') {
             $content .= 'directionalLight:true,';
         } else {
             $content .= 'directionalLight:false,';
         }
 
-        if ($this->settings['ambientLight'] == 'ambientLight') {
+        if ($this->settings['ambientLight'] === 'ambientLight') {
             $content .= 'ambientLight:true,';
         } else {
             $content .= 'ambientLight:false,';
@@ -188,6 +190,19 @@ class InlinejsViewHelper extends AbstractTagBasedViewHelper
     }
 
 
+    /**
+     */
+    public function uriToResource($path): string
+    {
+        $uri = '';
+        try {
+            $uri = PathUtility::getPublicResourceWebPath($path);
+        } catch (InvalidFileException $e) {
+        }
+        return GeneralUtility::locationHeaderUrl($uri);
+    }
+
+
     private function renderToc()
     {
         $content = '';
@@ -216,21 +231,25 @@ class InlinejsViewHelper extends AbstractTagBasedViewHelper
 
         $buttons = [
             'currentPage' => ['title' => LocalizationUtility::translate('currentPage', 'flipbook')],
-            'btnNext' => ['icon' => 'fa-chevron-right', 'title' => LocalizationUtility::translate('btnNext', 'flipbook')],
-            'btnLast' => ['icon' => 'fa-step-forward', 'title' => LocalizationUtility::translate('btnLast', 'flipbook')],
-            'btnPrev' => ['icon' => 'fa-chevron-left', 'title' => LocalizationUtility::translate('btnPrev', 'flipbook')],
-            'btnFirst' => ['icon' => 'fa-step-backward', 'title' => LocalizationUtility::translate('btnFirst', 'flipbook')],
-            'btnZoomIn' => ['icon' => 'fa-plus', 'title' => LocalizationUtility::translate('btnZoomIn', 'flipbook')],
-            'btnZoomOut' => ['icon' => 'fa-minus', 'title' => LocalizationUtility::translate('btnZoomOut', 'flipbook')],
-            'btnToc' => ['icon' => 'fa-list-ol', 'title' => LocalizationUtility::translate('btnToc', 'flipbook')],
-            'btnThumbs' => ['icon' => 'fa-th-large', 'title' => LocalizationUtility::translate('btnThumbs', 'flipbook')],
-            'btnShare' => ['icon' => 'fa-link', 'title' => LocalizationUtility::translate('btnShare', 'flipbook')],
-            'btnDownloadPages' => ['icon' => 'fa-download', 'title' => LocalizationUtility::translate('btnDownloadPages', 'flipbook'), 'url' => $this->settings['zipUrl']],
-            'btnDownloadPdf' => ['icon' => 'fa-file', 'title' => LocalizationUtility::translate('btnDownloadPdf', 'flipbook'), 'url' => $this->settings['download']],
-            'btnSound' => ['icon' => 'fa-volume-up', 'title' => LocalizationUtility::translate('btnSound', 'flipbook')],
-            'btnExpand' => ['icon' => 'fa-expand', 'title' => LocalizationUtility::translate('btnExpand', 'flipbook')],
-            'btnExpandLightbox' => ['icon' => 'fa-expand', 'title' => LocalizationUtility::translate('btnExpandLightbox', 'flipbook')],
-            'btnPrint' => ['icon' => 'fa-print', 'title' => LocalizationUtility::translate('btnPrint', 'flipbook')],
+            'btnNext' => ['icon' => 'flipbook-icon-chevron-right', 'title' => LocalizationUtility::translate('btnNext', 'flipbook')],
+            'btnLast' => ['icon' => 'flipbook-icon-backward-step', 'title' => LocalizationUtility::translate('btnLast', 'flipbook')],
+            'btnPrev' => ['icon' => 'flipbook-icon-chevron-left', 'title' => LocalizationUtility::translate('btnPrev', 'flipbook')],
+            'btnFirst' => ['icon' => 'flipbook-icon-backward-step', 'title' => LocalizationUtility::translate('btnFirst', 'flipbook')],
+            'btnZoomIn' => ['icon' => 'flipbook-icon-plus', 'title' => LocalizationUtility::translate('btnZoomIn', 'flipbook')],
+            'btnZoomOut' => ['icon' => 'flipbook-icon-minus', 'title' => LocalizationUtility::translate('btnZoomOut', 'flipbook')],
+            'btnToc' => ['icon' => 'flipbook-icon-list', 'title' => LocalizationUtility::translate('btnToc', 'flipbook')],
+            'btnThumbs' => ['icon' => 'flipbook-icon-table-cells-large', 'title' => LocalizationUtility::translate('btnThumbs', 'flipbook')],
+            'btnShare' => ['icon' => 'flipbook-icon-link', 'title' => LocalizationUtility::translate('btnShare', 'flipbook')],
+            'btnDownloadPages' => ['icon' => 'flipbook-icon-download', 'title' => LocalizationUtility::translate('btnDownloadPages', 'flipbook'), 'url' => $this->settings['zipUrl']],
+            'btnDownloadPdf' => ['icon' => 'flipbook-icon-file-pdf', 'title' => LocalizationUtility::translate('btnDownloadPdf', 'flipbook'), 'url' => $this->settings['download']],
+            'btnSound' => ['icon' => 'flipbook-icon-volume-xmark', 'iconAlt' => 'flipbook-icon-volume-high', 'title' => LocalizationUtility::translate('btnSound', 'flipbook')],
+            'btnExpand' => ['icon' => 'flipbook-icon-expand', 'title' => LocalizationUtility::translate('btnExpand', 'flipbook')],
+            'btnExpandLightbox' => ['icon' => 'flipbook-icon-expand', 'title' => LocalizationUtility::translate('btnExpandLightbox', 'flipbook')],
+            'btnPrint' => ['icon' => 'flipbook-icon-print', 'title' => LocalizationUtility::translate('btnPrint', 'flipbook')],
+            'btnClose' => ['icon' => 'flipbook-icon-xmark', 'title' => LocalizationUtility::translate('btnClose', 'flipbook')],
+            'btnSelect' => ['icon' => 'flipbook-icon-i-cursor', 'title' => LocalizationUtility::translate('btnSelect', 'flipbook')],
+            'btnAutoplay' => ['icon' => 'flipbook-icon-play', 'iconAlt' => 'flipbook-icon-pause', 'title' => LocalizationUtility::translate('btnAutoplay', 'flipbook')],
+            'btnBookmark' => ['icon' => 'flipbook-icon-bookmark', 'title' => LocalizationUtility::translate('btnBookmark', 'flipbook')],
             'google_plus' => [],
             'twitter' => [],
             'facebook' => [],
@@ -251,7 +270,9 @@ class InlinejsViewHelper extends AbstractTagBasedViewHelper
                 if ($value['icon']) {
                     $content .= 'icon: "' . $value['icon'] . '",';
                 }
-
+                if ($value['iconAlt']) {
+                    $content .= 'iconAlt: "' . $value['iconAlt'] . '",';
+                }
                 if ($value['url']) {
                     $content .= 'url: "' . $value['url'] . '",';
                 }
@@ -270,25 +291,25 @@ class InlinejsViewHelper extends AbstractTagBasedViewHelper
     /**
      * @return string
      */
-    private function createAssets()
+    private function createAssets(): string
     {
 
         $content = 'assets: {';
 
         if (($this->settings['assets']['preloader'] ?? '') !== '') {
-            $content .= 'preloader: "' . $this->uriPage($this->settings['assets']['preloader']) . '",';
+            $content .= 'preloader: "' . $this->uriToResource($this->settings['assets']['preloader']) . '",';
         }
-        if (strlen($this->settings['assets']['left']) > 0) {
-            $content .= 'left: "' . $this->uriPage($this->settings['assets']['left']) . '",';
+        if (($this->settings['assets']['left'] ?? '') !== '') {
+            $content .= 'left: "' . $this->uriToResource($this->settings['assets']['left']) . '",';
         }
-        if (strlen($this->settings['assets']['right']) > 0) {
-            $content .= 'right: "' . $this->uriPage($this->settings['assets']['right']) . '",';
+        if (($this->settings['assets']['right'] ?? '') !== '') {
+            $content .= 'right: "' . $this->uriToResource($this->settings['assets']['right']) . '",';
         }
-        if (strlen($this->settings['assets']['overlay']) > 0) {
-            $content .= 'overlay: "' . $this->uriPage($this->settings['assets']['overlay']) . '",';
+        if (($this->settings['assets']['overlay'] ?? '') !== '') {
+            $content .= 'overlay: "' . $this->uriToResource($this->settings['assets']['overlay']) . '",';
         }
-        if (strlen($this->settings['assets']['flipMp3']) > 0) {
-            $content .= 'flipMp3: "' . $this->uriPage($this->settings['assets']['flipMp3']) . '",';
+        if (($this->settings['assets']['flipMp3'] ?? '') !== '') {
+            $content .= 'flipMp3: "' . $this->uriToResource($this->settings['assets']['flipMp3']) . '",';
         }
 
         $content = rtrim($content, ",");
@@ -299,7 +320,7 @@ class InlinejsViewHelper extends AbstractTagBasedViewHelper
     /**
      * @return string
      */
-    private function renderNotEmptyOptions()
+    private function renderNotEmptyOptions(): string
     {
         $content = '';
 
@@ -383,7 +404,7 @@ class InlinejsViewHelper extends AbstractTagBasedViewHelper
         ];
 
         foreach ($enabledOptions as $option) {
-            if ($this->settings[$option] == 'enabled') {
+            if ($this->settings[$option] === 'enabled') {
                 $content .= $option . ": true,";
             } else {
                 $content .= $option . ": false,";

@@ -35,7 +35,7 @@
             </f:else>
         </f:if>
 
-        <f:render partial="InlineJs.html" arguments="{uid:uid, files:files, settings:settings, thumbfolder:thumbfolder}" section="main"/>
+        <f:render partial="InlineJs" arguments="{uid:uid, files:files, settings:settings, thumbfolder:thumbfolder}" section="main"/>
 
         <f:if condition="{settings.fullbook}">
             <style>

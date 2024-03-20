@@ -35,15 +35,15 @@ plugin.tx_flipbook {
 
         assets {
             # cat=rflipassets/settings/10; type=string; label=Preloader
-            preloader = typo3conf/ext/flipbook/Resources/Public/Images/preloader.jpg
+            preloader = EXT:flipbook/Resources/Public/Images/preloader.jpg
             # cat=rflipassets/settings/20; type=string; label=Left
-            left = typo3conf/ext/flipbook/Resources/Public/Images/left.png
+            left = EXT:flipbook/Resources/Public/Images/left.png
             # cat=rflipassets/settings/30; type=string; label=Right
-            right = typo3conf/ext/flipbook/Resources/Public/Images/right.png
+            right = EXT:flipbook/Resources/Public/Images/right.png
             # cat=rflipassets/settings/40; type=string; label=Overlay
-            overlay = typo3conf/ext/flipbook/Resources/Public/Images/overlay.jpg
+            overlay = EXT:flipbook/Resources/Public/Images/overlay.jpg
             # cat=rflipassets/settings/50; type=string; label=MP3 on flip
-            flipMp3 = typo3conf/ext/flipbook/Resources/Public/Audio/turnPage.mp3
+            flipMp3 = EXT:flipbook/Resources/Public/Audio/turnPage.mp3
         }
 
 

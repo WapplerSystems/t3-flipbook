@@ -1,4 +1,4 @@
-plugin.flipbook {
+plugin.tx_flipbook {
     view {
         templateRootPath = {$plugin.tx_flipbook.view.templateRootPath}
         partialRootPath = {$plugin.tx_flipbook.view.partialRootPath}
@@ -71,6 +71,10 @@ plugin.flipbook {
         btnExpandLightbox = {$plugin.tx_flipbook.settings.btnExpandLightbox}
         btnPrint = {$plugin.tx_flipbook.settings.btnPrint}
         btnShare = {$plugin.tx_flipbook.settings.btnShare}
+        btnClose = enabled
+        btnAutoplay = enabled
+        btnSelect = enabled
+        btnBookmark = enabled
         google_plus = {$plugin.tx_flipbook.settings.google_plus}
         twitter = {$plugin.tx_flipbook.settings.twitter}
         facebook = {$plugin.tx_flipbook.settings.facebook}
@@ -134,15 +138,3 @@ plugin.flipbook {
     page.includeJSFooterlibs.jQueryRflipBook.excludeFromConcatenation = 1
     page.includeJSFooterlibs.jQueryRflipBook.disableCompression = 1
 [END]
-
-page.includeCSS {
-
-    flipbook = EXT:flipbook/Resources/Public/CSS/flipbook.style.css
-    flipbook.excludeFromConcatenation = 1
-    flipbook.disableCompression = 1
-
-    #flipbookFa = EXT:flipbook/Resources/Public/CSS/font-awesome.css
-    #flipbookFa.excludeFromConcatenation = 1
-    #flipbookFa.disableCompression = 1
-
-}

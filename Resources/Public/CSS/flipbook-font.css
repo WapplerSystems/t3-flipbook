@@ -1,0 +1,86 @@
+@font-face {
+  font-display: block;
+  font-family: "flipbook";
+  src: url("../Fonts/flipbook.eot?5c30daafbecd126176dc34008f8737b9#iefix") format("embedded-opentype"),
+url("../Fonts/flipbook.woff2?5c30daafbecd126176dc34008f8737b9") format("woff2"),
+url("../Fonts/flipbook.woff?5c30daafbecd126176dc34008f8737b9") format("woff");
+}
+
+span[class^="flipbook-icon-"]::before, span[class*=" flipbook-icon-"]::before {
+  font-family: flipbook !important;
+  font-style: normal;
+  font-weight: normal !important;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+.flipbook-icon-angles-left::before {
+  content: "\f101";
+}
+.flipbook-icon-backward-step::before {
+  content: "\f102";
+}
+.flipbook-icon-bookmark::before {
+  content: "\f103";
+}
+.flipbook-icon-chevron-left::before {
+  content: "\f104";
+}
+.flipbook-icon-chevron-right::before {
+  content: "\f105";
+}
+.flipbook-icon-download::before {
+  content: "\f106";
+}
+.flipbook-icon-expand::before {
+  content: "\f107";
+}
+.flipbook-icon-file-pdf::before {
+  content: "\f108";
+}
+.flipbook-icon-forward-step::before {
+  content: "\f109";
+}
+.flipbook-icon-i-cursor::before {
+  content: "\f10a";
+}
+.flipbook-icon-link::before {
+  content: "\f10b";
+}
+.flipbook-icon-list::before {
+  content: "\f10c";
+}
+.flipbook-icon-minus::before {
+  content: "\f10d";
+}
+.flipbook-icon-pause::before {
+  content: "\f10e";
+}
+.flipbook-icon-play::before {
+  content: "\f10f";
+}
+.flipbook-icon-plus::before {
+  content: "\f110";
+}
+.flipbook-icon-print::before {
+  content: "\f111";
+}
+.flipbook-icon-table-cells-large::before {
+  content: "\f112";
+}
+.flipbook-icon-volume-high::before {
+  content: "\f113";
+}
+.flipbook-icon-volume-off::before {
+  content: "\f114";
+}
+.flipbook-icon-volume-xmark::before {
+  content: "\f115";
+}
+.flipbook-icon-xmark::before {
+  content: "\f116";
+}
