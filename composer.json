@@ -2,6 +2,7 @@
 	"name": "wapplersystems/flipbook",
 	"type": "typo3-cms-extension",
 	"description": "flipbook for TYPO3, based on rflipbook",
+	"license": "GPL-2.0-or-later",
 	"version": "12.0.0",
 	"keywords": [
 		"TYPO3",
