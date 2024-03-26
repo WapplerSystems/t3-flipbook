@@ -94,9 +94,14 @@ class InlineJsViewHelper extends AbstractTagBasedViewHelper
 
         $content .= $this->createAssets();
 
+
+        $request = $this->renderingContext->getRequest();
+        $normalizedParams = $request->getAttribute('normalizedParams');
+
+
         switch ($this->settings['mode']) {
             case 'pdf':
-                $content .= 'pdfUrl: "' . $this->settings['pdfUrl'] . '",';
+                $content .= 'pdfUrl: "' . rtrim($normalizedParams->getSiteUrl(),'/') .'/'. ltrim($this->settings['pdfUrl'],'/') . '",';
                 if (!empty($this->settings['pdfPageScale']))
                     $content .= 'pdfPageScale: ' . (float)$this->settings['pdfPageScale'] . ',';
 
