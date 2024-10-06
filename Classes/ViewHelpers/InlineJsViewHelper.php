@@ -15,10 +15,6 @@ use TYPO3\CMS\Core\Resource\Folder;
 
 /**
  *
- *
- * @package products
- * @license http://www.gnu.org/licenses/gpl.html GNU General Public License, version 3 or later
- *
  */
 class InlineJsViewHelper extends AbstractTagBasedViewHelper
 {
@@ -86,11 +82,11 @@ class InlineJsViewHelper extends AbstractTagBasedViewHelper
                 if (count($files) > 0) {
                     /** @var File $file */
                     foreach ($files as $file) {
-                        $content .= '{src:"' . $file->getPublicUrl() . '",';
+                        $content .= '{src:"' . $file->getPublicUrl() . '"';
                         if ($thumbfolder !== NULL) {
-                            $content .= 'thumb:"' . $thumbfolder->getPublicUrl() . $file->getName() . '",';
+                            $content .= ',thumb:"' . $thumbfolder->getPublicUrl() . $file->getName() . '"';
                             if ($file->getProperty('title')) {
-                                $content .= 'title: "' . $file->getProperty('title') . '"';
+                                $content .= ',title: "' . $file->getProperty('title') . '"';
                             }
                         } else {
                             $content .= '';
@@ -144,7 +140,7 @@ class InlineJsViewHelper extends AbstractTagBasedViewHelper
     }
 
     /**
-     * @param integer|NULL $pageUid target PID
+     * @param int $pageUid target PID
      * @param array $additionalParams query parameters to be attached to the resulting URI
      * @param integer $pageType type of the target page. See typolink.parameter
      * @param boolean $noCache set this to disable caching for the target page. You should not need this.
@@ -154,10 +150,10 @@ class InlineJsViewHelper extends AbstractTagBasedViewHelper
      * @param boolean $absolute If set, the URI of the rendered link is absolute
      * @param boolean $addQueryString If set, the current query parameters will be kept in the URI
      * @param array $argumentsToBeExcludedFromQueryString arguments to be removed from the URI. Only active if $addQueryString = TRUE
-     * @param string $addQueryStringMethod Set which parameters will be kept. Only active if $addQueryString = TRUE
+     * @param string|null $addQueryStringMethod Set which parameters will be kept. Only active if $addQueryString = TRUE
      * @return string Rendered page URI
      */
-    public function uriPage(int $pageUid, array $additionalParams = [], $pageType = 0, $noCache = FALSE, $noCacheHash = FALSE, $section = '', $linkAccessRestrictedPages = FALSE, $absolute = FALSE, $addQueryString = FALSE, array $argumentsToBeExcludedFromQueryString = array(), $addQueryStringMethod = NULL)
+    public function uriPage(int $pageUid, array $additionalParams = [], int $pageType = 0, bool $noCache = false, bool $noCacheHash = false, string $section = '', bool $linkAccessRestrictedPages = false, bool $absolute = false, bool $addQueryString = FALSE, array $argumentsToBeExcludedFromQueryString = [], string $addQueryStringMethod = NULL)
     {
 
         /** @var UriBuilder $uriBuilder */

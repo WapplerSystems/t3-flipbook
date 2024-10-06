@@ -25,12 +25,15 @@
                                 </figure>
                             </f:then>
                             <f:else>
-                                <figure>
-                                    <f:image image="{files.0}" id="container_{uid}" class="rflip-border img-fluid" maxWidth="{settings.previewMaxWidth}" height="{settings.previewMaxHeight}" alt=""/>
-                                    <f:if condition="{files.0.description}">
-                                        <figcaption>{files.0.description}</figcaption>
-                                    </f:if>
-                                </figure>
+                                <f:alias map="{file: '{files -> f:first()}'}">
+                                    <figure>
+                                        <f:image image="{file}" id="container_{uid}" class="rflip-border img-fluid" maxWidth="{settings.previewMaxWidth}" height="{settings.previewMaxHeight}" alt="{file.alternative}"/>
+                                        <f:if condition="{file.description}">
+                                            <figcaption>{file.description}</figcaption>
+                                        </f:if>
+                                    </figure>
+                                </f:alias>
+
                             </f:else>
 
                         </f:if>

@@ -9,7 +9,6 @@ use TYPO3\CMS\Core\Resource\FileRepository;
 use TYPO3\CMS\Core\Resource\ResourceFactory;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Extbase\Configuration\ConfigurationManagerInterface;
-use TYPO3\CMS\Extbase\Domain\Model\Folder;
 use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
 use TYPO3\CMS\Frontend\ContentObject\ContentObjectRenderer;
 
@@ -99,10 +98,14 @@ class FlipbookController extends ActionController
             $bigImageFolder = $this->settings['folder'];
             /** @var ResourceFactory $factory */
             $factory = GeneralUtility::makeInstance(ResourceFactory::class);
-            /** @var Folder $folder */
             $folder = $factory->getFolderObjectFromCombinedIdentifier($bigImageFolder);
 
-            $this->view->assign('files', $folder->getFiles());
+            $files = $folder->getFiles();
+            $imageFiles = array_filter($files, function ($file) {
+                return in_array($file->getExtension(),['jpg','jpeg','png','gif','webp']);
+            });
+
+            $this->view->assign('files', $imageFiles);
 
         }
 
