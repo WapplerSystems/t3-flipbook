@@ -2,31 +2,9 @@
 
 namespace WapplerSystems\Flipbook\ViewHelpers;
 
-/***************************************************************
- *  Copyright notice
- *
- *  (c) 2015
- *  All rights reserved
- *
- *  This script is part of the TYPO3 project. The TYPO3 project is
- *  free software; you can redistribute it and/or modify
- *  it under the terms of the GNU General Public License as published by
- *  the Free Software Foundation; either version 3 of the License, or
- *  (at your option) any later version.
- *
- *  The GNU General Public License can be found at
- *  http://www.gnu.org/copyleft/gpl.html.
- *
- *  This script is distributed in the hope that it will be useful,
- *  but WITHOUT ANY WARRANTY; without even the implied warranty of
- *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- *  GNU General Public License for more details.
- *
- *  This copyright notice MUST APPEAR in all copies of the script!
- ***************************************************************/
-
 use TYPO3\CMS\Core\Resource\Exception\InvalidFileException;
 use TYPO3\CMS\Core\Resource\File;
+use TYPO3\CMS\Core\Utility\DebugUtility;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Core\Utility\PathUtility;
 use TYPO3\CMS\Extbase\Mvc\Web\Routing\UriBuilder;
@@ -73,7 +51,6 @@ class InlineJsViewHelper extends AbstractTagBasedViewHelper
     public function render()
     {
         $this->settings = $this->arguments['settings'];
-        $settings = $this->settings;
         $uid = $this->arguments['uid'];
         $files = $this->arguments['files'];
         $thumbfolder = $this->arguments['thumbfolder'];
@@ -94,14 +71,9 @@ class InlineJsViewHelper extends AbstractTagBasedViewHelper
 
         $content .= $this->createAssets();
 
-
-        $request = $this->renderingContext->getRequest();
-        $normalizedParams = $request->getAttribute('normalizedParams');
-
-
         switch ($this->settings['mode']) {
             case 'pdf':
-                $content .= 'pdfUrl: "' . rtrim($normalizedParams->getSiteUrl(),'/') .'/'. ltrim($this->settings['pdfUrl'],'/') . '",';
+                $content .= 'pdfUrl: "' . $files[0]->getPublicUrl() . '",';
                 if (!empty($this->settings['pdfPageScale']))
                     $content .= 'pdfPageScale: ' . (float)$this->settings['pdfPageScale'] . ',';
 
@@ -185,7 +157,7 @@ class InlineJsViewHelper extends AbstractTagBasedViewHelper
      * @param string $addQueryStringMethod Set which parameters will be kept. Only active if $addQueryString = TRUE
      * @return string Rendered page URI
      */
-    public function uriPage(int $pageUid, array $additionalParams = array(), $pageType = 0, $noCache = FALSE, $noCacheHash = FALSE, $section = '', $linkAccessRestrictedPages = FALSE, $absolute = FALSE, $addQueryString = FALSE, array $argumentsToBeExcludedFromQueryString = array(), $addQueryStringMethod = NULL)
+    public function uriPage(int $pageUid, array $additionalParams = [], $pageType = 0, $noCache = FALSE, $noCacheHash = FALSE, $section = '', $linkAccessRestrictedPages = FALSE, $absolute = FALSE, $addQueryString = FALSE, array $argumentsToBeExcludedFromQueryString = array(), $addQueryStringMethod = NULL)
     {
 
         /** @var UriBuilder $uriBuilder */
@@ -208,11 +180,11 @@ class InlineJsViewHelper extends AbstractTagBasedViewHelper
     }
 
 
-    private function renderToc()
+    private function renderToc(): string
     {
         $content = '';
 
-        if ($this->settings['toc'] && count($this->settings['toc']) > 0) {
+        if (count($this->settings['toc'] ?? []) > 0) {
             $content .= 'tableOfContent:[';
 
             foreach ($this->settings['toc'] as $toc) {
@@ -230,7 +202,7 @@ class InlineJsViewHelper extends AbstractTagBasedViewHelper
     /**
      * @return string
      */
-    private function renderButtons()
+    private function renderButtons(): string
     {
         $content = '';
 
@@ -268,17 +240,16 @@ class InlineJsViewHelper extends AbstractTagBasedViewHelper
 
                 $content .= 'enabled: true,';
 
-                if ($value['title']) {
+                if (isset($value['title'])) {
                     $content .= 'title: "' . $value['title'] . '",';
                 }
-
-                if ($value['icon']) {
+                if (isset($value['icon'])) {
                     $content .= 'icon: "' . $value['icon'] . '",';
                 }
-                if ($value['iconAlt']) {
+                if (isset($value['iconAlt'])) {
                     $content .= 'iconAlt: "' . $value['iconAlt'] . '",';
                 }
-                if ($value['url']) {
+                if (isset($value['url'])) {
                     $content .= 'url: "' . $value['url'] . '",';
                 }
 
@@ -379,7 +350,7 @@ class InlineJsViewHelper extends AbstractTagBasedViewHelper
     /**
      * @return string
      */
-    private function renderTrueFalseOptions()
+    private function renderTrueFalseOptions(): string
     {
 
         $content = '';

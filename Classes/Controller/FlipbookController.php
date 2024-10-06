@@ -2,28 +2,6 @@
 
 namespace WapplerSystems\Flipbook\Controller;
 
-/***************************************************************
- *  Copyright notice
- *
- *  (c) 2015
- *  All rights reserved
- *
- *  This script is part of the TYPO3 project. The TYPO3 project is
- *  free software; you can redistribute it and/or modify
- *  it under the terms of the GNU General Public License as published by
- *  the Free Software Foundation; either version 3 of the License, or
- *  (at your option) any later version.
- *
- *  The GNU General Public License can be found at
- *  http://www.gnu.org/copyleft/gpl.html.
- *
- *  This script is distributed in the hope that it will be useful,
- *  but WITHOUT ANY WARRANTY; without even the implied warranty of
- *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- *  GNU General Public License for more details.
- *
- *  This copyright notice MUST APPEAR in all copies of the script!
- ***************************************************************/
 
 use Psr\Http\Message\ResponseInterface;
 use TYPO3\CMS\Core\Resource\FileReference;
@@ -33,6 +11,7 @@ use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Extbase\Configuration\ConfigurationManagerInterface;
 use TYPO3\CMS\Extbase\Domain\Model\Folder;
 use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
+use TYPO3\CMS\Frontend\ContentObject\ContentObjectRenderer;
 
 
 /**
@@ -56,7 +35,7 @@ class FlipbookController extends ActionController
     {
         parent::injectConfigurationManager($configurationManager);
 
-        $tsSettings = $this->settings['plugin.']['flipbook.']['settings.'];
+        $tsSettings = $this->settings;
         $originalSettings = $this->configurationManager->getConfiguration(
             ConfigurationManagerInterface::CONFIGURATION_TYPE_SETTINGS
         );
@@ -96,13 +75,36 @@ class FlipbookController extends ActionController
      */
     public function showAction() : ResponseInterface
     {
+        if ($this->settings['mode'] === 'pdf') {
 
-        /** @var string $bigImageFolder */
-        $bigImageFolder = $this->settings['folder'];
-        /** @var ResourceFactory $factory */
-        $factory = GeneralUtility::makeInstance(ResourceFactory::class);
-        /** @var Folder $folder */
-        $folder = $factory->getFolderObjectFromCombinedIdentifier($bigImageFolder);
+            if ($this->settings['pdfUrl'] !== '') {
+
+                $instructions = [
+                    'parameter' => $this->settings['pdfUrl'],
+                ];
+
+                $contentObject = GeneralUtility::makeInstance(ContentObjectRenderer::class);
+                $url = $contentObject->createUrl($instructions);
+                $this->view->assign('pdfUrl', $url);
+
+                $factory = GeneralUtility::makeInstance(ResourceFactory::class);
+                $file = $factory->getFileObjectFromCombinedIdentifier($url);
+
+                $this->view->assign('files', [$file]);
+            }
+
+        } else {
+
+            /** @var string $bigImageFolder */
+            $bigImageFolder = $this->settings['folder'];
+            /** @var ResourceFactory $factory */
+            $factory = GeneralUtility::makeInstance(ResourceFactory::class);
+            /** @var Folder $folder */
+            $folder = $factory->getFolderObjectFromCombinedIdentifier($bigImageFolder);
+
+            $this->view->assign('files', $folder->getFiles());
+
+        }
 
         if (!empty($this->settings['thumbs'])) {
             /** @var Folder $thumbFolder */
@@ -110,20 +112,17 @@ class FlipbookController extends ActionController
             $this->view->assign('thumbfolder', $thumbFolder);
         }
         /** preview image */
-        if ($this->settings['preview']) {
+        if ($this->settings['preview'] === '1') {
             /** @var FileRepository $fileRepository */
             $fileRepository = GeneralUtility::makeInstance(FileRepository::class);
             /** @var FileReference $preview */
             $preview = $fileRepository->findByRelation('tt_content', 'settings.preview', $this->configurationManager->getContentObject()->data['uid']);
             $this->view->assign('preview', $preview[0]);
         }
-        if (!is_array($this->settings['toc'])) {
+        if (!is_array($this->settings['toc'] ?? false)) {
             unset($this->settings['toc']);
         }
-        $this->view
-            ->assign('uid', uniqid())
-            ->assign('files', $folder->getFiles())
-            ->assign('settings', $this->settings);
+        $this->view->assign('uid', uniqid());
 
         $code = $this->view->render();
 
@@ -152,9 +151,7 @@ class FlipbookController extends ActionController
             '\\1'
         );
 
-        $buffer = preg_replace($search, $replace, $buffer);
-
-        return $buffer;
+        return preg_replace($search, $replace, $buffer);
     }
 
 }
