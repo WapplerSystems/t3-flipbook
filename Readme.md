@@ -12,8 +12,9 @@ Create a new folder where you want to store the PDF files used for the flipbook 
 
 ##### 2. Create a Flipbook Page:
 
-In the Page Tree, create a new page.
-Set the Page Type to **Flipbook [flipbook_show]**.
+In the Page Tree, create a new page, include TypoScript of this extension.
+
+Then add a content element of type **Flipbook [flipbook_show]**.
 
 ##### 3. Upload and Select Your PDF:
 
