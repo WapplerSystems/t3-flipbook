@@ -14,6 +14,11 @@ Create a new folder where you want to store the PDF files used for the flipbook 
 
 In the Page Tree, create a new page, include TypoScript of this extension.
 
+In case your site doesn't include jQuery already, set one of the following TS constants to 1:
+
+* `plugin.tx_flipbook.settings.includeJqueryHeader`
+* `plugin.tx_flipbook.settings.includeJqueryFooter`
+
 Then add a content element of type **Flipbook [flipbook_show]**.
 
 ##### 3. Upload and Select Your PDF:
