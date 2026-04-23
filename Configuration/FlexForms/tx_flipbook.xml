@@ -9,7 +9,6 @@
                 <TCEforms>
                     <sheetTitle>LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.options
                     </sheetTitle>
-                    <cshFile>LLL:EXT:flipbook/Resources/Private/Language/locallang_csh_flexform_pi1.xlf</cshFile>
                 </TCEforms>
                 <type>array</type>
                 <el>
