@@ -14,23 +14,3 @@ ExtensionUtility::configurePlugin(
     [],
     ExtensionUtility::PLUGIN_TYPE_CONTENT_ELEMENT
 );
-
-
-ExtensionManagementUtility::addPageTSConfig(trim(
-    '
-		mod.wizards.newContentElement.wizardItems {
-			plugins {
-				elements {
-					flipbook {
-						title = Flipbook
-						description =  Show flipbook from PDF
-						iconIdentifier = tx-flipbook
-						tt_content_defValues {
-							CType = flipbook_show
-						}
-					}
-				}
-			}
-		}
-
-	'));
