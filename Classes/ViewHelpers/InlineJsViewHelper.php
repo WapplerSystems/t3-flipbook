@@ -12,17 +12,13 @@ use TYPO3\CMS\Extbase\Utility\LocalizationUtility;
 use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractTagBasedViewHelper;
 use TYPO3\CMS\Core\Resource\Folder;
 
-
-/**
- *
- */
 class InlineJsViewHelper extends AbstractTagBasedViewHelper
 {
-
     /**
      * @var string
      */
     protected $tagName = 'inlinejs';
+
     /**
      * @var array $settings
      */
@@ -34,7 +30,6 @@ class InlineJsViewHelper extends AbstractTagBasedViewHelper
         $this->registerArgument('files', 'array', 'Files');
         $this->registerArgument('settings', 'array', 'Settings', true);
         $this->registerArgument('thumbfolder', Folder::class, 'Thumbnails folder');
-
     }
 
     /**
@@ -69,10 +64,12 @@ class InlineJsViewHelper extends AbstractTagBasedViewHelper
 
         switch ($this->settings['mode']) {
             case 'pdf':
-                $content .= 'pdfUrl: "' . $files[0]->getPublicUrl() . '",';
-                if (!empty($this->settings['pdfPageScale']))
+                if (!empty($files[0])) {
+                    $content .= 'pdfUrl: "' . $files[0]->getPublicUrl() . '",';
+                }
+                if (!empty($this->settings['pdfPageScale'])) {
                     $content .= 'pdfPageScale: ' . (float)$this->settings['pdfPageScale'] . ',';
-
+                }
                 break;
 
             case 'folders':
@@ -153,12 +150,23 @@ class InlineJsViewHelper extends AbstractTagBasedViewHelper
      * @param string|null $addQueryStringMethod Set which parameters will be kept. Only active if $addQueryString = TRUE
      * @return string Rendered page URI
      */
-    public function uriPage(int $pageUid, array $additionalParams = [], int $pageType = 0, bool $noCache = false, bool $noCacheHash = false, string $section = '', bool $linkAccessRestrictedPages = false, bool $absolute = false, bool $addQueryString = FALSE, array $argumentsToBeExcludedFromQueryString = [], string $addQueryStringMethod = NULL)
+    public function uriPage(int $pageUid, array $additionalParams = [], int $pageType = 0, bool $noCache = false, bool $noCacheHash = false, string $section = '', bool $linkAccessRestrictedPages = false, bool $absolute = false, bool $addQueryString = FALSE, array $argumentsToBeExcludedFromQueryString = [], ?string $addQueryStringMethod = NULL)
     {
-
         /** @var UriBuilder $uriBuilder */
         $uriBuilder = GeneralUtility::makeInstance(UriBuilder::class);
-        $uri = $uriBuilder->setTargetPageUid($pageUid)->setTargetPageType($pageType)->setNoCache($noCache)->setUseCacheHash(!$noCacheHash)->setSection($section)->setLinkAccessRestrictedPages($linkAccessRestrictedPages)->setArguments($additionalParams)->setCreateAbsoluteUri($absolute)->setAddQueryString($addQueryString)->setArgumentsToBeExcludedFromQueryString($argumentsToBeExcludedFromQueryString)->setAddQueryStringMethod($addQueryStringMethod)->build();
+        $uri = $uriBuilder
+            ->setTargetPageUid($pageUid)
+            ->setTargetPageType($pageType)
+            ->setNoCache($noCache)
+            ->setUseCacheHash(!$noCacheHash)
+            ->setSection($section)
+            ->setLinkAccessRestrictedPages($linkAccessRestrictedPages)
+            ->setArguments($additionalParams)->setCreateAbsoluteUri($absolute)
+            ->setAddQueryString($addQueryString)
+            ->setArgumentsToBeExcludedFromQueryString($argumentsToBeExcludedFromQueryString)
+            ->setAddQueryStringMethod($addQueryStringMethod)
+            ->build();
+
         return $uri;
     }
 
