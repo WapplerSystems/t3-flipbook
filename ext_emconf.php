@@ -18,7 +18,7 @@ $EM_CONF['flipbook'] = [
     'version' => '12.0.3',
     'constraints' => [
         'depends' => [
-            'typo3' => '12.4.0-12.4.99',
+            'typo3' => '12.4.0-13.4.99',
         ],
         'conflicts' => [],
         'suggests' => [],

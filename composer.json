@@ -11,7 +11,7 @@
 		"rbiz/rflipbook": "self.version"
 	},
 	"require": {
-		"typo3/cms-core": "^12",
+		"typo3/cms-core": "^12 || ^13",
 		"php": ">=8.0.0"
 	},
 	"autoload": {
