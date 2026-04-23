@@ -24,12 +24,19 @@ class FlipbookController extends ActionController
         $originalSettings = $this->configurationManager->getConfiguration(
             ConfigurationManagerInterface::CONFIGURATION_TYPE_SETTINGS
         );
+
         if (isset($tsSettings['overrideFlexformSettingsIfEmpty']) && $tsSettings['overrideFlexformSettingsIfEmpty'] == 1) {
             // if flexform setting is empty and value is available in TS
             foreach ($tsSettings as $key => $value) {
-                if ($key === 'img.') continue;
-                if ($key === 'assets.') continue;
-                if ($key === 'deepLinking.') continue;
+                if ($key === 'img.') {
+                    continue;
+                }
+                if ($key === 'assets.') {
+                    continue;
+                }
+                if ($key === 'deepLinking.') {
+                    continue;
+                }
 
                 if (!$originalSettings[$key] && isset($value)) {
                     $originalSettings[$key] = $value;
@@ -37,20 +44,27 @@ class FlipbookController extends ActionController
             }
             if (isset($tsSettings['img.'])) {
                 foreach ($tsSettings['img.'] as $key => $value) {
-                    if (!$originalSettings['img'][$key] && isset($value)) $originalSettings['img'][$key] = $value;
+                    if (!$originalSettings['img'][$key] && isset($value)) {
+                        $originalSettings['img'][$key] = $value;
+                    }
                 }
             }
             if (isset($tsSettings['assets.'])) {
                 foreach ($tsSettings['assets.'] as $key => $value) {
-                    if (!$originalSettings['assets'][$key] && isset($value)) $originalSettings['assets'][$key] = $value;
+                    if (!$originalSettings['assets'][$key] && isset($value)) {
+                        $originalSettings['assets'][$key] = $value;
+                    }
                 }
             }
             if (isset($tsSettings['deepLinking.'])) {
                 foreach ($tsSettings['deepLinking.'] as $key => $value) {
-                    if (!$originalSettings['deepLinking'][$key] && isset($value)) $originalSettings['deepLinking'][$key] = $value;
+                    if (!$originalSettings['deepLinking'][$key] && isset($value)) {
+                        $originalSettings['deepLinking'][$key] = $value;
+                    }
                 }
             }
         }
+
         $this->settings = $originalSettings;
     }
 
@@ -58,7 +72,7 @@ class FlipbookController extends ActionController
     /**
      *
      */
-    public function showAction() : ResponseInterface
+    public function showAction(): ResponseInterface
     {
         if ($this->settings['mode'] === 'pdf') {
 
@@ -87,8 +101,8 @@ class FlipbookController extends ActionController
             $folder = $factory->getFolderObjectFromCombinedIdentifier($bigImageFolder);
 
             $files = $folder->getFiles();
-            $imageFiles = array_filter($files, function ($file) {
-                return in_array($file->getExtension(),['jpg','jpeg','png','gif','webp']);
+            $imageFiles = array_filter($files, function($file) {
+                return in_array($file->getExtension(), ['jpg','jpeg','png','gif','webp']);
             });
 
             $this->view->assign('files', $imageFiles);
@@ -118,29 +132,23 @@ class FlipbookController extends ActionController
         return $this->htmlResponse($this->sanitize_output($code));
     }
 
-
-    /**
-     * @param $buffer
-     * @return mixed
-     */
-    protected function sanitize_output($buffer)
+    // TODO remove or finalize this function
+    protected function sanitize_output(string $buffer): string
     {
-
         return $buffer;
 
-        $search = array(
+        $search = [
             '/\>[^\S ]+/s',  // strip whitespaces after tags, except space
             '/[^\S ]+\</s',  // strip whitespaces before tags, except space
             '/(\s)+/s'       // shorten multiple whitespace sequences
-        );
+        ];
 
-        $replace = array(
+        $replace = [
             '>',
             '<',
             '\\1'
-        );
+        ];
 
         return preg_replace($search, $replace, $buffer);
     }
-
 }
