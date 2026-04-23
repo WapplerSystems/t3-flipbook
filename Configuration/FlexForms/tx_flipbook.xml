@@ -1,250 +1,177 @@
+<?xml version="1.0"?>
 <T3DataStructure>
     <meta>
         <langDisable>1</langDisable>
     </meta>
-
     <sheets>
         <options>
             <ROOT>
-                <TCEforms>
-                    <sheetTitle>LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.options
-                    </sheetTitle>
-                </TCEforms>
+                <sheetTitle>LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.options</sheetTitle>
                 <type>array</type>
                 <el>
                     <settings.fullbook type="array">
-                        <TCEforms type="array">
-                            <label>Full-Width Book</label>
-                            <config type="array">
-                                <type>check</type>
-                            </config>
-                        </TCEforms>
+                        <label>Full-Width Book</label>
+                        <config type="array">
+                            <type>check</type>
+                        </config>
                     </settings.fullbook>
-
                     <settings.header type="array">
-                        <TCEforms type="array">
-                            <label>
-                                LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.options.header
-                            </label>
-                            <config type="array">
-                                <type>input</type>
-                                <size>48</size>
-                                <eval>trim</eval>
-                            </config>
-                        </TCEforms>
+                        <label>LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.options.header</label>
+                        <config type="array">
+                            <type>input</type>
+                            <size>48</size>
+                            <eval>trim</eval>
+                        </config>
                     </settings.header>
-
                     <settings.download>
-                        <TCEforms>
-                            <label>
-                                LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.options.download
-                            </label>
-                            <config>
-                                <type>link</type>
-                            </config>
-                        </TCEforms>
+                        <label>LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.options.download</label>
+                        <config>
+                            <type>link</type>
+                        </config>
                     </settings.download>
-
-
                     <settings.preview>
-                        <TCEforms>
-                            <label>
-                                LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.options.thumb
-                            </label>
-                            <config>
-                                <type>inline</type>
-                                <appearance type="array">
-                                    <enabledControls type="array">
-                                        <delete>1</delete>
-                                        <dragdrop>1</dragdrop>
-                                        <hide>1</hide>
-                                        <info>1</info>
-                                        <localize>1</localize>
-                                    </enabledControls>
-                                    <headerThumbnail type="array">
-                                        <field>uid_local</field>
-                                        <height>45c</height>
-                                        <width>45</width>
-                                    </headerThumbnail>
-                                    <useSortable>1</useSortable>
-                                </appearance>
-                                <behaviour type="array">
-                                    <localizationMode>select</localizationMode>
-                                    <localizeChildrenAtParentLocalization>1</localizeChildrenAtParentLocalization>
-                                </behaviour>
-                                <filter type="array">
-
-                                </filter>
-                                <foreign_field>uid_foreign</foreign_field>
-                                <foreign_label>uid_local</foreign_label>
-                                <foreign_match_fields type="array">
-                                    <fieldname>settings.preview</fieldname>
-                                </foreign_match_fields>
-                                <foreign_selector>uid_local</foreign_selector>
-                                <foreign_selector_fieldTcaOverride type="array">
-                                    <config type="array">
-                                        <appearance type="array">
-                                            <elementBrowserAllowed>gif,jpg,jpeg,tif,tiff,bmp,pcx,tga,png,pdf,ai
+                        <label>LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.options.thumb</label>
+                        <config>
+                            <type>inline</type>
+                            <appearance type="array">
+                                <enabledControls type="array">
+                                    <delete>1</delete>
+                                    <dragdrop>1</dragdrop>
+                                    <hide>1</hide>
+                                    <info>1</info>
+                                    <localize>1</localize>
+                                </enabledControls>
+                                <headerThumbnail type="array">
+                                    <field>uid_local</field>
+                                    <height>45c</height>
+                                    <width>45</width>
+                                </headerThumbnail>
+                                <useSortable>1</useSortable>
+                            </appearance>
+                            <behaviour type="array">
+                                <localizationMode>select</localizationMode>
+                                <localizeChildrenAtParentLocalization>1</localizeChildrenAtParentLocalization>
+                            </behaviour>
+                            <filter type="array"/>
+                            <foreign_field>uid_foreign</foreign_field>
+                            <foreign_label>uid_local</foreign_label>
+                            <foreign_match_fields type="array">
+                                <fieldname>settings.preview</fieldname>
+                            </foreign_match_fields>
+                            <foreign_selector>uid_local</foreign_selector>
+                            <foreign_selector_fieldTcaOverride type="array">
+                                <config type="array">
+                                    <appearance type="array">
+                                        <elementBrowserAllowed>gif,jpg,jpeg,tif,tiff,bmp,pcx,tga,png,pdf,ai
                                             </elementBrowserAllowed>
-                                            <elementBrowserType>file</elementBrowserType>
-                                        </appearance>
-                                    </config>
-                                </foreign_selector_fieldTcaOverride>
-                                <foreign_sortby>sorting_foreign</foreign_sortby>
-                                <foreign_table>sys_file_reference</foreign_table>
-                                <foreign_table_field>tablenames</foreign_table_field>
-                                <maxitems>1</maxitems>
-                                <minitems>0</minitems>
-                            </config>
-                        </TCEforms>
+                                        <elementBrowserType>file</elementBrowserType>
+                                    </appearance>
+                                </config>
+                            </foreign_selector_fieldTcaOverride>
+                            <foreign_sortby>sorting_foreign</foreign_sortby>
+                            <foreign_table>sys_file_reference</foreign_table>
+                            <foreign_table_field>tablenames</foreign_table_field>
+                            <maxitems>1</maxitems>
+                            <minitems>0</minitems>
+                        </config>
                     </settings.preview>
-
                     <settings.description>
-                        <TCEforms type="array">
-                            <config type="array">
-                                <type>text</type>
-                                <cols>48</cols>
-                                <rows>5</rows>
-                            </config>
-                            <label>
-                                LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.options.description
-                            </label>
-                            <defaultExtras>richtext[*]:rte_transform[flag=rte_enabled|mode=ts_css]</defaultExtras>
-                        </TCEforms>
+                        <config type="array">
+                            <type>text</type>
+                            <cols>48</cols>
+                            <rows>5</rows>
+                        </config>
+                        <label>LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.options.description</label>
+                        <defaultExtras>richtext[*]:rte_transform[flag=rte_enabled|mode=ts_css]</defaultExtras>
                     </settings.description>
-
-
                 </el>
             </ROOT>
         </options>
-
         <sDEF>
             <ROOT>
-                <TCEforms>
-                    <sheetTitle>LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.folder
-                    </sheetTitle>
-                </TCEforms>
+                <sheetTitle>LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.folder</sheetTitle>
                 <type>array</type>
                 <el>
-
                     <settings.mode type="array">
-                        <TCEforms type="array">
-                            <label>
-                                LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.options.mode
-                            </label>
-                            <onChange>reload</onChange>
-                            <config>
-                                <type>select</type>
-                                <renderType>selectSingle</renderType>
-                                <items type="array">
-                                    <numIndex index="0" type="array">
-                                        <numIndex index="0">Create Flipbook from folders</numIndex>
-                                        <numIndex index="1">folders</numIndex>
-                                    </numIndex>
-                                    <numIndex index="1" type="array">
-                                        <numIndex index="0">Create Flipbook from pdf</numIndex>
-                                        <numIndex index="1">pdf</numIndex>
-                                    </numIndex>
-                                </items>
-                            </config>
-                        </TCEforms>
+                        <label>LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.options.mode</label>
+                        <onChange>reload</onChange>
+                        <config>
+                            <type>select</type>
+                            <renderType>selectSingle</renderType>
+                            <items type="array">
+                                <numIndex index="0" type="array">
+                                    <label>Create Flipbook from folders</label>
+                                    <value>folders</value>
+                                </numIndex>
+                                <numIndex index="1" type="array">
+                                    <label>Create Flipbook from pdf</label>
+                                    <value>pdf</value>
+                                </numIndex>
+                            </items>
+                        </config>
                     </settings.mode>
-
                     <settings.folder>
-                        <TCEforms>
-                            <label>
-                                LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.folder.bigimages
-                            </label>
-                            <displayCond>FIELD:settings.mode:=:folders</displayCond>
-                            <config>
-                                <type>group</type>
-                                <internal_type>folder</internal_type>
-                                <max_size>1</max_size>
-                                <maxitems>1</maxitems>
-                                <minitems>1</minitems>
-                                <autoSizeMax>1</autoSizeMax>
-                                <eval>required</eval>
-                            </config>
-                        </TCEforms>
+                        <label>LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.folder.bigimages</label>
+                        <displayCond>FIELD:settings.mode:=:folders</displayCond>
+                        <config>
+                            <type>folder</type>
+                            <max_size>1</max_size>
+                            <maxitems>1</maxitems>
+                            <minitems>1</minitems>
+                            <autoSizeMax>1</autoSizeMax>
+                            <required>1</required>
+                        </config>
                     </settings.folder>
                     <settings.thumbs>
-                        <TCEforms>
-                            <label>
-                                LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.folder.smallimages
-                            </label>
-                            <displayCond>FIELD:settings.mode:=:folders</displayCond>
-                            <config>
-                                <type>group</type>
-                                <internal_type>folder</internal_type>
-                                <max_size>1</max_size>
-                                <maxitems>1</maxitems>
-                                <autoSizeMax>1</autoSizeMax>
-                            </config>
-                        </TCEforms>
+                        <label>LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.folder.smallimages</label>
+                        <displayCond>FIELD:settings.mode:=:folders</displayCond>
+                        <config>
+                            <type>folder</type>
+                            <max_size>1</max_size>
+                            <maxitems>1</maxitems>
+                            <autoSizeMax>1</autoSizeMax>
+                        </config>
                     </settings.thumbs>
-
-
                     <settings.pdfUrl>
-                        <TCEforms>
-                            <label>
-                                LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.pdf.file
-                            </label>
-                            <displayCond>FIELD:settings.mode:=:pdf</displayCond>
-                            <config>
-                                <type>link</type>
-                            </config>
-                        </TCEforms>
+                        <label>LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.pdf.file</label>
+                        <displayCond>FIELD:settings.mode:=:pdf</displayCond>
+                        <config>
+                            <type>link</type>
+                        </config>
                     </settings.pdfUrl>
-
-
                 </el>
             </ROOT>
         </sDEF>
-
         <toc>
             <ROOT>
-                <TCEforms>
-                    <sheetTitle>LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.toc
-                    </sheetTitle>
-                </TCEforms>
+                <sheetTitle>LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.toc</sheetTitle>
                 <type>array</type>
                 <el>
                     <settings.toc type="array">
                         <type>array</type>
                         <section>1</section>
-                        <label>LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.toc.index
-                        </label>
+                        <label>LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.toc.index</label>
                         <el type="array">
                             <field_toc_entry type="array">
-                                <title></title>
+                                <title/>
                                 <type>array</type>
-                                <label>
-                                    LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.toc.chapter
-                                </label>
+                                <label>LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.toc.chapter</label>
                                 <el type="array">
                                     <field_toc_label type="array">
-                                        <TCEforms type="array">
-                                            <config type="array">
-                                                <type>input</type>
-                                                <size>48</size>
-                                                <eval>trim</eval>
-                                            </config>
-                                            <label>
-                                                LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.toc.chapterlabel
-                                            </label>
-                                        </TCEforms>
+                                        <config type="array">
+                                            <type>input</type>
+                                            <size>48</size>
+                                            <eval>trim</eval>
+                                        </config>
+                                        <label>LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.toc.chapterlabel</label>
                                     </field_toc_label>
                                     <field_toc_page type="array">
-                                        <TCEforms type="array">
-                                            <config type="array">
-                                                <type>input</type>
-                                                <size>48</size>
-                                                <eval>trim,int</eval>
-                                            </config>
-                                            <label>
-                                                LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.toc.page
-                                            </label>
-                                        </TCEforms>
+                                        <config type="array">
+                                            <type>number</type>
+                                            <size>48</size>
+                                            <eval>trim</eval>
+                                        </config>
+                                        <label>LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.toc.page</label>
                                     </field_toc_page>
                                 </el>
                             </field_toc_entry>
@@ -253,758 +180,560 @@
                 </el>
             </ROOT>
         </toc>
-
         <pluginSettings>
             <ROOT>
-                <TCEforms>
-                    <sheetTitle>
-                        LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.pluginSettings
-                    </sheetTitle>
-                </TCEforms>
+                <sheetTitle>LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.pluginSettings</sheetTitle>
                 <type>array</type>
                 <el>
                     <settings.hideMenu>
-                        <TCEforms>
-                            <label>
-                                LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.pluginSettings.hideMenu
+                        <label>LLL:EXT:flipbook/Resources/Private/Language/hideMenu
                             </label>
-                            <config>
-                                <type>select</type>
-                                <renderType>selectSingle</renderType>
-                                <items type="array">
-                                    <numIndex index="0" type="array">
-                                        <numIndex index="0">---</numIndex>
-                                        <numIndex index="1"></numIndex>
-                                    </numIndex>
-                                    <numIndex index="1" type="array">
-                                        <numIndex index="0">
-                                            LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.pluginSettings.hideMenu.true
-                                        </numIndex>
-                                        <numIndex index="1">enabled</numIndex>
-                                    </numIndex>
-                                    <numIndex index="2" type="array">
-                                        <numIndex index="0">
-                                            LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.pluginSettings.hideMenu.false
-                                        </numIndex>
-                                        <numIndex index="1">disabled</numIndex>
-                                    </numIndex>
-                                </items>
-                            </config>
-                        </TCEforms>
+                        <config>
+                            <type>select</type>
+                            <renderType>selectSingle</renderType>
+                            <items type="array">
+                                <numIndex index="0" type="array">
+                                    <label>---</label>
+                                    <value/>
+                                </numIndex>
+                                <numIndex index="1" type="array">
+                                    <label>LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.pluginSettings.hideMenu.true</label>
+                                    <value>enabled</value>
+                                </numIndex>
+                                <numIndex index="2" type="array">
+                                    <label>LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.pluginSettings.hideMenu.false</label>
+                                    <value>disabled</value>
+                                </numIndex>
+                            </items>
+                        </config>
                     </settings.hideMenu>
-
                     <settings.sideNavigationButtons>
-                        <TCEforms>
-                            <label>
-                                LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.pluginSettings.sideNavigationButtons
+                        <label>LLL:EXT:flipbook/Resources/Private/Language/nButtons
                             </label>
-                            <config>
-                                <type>select</type>
-                                <renderType>selectSingle</renderType>
-                                <items type="array">
-                                    <numIndex index="0" type="array">
-                                        <numIndex index="0">---</numIndex>
-                                        <numIndex index="1"></numIndex>
-                                    </numIndex>
-                                    <numIndex index="1" type="array">
-                                        <numIndex index="0">
-                                            LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.pluginSettings.sideNavigationButtons.true
-                                        </numIndex>
-                                        <numIndex index="1">enabled</numIndex>
-                                    </numIndex>
-                                    <numIndex index="2" type="array">
-                                        <numIndex index="0">
-                                            LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.pluginSettings.sideNavigationButtons.false
-                                        </numIndex>
-                                        <numIndex index="1">disabled</numIndex>
-                                    </numIndex>
-                                </items>
-                            </config>
-                        </TCEforms>
+                        <config>
+                            <type>select</type>
+                            <renderType>selectSingle</renderType>
+                            <items type="array">
+                                <numIndex index="0" type="array">
+                                    <label>---</label>
+                                    <value/>
+                                </numIndex>
+                                <numIndex index="1" type="array">
+                                    <label>LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.pluginSettings.sideNavigationButtons.true</label>
+                                    <value>enabled</value>
+                                </numIndex>
+                                <numIndex index="2" type="array">
+                                    <label>LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.pluginSettings.sideNavigationButtons.false</label>
+                                    <value>disabled</value>
+                                </numIndex>
+                            </items>
+                        </config>
                     </settings.sideNavigationButtons>
                     <settings.pdfPageScale>
-                        <TCEforms>
-                            <label>
-                                LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.pluginSettings.pdfPageScale
+                        <label>LLL:EXT:flipbook/Resources/Private/Language/ageScale
                             </label>
-                            <config>
-                                <type>input</type>
-                                <size>48</size>
-                                <eval>trim</eval>
-                            </config>
-                        </TCEforms>
+                        <config>
+                            <type>input</type>
+                            <size>48</size>
+                            <eval>trim</eval>
+                        </config>
                     </settings.pdfPageScale>
                     <settings.skin>
-                        <TCEforms type="array">
-                            <label>
-                                LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.pluginSettings.skin
-                            </label>
-                            <config>
-                                <type>select</type>
-                                <renderType>selectSingle</renderType>
-                                <items type="array">
-                                    <numIndex index="0" type="array">
-                                        <numIndex index="0">---</numIndex>
-                                        <numIndex index="1"></numIndex>
-                                    </numIndex>
-                                    <numIndex index="1" type="array">
-                                        <numIndex index="0">
-                                            LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.pluginSettings.skin.light
-                                        </numIndex>
-                                        <numIndex index="1">light</numIndex>
-                                    </numIndex>
-                                    <numIndex index="2" type="array">
-                                        <numIndex index="0">
-                                            LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.pluginSettings.skin.dark
-                                        </numIndex>
-                                        <numIndex index="1">dark</numIndex>
-                                    </numIndex>
-                                </items>
-                            </config>
-                        </TCEforms>
+                        <label>LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.pluginSettings.skin</label>
+                        <config>
+                            <type>select</type>
+                            <renderType>selectSingle</renderType>
+                            <items type="array">
+                                <numIndex index="0" type="array">
+                                    <label>---</label>
+                                    <value/>
+                                </numIndex>
+                                <numIndex index="1" type="array">
+                                    <label>LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.pluginSettings.skin.light</label>
+                                    <value>light</value>
+                                </numIndex>
+                                <numIndex index="2" type="array">
+                                    <label>LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.pluginSettings.skin.dark</label>
+                                    <value>dark</value>
+                                </numIndex>
+                            </items>
+                        </config>
                     </settings.skin>
                     <settings.startPage>
-                        <TCEforms>
-                            <label>
-                                LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.pluginSettings.startPage
+                        <label>LLL:EXT:flipbook/Resources/Private/Language/tartPage
                             </label>
-                            <config>
-                                <type>input</type>
-                                <size>48</size>
-                                <eval>trim</eval>
-                            </config>
-                        </TCEforms>
+                        <config>
+                            <type>input</type>
+                            <size>48</size>
+                            <eval>trim</eval>
+                        </config>
                     </settings.startPage>
                     <settings.sounds>
-                        <TCEforms>
-                            <label>
-                                LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.pluginSettings.sounds
-                            </label>
-                            <config>
-                                <type>select</type>
-                                <renderType>selectSingle</renderType>
-                                <items type="array">
-                                    <numIndex index="0" type="array">
-                                        <numIndex index="0">---</numIndex>
-                                        <numIndex index="1"></numIndex>
-                                    </numIndex>
-                                    <numIndex index="1" type="array">
-                                        <numIndex index="0">
-                                            LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.pluginSettings.sounds.enable
-                                        </numIndex>
-                                        <numIndex index="1">enabled</numIndex>
-                                    </numIndex>
-                                    <numIndex index="2" type="array">
-                                        <numIndex index="0">
-                                            LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.pluginSettings.sounds.disable
-                                        </numIndex>
-                                        <numIndex index="1">disabled</numIndex>
-                                    </numIndex>
-                                </items>
-                            </config>
-                        </TCEforms>
+                        <label>LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.pluginSettings.sounds</label>
+                        <config>
+                            <type>select</type>
+                            <renderType>selectSingle</renderType>
+                            <items type="array">
+                                <numIndex index="0" type="array">
+                                    <label>---</label>
+                                    <value/>
+                                </numIndex>
+                                <numIndex index="1" type="array">
+                                    <label>LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.pluginSettings.sounds.enable</label>
+                                    <value>enabled</value>
+                                </numIndex>
+                                <numIndex index="2" type="array">
+                                    <label>LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.pluginSettings.sounds.disable</label>
+                                    <value>disabled</value>
+                                </numIndex>
+                            </items>
+                        </config>
                     </settings.sounds>
                     <settings.pageWidth>
-                        <TCEforms>
-                            <label>
-                                LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.pluginSettings.pageWidth
+                        <label>LLL:EXT:flipbook/Resources/Private/Language/ageWidth
                             </label>
-                            <config>
-                                <type>input</type>
-                                <size>48</size>
-                                <eval>trim</eval>
-                            </config>
-                        </TCEforms>
+                        <config>
+                            <type>input</type>
+                            <size>48</size>
+                            <eval>trim</eval>
+                        </config>
                     </settings.pageWidth>
                     <settings.pageHeight>
-                        <TCEforms>
-                            <label>
-                                LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.pluginSettings.pageHeight
+                        <label>LLL:EXT:flipbook/Resources/Private/Language/geHeight
                             </label>
-                            <config>
-                                <type>input</type>
-                                <size>48</size>
-                                <eval>trim</eval>
-                            </config>
-                        </TCEforms>
+                        <config>
+                            <type>input</type>
+                            <size>48</size>
+                            <eval>trim</eval>
+                        </config>
                     </settings.pageHeight>
                     <settings.thumbnailWidth>
-                        <TCEforms>
-                            <label>
-                                LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.pluginSettings.thumbnailWidth
+                        <label>LLL:EXT:flipbook/Resources/Private/Language/ailWidth
                             </label>
-                            <config>
-                                <type>input</type>
-                                <size>48</size>
-                                <eval>trim</eval>
-                            </config>
-                        </TCEforms>
+                        <config>
+                            <type>input</type>
+                            <size>48</size>
+                            <eval>trim</eval>
+                        </config>
                     </settings.thumbnailWidth>
                     <settings.thumbnailHeight>
-                        <TCEforms>
-                            <label>
-                                LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.pluginSettings.thumbnailHeight
+                        <label>LLL:EXT:flipbook/Resources/Private/Language/ilHeight
                             </label>
-                            <config>
-                                <type>input</type>
-                                <size>48</size>
-                                <eval>trim</eval>
-                            </config>
-                        </TCEforms>
+                        <config>
+                            <type>input</type>
+                            <size>48</size>
+                            <eval>trim</eval>
+                        </config>
                     </settings.thumbnailHeight>
                     <settings.contentOnStart>
-                        <TCEforms>
-                            <label>
-                                LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.pluginSettings.contentOnStart
+                        <label>LLL:EXT:flipbook/Resources/Private/Language/tOnStart
                             </label>
-                            <config>
-                                <type>select</type>
-                                <renderType>selectSingle</renderType>
-                                <items type="array">
-                                    <numIndex index="0" type="array">
-                                        <numIndex index="0">---</numIndex>
-                                        <numIndex index="1"></numIndex>
-                                    </numIndex>
-                                    <numIndex index="1" type="array">
-                                        <numIndex index="0">
-                                            LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.pluginSettings.contentOnStart.true
-                                        </numIndex>
-                                        <numIndex index="1">enabled</numIndex>
-                                    </numIndex>
-                                    <numIndex index="2" type="array">
-                                        <numIndex index="0">
-                                            LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.pluginSettings.contentOnStart.false
-                                        </numIndex>
-                                        <numIndex index="1">disabled</numIndex>
-                                    </numIndex>
-                                </items>
-                            </config>
-                        </TCEforms>
+                        <config>
+                            <type>select</type>
+                            <renderType>selectSingle</renderType>
+                            <items type="array">
+                                <numIndex index="0" type="array">
+                                    <label>---</label>
+                                    <value/>
+                                </numIndex>
+                                <numIndex index="1" type="array">
+                                    <label>LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.pluginSettings.contentOnStart.true</label>
+                                    <value>enabled</value>
+                                </numIndex>
+                                <numIndex index="2" type="array">
+                                    <label>LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.pluginSettings.contentOnStart.false</label>
+                                    <value>disabled</value>
+                                </numIndex>
+                            </items>
+                        </config>
                     </settings.contentOnStart>
                     <settings.thumbnailsOnStart>
-                        <TCEforms>
-                            <label>
-                                LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.pluginSettings.thumbnailsOnStart
+                        <label>LLL:EXT:flipbook/Resources/Private/Language/sOnStart
                             </label>
-                            <config>
-                                <type>select</type>
-                                <renderType>selectSingle</renderType>
-                                <items type="array">
-                                    <numIndex index="0" type="array">
-                                        <numIndex index="0">---</numIndex>
-                                        <numIndex index="1"></numIndex>
-                                    </numIndex>
-                                    <numIndex index="1" type="array">
-                                        <numIndex index="0">
-                                            LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.pluginSettings.thumbnailsOnStart.true
-                                        </numIndex>
-                                        <numIndex index="1">enabled</numIndex>
-                                    </numIndex>
-                                    <numIndex index="2" type="array">
-                                        <numIndex index="0">
-                                            LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.pluginSettings.thumbnailsOnStart.false
-                                        </numIndex>
-                                        <numIndex index="1">disabled</numIndex>
-                                    </numIndex>
-                                </items>
-                            </config>
-                        </TCEforms>
+                        <config>
+                            <type>select</type>
+                            <renderType>selectSingle</renderType>
+                            <items type="array">
+                                <numIndex index="0" type="array">
+                                    <label>---</label>
+                                    <value/>
+                                </numIndex>
+                                <numIndex index="1" type="array">
+                                    <label>LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.pluginSettings.thumbnailsOnStart.true</label>
+                                    <value>enabled</value>
+                                </numIndex>
+                                <numIndex index="2" type="array">
+                                    <label>LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.pluginSettings.thumbnailsOnStart.false</label>
+                                    <value>disabled</value>
+                                </numIndex>
+                            </items>
+                        </config>
                     </settings.thumbnailsOnStart>
                     <settings.singlePageMode>
-                        <TCEforms>
-                            <label>
-                                LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.pluginSettings.singlePageMode
+                        <label>LLL:EXT:flipbook/Resources/Private/Language/PageMode
                             </label>
-                            <config>
-                                <type>select</type>
-                                <renderType>selectSingle</renderType>
-                                <items type="array">
-                                    <numIndex index="0" type="array">
-                                        <numIndex index="0">---</numIndex>
-                                        <numIndex index="1"></numIndex>
-                                    </numIndex>
-                                    <numIndex index="1" type="array">
-                                        <numIndex index="0">
-                                            LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.pluginSettings.singlePageMode.true
-                                        </numIndex>
-                                        <numIndex index="1">enabled</numIndex>
-                                    </numIndex>
-                                    <numIndex index="2" type="array">
-                                        <numIndex index="0">
-                                            LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.pluginSettings.singlePageMode.false
-                                        </numIndex>
-                                        <numIndex index="1">disabled</numIndex>
-                                    </numIndex>
-                                </items>
-                            </config>
-                        </TCEforms>
+                        <config>
+                            <type>select</type>
+                            <renderType>selectSingle</renderType>
+                            <items type="array">
+                                <numIndex index="0" type="array">
+                                    <label>---</label>
+                                    <value/>
+                                </numIndex>
+                                <numIndex index="1" type="array">
+                                    <label>LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.pluginSettings.singlePageMode.true</label>
+                                    <value>enabled</value>
+                                </numIndex>
+                                <numIndex index="2" type="array">
+                                    <label>LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.pluginSettings.singlePageMode.false</label>
+                                    <value>disabled</value>
+                                </numIndex>
+                            </items>
+                        </config>
                     </settings.singlePageMode>
-
                 </el>
             </ROOT>
         </pluginSettings>
-
         <mobileSettings>
             <ROOT>
-                <TCEforms>
-                    <sheetTitle>
-                        LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.mobileSettings
-                    </sheetTitle>
-                </TCEforms>
+                <sheetTitle>LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.mobileSettings</sheetTitle>
                 <type>array</type>
                 <el>
                     <settings.singlePageModeIfMobile>
-                        <TCEforms>
-                            <label>
-                                LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.mobileSettings.singlePageModeIfMobile
+                        <label>LLL:EXT:flipbook/Resources/Private/Language/IfMobile
                             </label>
-                            <config>
-                                <type>select</type>
-                                <renderType>selectSingle</renderType>
-                                <items type="array">
-                                    <numIndex index="0" type="array">
-                                        <numIndex index="0">---</numIndex>
-                                        <numIndex index="1"></numIndex>
-                                    </numIndex>
-                                    <numIndex index="1" type="array">
-                                        <numIndex index="0">
-                                            LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.mobileSettings.singlePageModeIfMobile.true
-                                        </numIndex>
-                                        <numIndex index="1">enabled</numIndex>
-                                    </numIndex>
-                                    <numIndex index="2" type="array">
-                                        <numIndex index="0">
-                                            LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.mobileSettings.singlePageModeIfMobile.false
-                                        </numIndex>
-                                        <numIndex index="1">disabled</numIndex>
-                                    </numIndex>
-                                </items>
-                            </config>
-                        </TCEforms>
+                        <config>
+                            <type>select</type>
+                            <renderType>selectSingle</renderType>
+                            <items type="array">
+                                <numIndex index="0" type="array">
+                                    <label>---</label>
+                                    <value/>
+                                </numIndex>
+                                <numIndex index="1" type="array">
+                                    <label>LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.mobileSettings.singlePageModeIfMobile.true</label>
+                                    <value>enabled</value>
+                                </numIndex>
+                                <numIndex index="2" type="array">
+                                    <label>LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.mobileSettings.singlePageModeIfMobile.false</label>
+                                    <value>disabled</value>
+                                </numIndex>
+                            </items>
+                        </config>
                     </settings.singlePageModeIfMobile>
                     <settings.pdfBrowserViewerIfMobile>
-                        <TCEforms>
-                            <label>
-                                LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.mobileSettings.pdfBrowserViewerIfMobile
+                        <label>LLL:EXT:flipbook/Resources/Private/Language/IfMobile
                             </label>
-                            <config>
-                                <type>select</type>
-                                <renderType>selectSingle</renderType>
-                                <items type="array">
-                                    <numIndex index="0" type="array">
-                                        <numIndex index="0">---</numIndex>
-                                        <numIndex index="1"></numIndex>
-                                    </numIndex>
-                                    <numIndex index="1" type="array">
-                                        <numIndex index="0">
-                                            LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.mobileSettings.pdfBrowserViewerIfMobile.true
-                                        </numIndex>
-                                        <numIndex index="1">enabled</numIndex>
-                                    </numIndex>
-                                    <numIndex index="2" type="array">
-                                        <numIndex index="0">
-                                            LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.mobileSettings.pdfBrowserViewerIfMobile.false
-                                        </numIndex>
-                                        <numIndex index="1">disabled</numIndex>
-                                    </numIndex>
-                                </items>
-                            </config>
-                        </TCEforms>
+                        <config>
+                            <type>select</type>
+                            <renderType>selectSingle</renderType>
+                            <items type="array">
+                                <numIndex index="0" type="array">
+                                    <label>---</label>
+                                    <value/>
+                                </numIndex>
+                                <numIndex index="1" type="array">
+                                    <label>LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.mobileSettings.pdfBrowserViewerIfMobile.true</label>
+                                    <value>enabled</value>
+                                </numIndex>
+                                <numIndex index="2" type="array">
+                                    <label>LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.mobileSettings.pdfBrowserViewerIfMobile.false</label>
+                                    <value>disabled</value>
+                                </numIndex>
+                            </items>
+                        </config>
                     </settings.pdfBrowserViewerIfMobile>
                     <settings.btnTocIfMobile>
-                        <TCEforms>
-                            <label>
-                                LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.mobileSettings.btnTocIfMobile
+                        <label>LLL:EXT:flipbook/Resources/Private/Language/IfMobile
                             </label>
-                            <config>
-                                <type>select</type>
-                                <renderType>selectSingle</renderType>
-                                <items type="array">
-                                    <numIndex index="0" type="array">
-                                        <numIndex index="0">---</numIndex>
-                                        <numIndex index="1"></numIndex>
-                                    </numIndex>
-                                    <numIndex index="1" type="array">
-                                        <numIndex index="0">
-                                            LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.mobileSettings.btnTocIfMobile.true
-                                        </numIndex>
-                                        <numIndex index="1">enabled</numIndex>
-                                    </numIndex>
-                                    <numIndex index="2" type="array">
-                                        <numIndex index="0">
-                                            LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.mobileSettings.btnTocIfMobile.false
-                                        </numIndex>
-                                        <numIndex index="1">disabled</numIndex>
-                                    </numIndex>
-                                </items>
-                            </config>
-                        </TCEforms>
+                        <config>
+                            <type>select</type>
+                            <renderType>selectSingle</renderType>
+                            <items type="array">
+                                <numIndex index="0" type="array">
+                                    <label>---</label>
+                                    <value/>
+                                </numIndex>
+                                <numIndex index="1" type="array">
+                                    <label>LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.mobileSettings.btnTocIfMobile.true</label>
+                                    <value>enabled</value>
+                                </numIndex>
+                                <numIndex index="2" type="array">
+                                    <label>LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.mobileSettings.btnTocIfMobile.false</label>
+                                    <value>disabled</value>
+                                </numIndex>
+                            </items>
+                        </config>
                     </settings.btnTocIfMobile>
                     <settings.btnThumbsIfMobile>
-                        <TCEforms>
-                            <label>
-                                LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.mobileSettings.btnThumbsIfMobile
+                        <label>LLL:EXT:flipbook/Resources/Private/Language/IfMobile
                             </label>
-                            <config>
-                                <type>select</type>
-                                <renderType>selectSingle</renderType>
-                                <items type="array">
-                                    <numIndex index="0" type="array">
-                                        <numIndex index="0">---</numIndex>
-                                        <numIndex index="1"></numIndex>
-                                    </numIndex>
-                                    <numIndex index="1" type="array">
-                                        <numIndex index="0">
-                                            LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.mobileSettings.btnThumbsIfMobile.true
-                                        </numIndex>
-                                        <numIndex index="1">enabled</numIndex>
-                                    </numIndex>
-                                    <numIndex index="2" type="array">
-                                        <numIndex index="0">
-                                            LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.mobileSettings.btnThumbsIfMobile.false
-                                        </numIndex>
-                                        <numIndex index="1">disabled</numIndex>
-                                    </numIndex>
-                                </items>
-                            </config>
-                        </TCEforms>
+                        <config>
+                            <type>select</type>
+                            <renderType>selectSingle</renderType>
+                            <items type="array">
+                                <numIndex index="0" type="array">
+                                    <label>---</label>
+                                    <value/>
+                                </numIndex>
+                                <numIndex index="1" type="array">
+                                    <label>LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.mobileSettings.btnThumbsIfMobile.true</label>
+                                    <value>enabled</value>
+                                </numIndex>
+                                <numIndex index="2" type="array">
+                                    <label>LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.mobileSettings.btnThumbsIfMobile.false</label>
+                                    <value>disabled</value>
+                                </numIndex>
+                            </items>
+                        </config>
                     </settings.btnThumbsIfMobile>
                     <settings.btnShareIfMobile>
-                        <TCEforms>
-                            <label>
-                                LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.mobileSettings.btnShareIfMobile
+                        <label>LLL:EXT:flipbook/Resources/Private/Language/IfMobile
                             </label>
-                            <config>
-                                <type>select</type>
-                                <renderType>selectSingle</renderType>
-                                <items type="array">
-                                    <numIndex index="0" type="array">
-                                        <numIndex index="0">---</numIndex>
-                                        <numIndex index="1"></numIndex>
-                                    </numIndex>
-                                    <numIndex index="1" type="array">
-                                        <numIndex index="0">
-                                            LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.mobileSettings.btnShareIfMobile.true
-                                        </numIndex>
-                                        <numIndex index="1">enabled</numIndex>
-                                    </numIndex>
-                                    <numIndex index="2" type="array">
-                                        <numIndex index="0">
-                                            LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.mobileSettings.btnShareIfMobile.false
-                                        </numIndex>
-                                        <numIndex index="1">disabled</numIndex>
-                                    </numIndex>
-                                </items>
-                            </config>
-                        </TCEforms>
+                        <config>
+                            <type>select</type>
+                            <renderType>selectSingle</renderType>
+                            <items type="array">
+                                <numIndex index="0" type="array">
+                                    <label>---</label>
+                                    <value/>
+                                </numIndex>
+                                <numIndex index="1" type="array">
+                                    <label>LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.mobileSettings.btnShareIfMobile.true</label>
+                                    <value>enabled</value>
+                                </numIndex>
+                                <numIndex index="2" type="array">
+                                    <label>LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.mobileSettings.btnShareIfMobile.false</label>
+                                    <value>disabled</value>
+                                </numIndex>
+                            </items>
+                        </config>
                     </settings.btnShareIfMobile>
                     <settings.btnDownloadPagesIfMobile>
-                        <TCEforms>
-                            <label>
-                                LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.mobileSettings.btnDownloadPagesIfMobile
+                        <label>LLL:EXT:flipbook/Resources/Private/Language/IfMobile
                             </label>
-                            <config>
-                                <type>select</type>
-                                <renderType>selectSingle</renderType>
-                                <items type="array">
-                                    <numIndex index="0" type="array">
-                                        <numIndex index="0">---</numIndex>
-                                        <numIndex index="1"></numIndex>
-                                    </numIndex>
-                                    <numIndex index="1" type="array">
-                                        <numIndex index="0">
-                                            LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.mobileSettings.btnDownloadPagesIfMobile.true
-                                        </numIndex>
-                                        <numIndex index="1">enabled</numIndex>
-                                    </numIndex>
-                                    <numIndex index="2" type="array">
-                                        <numIndex index="0">
-                                            LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.mobileSettings.btnDownloadPagesIfMobile.false
-                                        </numIndex>
-                                        <numIndex index="1">disabled</numIndex>
-                                    </numIndex>
-                                </items>
-                            </config>
-                        </TCEforms>
+                        <config>
+                            <type>select</type>
+                            <renderType>selectSingle</renderType>
+                            <items type="array">
+                                <numIndex index="0" type="array">
+                                    <label>---</label>
+                                    <value/>
+                                </numIndex>
+                                <numIndex index="1" type="array">
+                                    <label>LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.mobileSettings.btnDownloadPagesIfMobile.true</label>
+                                    <value>enabled</value>
+                                </numIndex>
+                                <numIndex index="2" type="array">
+                                    <label>LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.mobileSettings.btnDownloadPagesIfMobile.false</label>
+                                    <value>disabled</value>
+                                </numIndex>
+                            </items>
+                        </config>
                     </settings.btnDownloadPagesIfMobile>
                     <settings.btnDownloadPdfIfMobile>
-                        <TCEforms>
-                            <label>
-                                LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.mobileSettings.btnDownloadPdfIfMobile
+                        <label>LLL:EXT:flipbook/Resources/Private/Language/IfMobile
                             </label>
-                            <config>
-                                <type>select</type>
-                                <renderType>selectSingle</renderType>
-                                <items type="array">
-                                    <numIndex index="0" type="array">
-                                        <numIndex index="0">---</numIndex>
-                                        <numIndex index="1"></numIndex>
-                                    </numIndex>
-                                    <numIndex index="1" type="array">
-                                        <numIndex index="0">
-                                            LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.mobileSettings.btnDownloadPdfIfMobile.true
-                                        </numIndex>
-                                        <numIndex index="1">enabled</numIndex>
-                                    </numIndex>
-                                    <numIndex index="2" type="array">
-                                        <numIndex index="0">
-                                            LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.mobileSettings.btnDownloadPdfIfMobile.false
-                                        </numIndex>
-                                        <numIndex index="1">disabled</numIndex>
-                                    </numIndex>
-                                </items>
-                            </config>
-                        </TCEforms>
+                        <config>
+                            <type>select</type>
+                            <renderType>selectSingle</renderType>
+                            <items type="array">
+                                <numIndex index="0" type="array">
+                                    <label>---</label>
+                                    <value/>
+                                </numIndex>
+                                <numIndex index="1" type="array">
+                                    <label>LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.mobileSettings.btnDownloadPdfIfMobile.true</label>
+                                    <value>enabled</value>
+                                </numIndex>
+                                <numIndex index="2" type="array">
+                                    <label>LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.mobileSettings.btnDownloadPdfIfMobile.false</label>
+                                    <value>disabled</value>
+                                </numIndex>
+                            </items>
+                        </config>
                     </settings.btnDownloadPdfIfMobile>
                     <settings.btnSoundIfMobile>
-                        <TCEforms>
-                            <label>
-                                LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.mobileSettings.btnSoundIfMobile
+                        <label>LLL:EXT:flipbook/Resources/Private/Language/IfMobile
                             </label>
-                            <config>
-                                <type>select</type>
-                                <renderType>selectSingle</renderType>
-                                <items type="array">
-                                    <numIndex index="0" type="array">
-                                        <numIndex index="0">---</numIndex>
-                                        <numIndex index="1"></numIndex>
-                                    </numIndex>
-                                    <numIndex index="1" type="array">
-                                        <numIndex index="0">
-                                            LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.mobileSettings.btnSoundIfMobile.true
-                                        </numIndex>
-                                        <numIndex index="1">enabled</numIndex>
-                                    </numIndex>
-                                    <numIndex index="2" type="array">
-                                        <numIndex index="0">
-                                            LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.mobileSettings.btnSoundIfMobile.false
-                                        </numIndex>
-                                        <numIndex index="1">disabled</numIndex>
-                                    </numIndex>
-                                </items>
-                            </config>
-                        </TCEforms>
+                        <config>
+                            <type>select</type>
+                            <renderType>selectSingle</renderType>
+                            <items type="array">
+                                <numIndex index="0" type="array">
+                                    <label>---</label>
+                                    <value/>
+                                </numIndex>
+                                <numIndex index="1" type="array">
+                                    <label>LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.mobileSettings.btnSoundIfMobile.true</label>
+                                    <value>enabled</value>
+                                </numIndex>
+                                <numIndex index="2" type="array">
+                                    <label>LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.mobileSettings.btnSoundIfMobile.false</label>
+                                    <value>disabled</value>
+                                </numIndex>
+                            </items>
+                        </config>
                     </settings.btnSoundIfMobile>
                     <settings.btnExpandIfMobile>
-                        <TCEforms>
-                            <label>
-                                LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.mobileSettings.btnExpandIfMobile
+                        <label>LLL:EXT:flipbook/Resources/Private/Language/IfMobile
                             </label>
-                            <config>
-                                <type>select</type>
-                                <renderType>selectSingle</renderType>
-                                <items type="array">
-                                    <numIndex index="0" type="array">
-                                        <numIndex index="0">---</numIndex>
-                                        <numIndex index="1"></numIndex>
-                                    </numIndex>
-                                    <numIndex index="1" type="array">
-                                        <numIndex index="0">
-                                            LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.mobileSettings.btnExpandIfMobile.true
-                                        </numIndex>
-                                        <numIndex index="1">enabled</numIndex>
-                                    </numIndex>
-                                    <numIndex index="2" type="array">
-                                        <numIndex index="0">
-                                            LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.mobileSettings.btnExpandIfMobile.false
-                                        </numIndex>
-                                        <numIndex index="1">disabled</numIndex>
-                                    </numIndex>
-                                </items>
-                            </config>
-                        </TCEforms>
+                        <config>
+                            <type>select</type>
+                            <renderType>selectSingle</renderType>
+                            <items type="array">
+                                <numIndex index="0" type="array">
+                                    <label>---</label>
+                                    <value/>
+                                </numIndex>
+                                <numIndex index="1" type="array">
+                                    <label>LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.mobileSettings.btnExpandIfMobile.true</label>
+                                    <value>enabled</value>
+                                </numIndex>
+                                <numIndex index="2" type="array">
+                                    <label>LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.mobileSettings.btnExpandIfMobile.false</label>
+                                    <value>disabled</value>
+                                </numIndex>
+                            </items>
+                        </config>
                     </settings.btnExpandIfMobile>
                     <settings.btnPrintIfMobile>
-                        <TCEforms>
-                            <label>
-                                LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.mobileSettings.btnPrintIfMobile
+                        <label>LLL:EXT:flipbook/Resources/Private/Language/IfMobile
                             </label>
-                            <config>
-                                <type>select</type>
-                                <renderType>selectSingle</renderType>
-                                <items type="array">
-                                    <numIndex index="0" type="array">
-                                        <numIndex index="0">---</numIndex>
-                                        <numIndex index="1"></numIndex>
-                                    </numIndex>
-                                    <numIndex index="1" type="array">
-                                        <numIndex index="0">
-                                            LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.mobileSettings.btnPrintIfMobile.true
-                                        </numIndex>
-                                        <numIndex index="1">enabled</numIndex>
-                                    </numIndex>
-                                    <numIndex index="2" type="array">
-                                        <numIndex index="0">
-                                            LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.mobileSettings.btnPrintIfMobile.false
-                                        </numIndex>
-                                        <numIndex index="1">disabled</numIndex>
-                                    </numIndex>
-                                </items>
-                            </config>
-                        </TCEforms>
+                        <config>
+                            <type>select</type>
+                            <renderType>selectSingle</renderType>
+                            <items type="array">
+                                <numIndex index="0" type="array">
+                                    <label>---</label>
+                                    <value/>
+                                </numIndex>
+                                <numIndex index="1" type="array">
+                                    <label>LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.mobileSettings.btnPrintIfMobile.true</label>
+                                    <value>enabled</value>
+                                </numIndex>
+                                <numIndex index="2" type="array">
+                                    <label>LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.mobileSettings.btnPrintIfMobile.false</label>
+                                    <value>disabled</value>
+                                </numIndex>
+                            </items>
+                        </config>
                     </settings.btnPrintIfMobile>
-
                 </el>
             </ROOT>
         </mobileSettings>
-
         <socialshare>
             <ROOT>
-                <TCEforms>
-                    <sheetTitle>
-                        LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.socialshare
-                    </sheetTitle>
-                </TCEforms>
+                <sheetTitle>LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.socialshare</sheetTitle>
                 <type>array</type>
                 <el>
                     <settings.google_plus>
-                        <TCEforms>
-                            <label>
-                                LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.socialshare.google_plus
-                            </label>
-                            <config>
-                                <type>select</type>
-                                <renderType>selectSingle</renderType>
-                                <items type="array">
-                                    <numIndex index="0" type="array">
-                                        <numIndex index="0">---</numIndex>
-                                        <numIndex index="1"></numIndex>
-                                    </numIndex>
-                                    <numIndex index="1" type="array">
-                                        <numIndex index="0">
-                                            LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.socialshare.google_plus.true
-                                        </numIndex>
-                                        <numIndex index="1">enabled</numIndex>
-                                    </numIndex>
-                                    <numIndex index="2" type="array">
-                                        <numIndex index="0">
-                                            LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.socialshare.google_plus.false
-                                        </numIndex>
-                                        <numIndex index="1">disabled</numIndex>
-                                    </numIndex>
-                                </items>
-                            </config>
-                        </TCEforms>
+                        <label>LLL:EXT:flipbook/Resources/Private/Language/gle_plus</label>
+                        <config>
+                            <type>select</type>
+                            <renderType>selectSingle</renderType>
+                            <items type="array">
+                                <numIndex index="0" type="array">
+                                    <label>---</label>
+                                    <value/>
+                                </numIndex>
+                                <numIndex index="1" type="array">
+                                    <label>LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.socialshare.google_plus.true</label>
+                                    <value>enabled</value>
+                                </numIndex>
+                                <numIndex index="2" type="array">
+                                    <label>LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.socialshare.google_plus.false</label>
+                                    <value>disabled</value>
+                                </numIndex>
+                            </items>
+                        </config>
                     </settings.google_plus>
                     <settings.twitter>
-                        <TCEforms>
-                            <label>
-                                LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.socialshare.twitter
-                            </label>
-                            <config>
-                                <type>select</type>
-                                <renderType>selectSingle</renderType>
-                                <items type="array">
-                                    <numIndex index="0" type="array">
-                                        <numIndex index="0">---</numIndex>
-                                        <numIndex index="1"></numIndex>
-                                    </numIndex>
-                                    <numIndex index="1" type="array">
-                                        <numIndex index="0">
-                                            LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.socialshare.twitter.true
-                                        </numIndex>
-                                        <numIndex index="1">enabled</numIndex>
-                                    </numIndex>
-                                    <numIndex index="2" type="array">
-                                        <numIndex index="0">
-                                            LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.socialshare.twitter.false
-                                        </numIndex>
-                                        <numIndex index="1">disabled</numIndex>
-                                    </numIndex>
-                                </items>
-                            </config>
-                        </TCEforms>
+                        <label>LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.socialshare.twitter</label>
+                        <config>
+                            <type>select</type>
+                            <renderType>selectSingle</renderType>
+                            <items type="array">
+                                <numIndex index="0" type="array">
+                                    <label>---</label>
+                                    <value/>
+                                </numIndex>
+                                <numIndex index="1" type="array">
+                                    <label>LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.socialshare.twitter.true</label>
+                                    <value>enabled</value>
+                                </numIndex>
+                                <numIndex index="2" type="array">
+                                    <label>LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.socialshare.twitter.false</label>
+                                    <value>disabled</value>
+                                </numIndex>
+                            </items>
+                        </config>
                     </settings.twitter>
                     <settings.facebook>
-                        <TCEforms>
-                            <label>
-                                LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.socialshare.facebook
-                            </label>
-                            <config>
-                                <type>select</type>
-                                <renderType>selectSingle</renderType>
-                                <items type="array">
-                                    <numIndex index="0" type="array">
-                                        <numIndex index="0">---</numIndex>
-                                        <numIndex index="1"></numIndex>
-                                    </numIndex>
-                                    <numIndex index="1" type="array">
-                                        <numIndex index="0">
-                                            LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.socialshare.facebook.true
-                                        </numIndex>
-                                        <numIndex index="1">enabled</numIndex>
-                                    </numIndex>
-                                    <numIndex index="2" type="array">
-                                        <numIndex index="0">
-                                            LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.socialshare.facebook.false
-                                        </numIndex>
-                                        <numIndex index="1">disabled</numIndex>
-                                    </numIndex>
-                                </items>
-                            </config>
-                        </TCEforms>
+                        <label>LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.socialshare.facebook</label>
+                        <config>
+                            <type>select</type>
+                            <renderType>selectSingle</renderType>
+                            <items type="array">
+                                <numIndex index="0" type="array">
+                                    <label>---</label>
+                                    <value/>
+                                </numIndex>
+                                <numIndex index="1" type="array">
+                                    <label>LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.socialshare.facebook.true</label>
+                                    <value>enabled</value>
+                                </numIndex>
+                                <numIndex index="2" type="array">
+                                    <label>LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.socialshare.facebook.false</label>
+                                    <value>disabled</value>
+                                </numIndex>
+                            </items>
+                        </config>
                     </settings.facebook>
                     <settings.pinterest>
-                        <TCEforms>
-                            <label>
-                                LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.socialshare.pinterest
-                            </label>
-                            <config>
-                                <type>select</type>
-                                <renderType>selectSingle</renderType>
-                                <items type="array">
-                                    <numIndex index="0" type="array">
-                                        <numIndex index="0">---</numIndex>
-                                        <numIndex index="1"></numIndex>
-                                    </numIndex>
-                                    <numIndex index="1" type="array">
-                                        <numIndex index="0">
-                                            LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.socialshare.pinterest.true
-                                        </numIndex>
-                                        <numIndex index="1">enabled</numIndex>
-                                    </numIndex>
-                                    <numIndex index="2" type="array">
-                                        <numIndex index="0">
-                                            LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.socialshare.pinterest.false
-                                        </numIndex>
-                                        <numIndex index="1">disabled</numIndex>
-                                    </numIndex>
-                                </items>
-                            </config>
-                        </TCEforms>
+                        <label>LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.socialshare.pinterest</label>
+                        <config>
+                            <type>select</type>
+                            <renderType>selectSingle</renderType>
+                            <items type="array">
+                                <numIndex index="0" type="array">
+                                    <label>---</label>
+                                    <value/>
+                                </numIndex>
+                                <numIndex index="1" type="array">
+                                    <label>LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.socialshare.pinterest.true</label>
+                                    <value>enabled</value>
+                                </numIndex>
+                                <numIndex index="2" type="array">
+                                    <label>LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.socialshare.pinterest.false</label>
+                                    <value>disabled</value>
+                                </numIndex>
+                            </items>
+                        </config>
                     </settings.pinterest>
                     <settings.email>
-                        <TCEforms>
-                            <label>
-                                LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.socialshare.email
-                            </label>
-                            <config>
-                                <type>select</type>
-                                <renderType>selectSingle</renderType>
-                                <items type="array">
-                                    <numIndex index="0" type="array">
-                                        <numIndex index="0">---</numIndex>
-                                        <numIndex index="1"></numIndex>
-                                    </numIndex>
-                                    <numIndex index="1" type="array">
-                                        <numIndex index="0">
-                                            LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.socialshare.email.true
-                                        </numIndex>
-                                        <numIndex index="1">enabled</numIndex>
-                                    </numIndex>
-                                    <numIndex index="2" type="array">
-                                        <numIndex index="0">
-                                            LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.socialshare.email.false
-                                        </numIndex>
-                                        <numIndex index="1">disabled</numIndex>
-                                    </numIndex>
-                                </items>
-                            </config>
-                        </TCEforms>
+                        <label>LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.socialshare.email</label>
+                        <config>
+                            <type>select</type>
+                            <renderType>selectSingle</renderType>
+                            <items type="array">
+                                <numIndex index="0" type="array">
+                                    <label>---</label>
+                                    <value/>
+                                </numIndex>
+                                <numIndex index="1" type="array">
+                                    <label>LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.socialshare.email.true</label>
+                                    <value>enabled</value>
+                                </numIndex>
+                                <numIndex index="2" type="array">
+                                    <label>LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.socialshare.email.false</label>
+                                    <value>disabled</value>
+                                </numIndex>
+                            </items>
+                        </config>
                     </settings.email>
                 </el>
             </ROOT>
         </socialshare>
-
     </sheets>
 </T3DataStructure>
