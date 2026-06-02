@@ -213,7 +213,7 @@ class InlineJsViewHelper extends AbstractTagBasedViewHelper
         $buttons = [
             'currentPage' => ['title' => LocalizationUtility::translate('currentPage', 'flipbook')],
             'btnNext' => ['icon' => 'flipbook-icon-chevron-right', 'title' => LocalizationUtility::translate('btnNext', 'flipbook')],
-            'btnLast' => ['icon' => 'flipbook-icon-backward-step', 'title' => LocalizationUtility::translate('btnLast', 'flipbook')],
+            'btnLast' => ['icon' => 'flipbook-icon-forward-step', 'title' => LocalizationUtility::translate('btnLast', 'flipbook')],
             'btnPrev' => ['icon' => 'flipbook-icon-chevron-left', 'title' => LocalizationUtility::translate('btnPrev', 'flipbook')],
             'btnFirst' => ['icon' => 'flipbook-icon-backward-step', 'title' => LocalizationUtility::translate('btnFirst', 'flipbook')],
             'btnZoomIn' => ['icon' => 'flipbook-icon-plus', 'title' => LocalizationUtility::translate('btnZoomIn', 'flipbook')],
