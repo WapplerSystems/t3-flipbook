@@ -293,6 +293,9 @@
             <trans-unit id="flexform.sheet.socialshare.email.false">
                 <source>Disabled</source>
             </trans-unit>
+            <trans-unit id="flexform.sheet.options.imageTitle">
+                <source>Title (caption of the preview image)</source>
+            </trans-unit>
 
         </body>
     </file>

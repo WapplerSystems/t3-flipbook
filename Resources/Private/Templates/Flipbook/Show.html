@@ -19,8 +19,13 @@
                             <f:then>
                                 <figure>
                                     <f:image src="{preview.uid}" id="container_{uid}" class="rflip-border img-fluid" maxWidth="{settings.previewMaxWidth}" height="{settings.previewMaxHeight}" alt="" treatIdAsReference="1"/>
-                                    <f:if condition="{preview.description}">
-                                        <figcaption>{preview.description}</figcaption>
+                                    <f:if condition="{settings.imageTitle}">
+                                        <f:then>
+                                            <figcaption>{settings.imageTitle}</figcaption>
+                                        </f:then>
+                                        <f:else if="{preview.description}">
+                                            <figcaption>{preview.description}</figcaption>
+                                        </f:else>
                                     </f:if>
                                 </figure>
                             </f:then>
@@ -28,8 +33,13 @@
                                 <f:alias map="{file: '{files -> f:first()}'}">
                                     <figure>
                                         <f:image image="{file}" id="container_{uid}" class="rflip-border img-fluid" maxWidth="{settings.previewMaxWidth}" height="{settings.previewMaxHeight}" alt="{file.alternative}"/>
-                                        <f:if condition="{file.description}">
-                                            <figcaption>{file.description}</figcaption>
+                                        <f:if condition="{settings.imageTitle}">
+                                            <f:then>
+                                                <figcaption>{settings.imageTitle}</figcaption>
+                                            </f:then>
+                                            <f:else if="{file.description}">
+                                                <figcaption>{file.description}</figcaption>
+                                            </f:else>
                                         </f:if>
                                     </figure>
                                 </f:alias>
