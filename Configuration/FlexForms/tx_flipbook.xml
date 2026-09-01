@@ -10,7 +10,7 @@
                 <type>array</type>
                 <el>
                     <settings.fullbook type="array">
-                        <label>Full-Width Book</label>
+                        <label>Direkt geöffnet anzeigen (kein Klick zum Öffnen nötig)</label>
                         <config type="array">
                             <type>check</type>
                         </config>
