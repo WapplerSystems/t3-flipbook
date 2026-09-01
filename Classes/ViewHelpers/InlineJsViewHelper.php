@@ -43,7 +43,7 @@ class InlineJsViewHelper extends AbstractTagBasedViewHelper
     {
         $this->settings = $this->arguments['settings'];
         $uid = $this->arguments['uid'];
-        $files = $this->arguments['files'];
+        $files = $this->arguments['files'] ?? [];
         $thumbfolder = $this->arguments['thumbfolder'];
         $content = '';
 
@@ -62,7 +62,7 @@ class InlineJsViewHelper extends AbstractTagBasedViewHelper
 
         $content .= $this->createAssets();
 
-        switch ($this->settings['mode']) {
+        switch ($this->settings['mode'] ?? '') {
             case 'pdf':
                 if (!empty($files[0])) {
                     $content .= 'pdfUrl: "' . $files[0]->getPublicUrl() . '",';
@@ -104,25 +104,25 @@ class InlineJsViewHelper extends AbstractTagBasedViewHelper
 
         $content .= $this->renderToc();
 
-        if ($this->settings['pageShadow'] === 'pageShadow') {
+        if (($this->settings['pageShadow'] ?? '') === 'pageShadow') {
             $content .= 'pageShadow:true,';
         } else {
             $content .= 'pageShadow:false,';
         }
 
-        if ($this->settings['pointLight'] === 'pointLight') {
+        if (($this->settings['pointLight'] ?? '') === 'pointLight') {
             $content .= 'pointLight:true,';
         } else {
             $content .= 'pointLight:false,';
         }
 
-        if ($this->settings['directionalLight'] === 'directionalLight') {
+        if (($this->settings['directionalLight'] ?? '') === 'directionalLight') {
             $content .= 'directionalLight:true,';
         } else {
             $content .= 'directionalLight:false,';
         }
 
-        if ($this->settings['ambientLight'] === 'ambientLight') {
+        if (($this->settings['ambientLight'] ?? '') === 'ambientLight') {
             $content .= 'ambientLight:true,';
         } else {
             $content .= 'ambientLight:false,';
