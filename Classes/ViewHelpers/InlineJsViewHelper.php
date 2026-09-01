@@ -391,7 +391,8 @@ class InlineJsViewHelper extends AbstractTagBasedViewHelper
         ];
 
         foreach ($enabledOptions as $option) {
-            if ($this->settings[$option] === 'enabled') {
+            // single-page mode on mobile is always forced on
+            if ($option === 'singlePageModeIfMobile' || ($this->settings[$option] ?? '') === 'enabled') {
                 $content .= $option . ": true,";
             } else {
                 $content .= $option . ": false,";
