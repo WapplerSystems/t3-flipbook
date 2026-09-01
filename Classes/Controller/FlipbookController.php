@@ -76,9 +76,9 @@ class FlipbookController extends ActionController
      */
     public function showAction(): ResponseInterface
     {
-        if ($this->settings['mode'] === 'pdf') {
+        if (($this->settings['mode'] ?? '') === 'pdf') {
 
-            if ($this->settings['pdfUrl'] !== '') {
+            if (($this->settings['pdfUrl'] ?? '') !== '') {
 
                 $pdfValue = trim((string)$this->settings['pdfUrl']);
                 $factory = GeneralUtility::makeInstance(ResourceFactory::class);
@@ -107,17 +107,20 @@ class FlipbookController extends ActionController
         } else {
 
             /** @var string $bigImageFolder */
-            $bigImageFolder = $this->settings['folder'];
+            $bigImageFolder = $this->settings['folder'] ?? '';
             /** @var ResourceFactory $factory */
             $factory = GeneralUtility::makeInstance(ResourceFactory::class);
-            $folder = $factory->getFolderObjectFromCombinedIdentifier($bigImageFolder);
 
-            $files = $folder->getFiles();
-            $imageFiles = array_filter($files, function($file) {
-                return in_array($file->getExtension(), ['jpg','jpeg','png','gif','webp']);
-            });
+            if ($bigImageFolder !== '') {
+                $folder = $factory->getFolderObjectFromCombinedIdentifier($bigImageFolder);
 
-            $this->view->assign('files', $imageFiles);
+                $files = $folder->getFiles();
+                $imageFiles = array_filter($files, function($file) {
+                    return in_array($file->getExtension(), ['jpg','jpeg','png','gif','webp']);
+                });
+
+                $this->view->assign('files', $imageFiles);
+            }
 
         }
 
@@ -127,12 +130,12 @@ class FlipbookController extends ActionController
             $this->view->assign('thumbfolder', $thumbFolder);
         }
         /** preview image */
-        if ($this->settings['preview'] === '1') {
+        if (($this->settings['preview'] ?? '') === '1') {
             /** @var FileRepository $fileRepository */
             $fileRepository = GeneralUtility::makeInstance(FileRepository::class);
             /** @var FileReference $preview */
             $preview = $fileRepository->findByRelation('tt_content', 'settings.preview', $this->request->getAttribute('currentContentObject')->data['uid']);
-            $this->view->assign('preview', $preview[0]);
+            $this->view->assign('preview', $preview[0] ?? null);
         }
         if (!is_array($this->settings['toc'] ?? false)) {
             unset($this->settings['toc']);
