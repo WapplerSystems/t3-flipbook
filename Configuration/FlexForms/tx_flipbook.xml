@@ -197,6 +197,12 @@
                 <sheetTitle>LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.pluginSettings</sheetTitle>
                 <type>array</type>
                 <el>
+                    <settings.search type="array">
+                        <label>Suche im Flipbook aktivieren (nur im PDF-Modus)</label>
+                        <config type="array">
+                            <type>check</type>
+                        </config>
+                    </settings.search>
                     <settings.hideMenu>
                         <label>LLL:EXT:flipbook/Resources/Private/Language/hideMenu
                             </label>

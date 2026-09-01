@@ -219,10 +219,11 @@ class InlineJsViewHelper extends AbstractTagBasedViewHelper
             'btnZoomIn' => ['icon' => 'flipbook-icon-plus', 'title' => LocalizationUtility::translate('btnZoomIn', 'flipbook')],
             'btnZoomOut' => ['icon' => 'flipbook-icon-minus', 'title' => LocalizationUtility::translate('btnZoomOut', 'flipbook')],
             'btnToc' => ['icon' => 'flipbook-icon-list', 'title' => LocalizationUtility::translate('btnToc', 'flipbook')],
+            'btnSearch' => ['icon' => 'flipbook-icon-search', 'title' => LocalizationUtility::translate('btnSearch', 'flipbook')],
             'btnThumbs' => ['icon' => 'flipbook-icon-table-cells-large', 'title' => LocalizationUtility::translate('btnThumbs', 'flipbook')],
             'btnShare' => ['icon' => 'flipbook-icon-link', 'title' => LocalizationUtility::translate('btnShare', 'flipbook')],
-            'btnDownloadPages' => ['icon' => 'flipbook-icon-download', 'title' => LocalizationUtility::translate('btnDownloadPages', 'flipbook'), 'url' => $this->settings['zipUrl']],
-            'btnDownloadPdf' => ['icon' => 'flipbook-icon-file-pdf', 'title' => LocalizationUtility::translate('btnDownloadPdf', 'flipbook'), 'url' => $this->settings['download']],
+            'btnDownloadPages' => ['icon' => 'flipbook-icon-download', 'title' => LocalizationUtility::translate('btnDownloadPages', 'flipbook'), 'url' => $this->settings['zipUrl'] ?? ''],
+            'btnDownloadPdf' => ['icon' => 'flipbook-icon-file-pdf', 'title' => LocalizationUtility::translate('btnDownloadPdf', 'flipbook'), 'url' => $this->settings['download'] ?? ''],
             'btnSound' => ['icon' => 'flipbook-icon-volume-xmark', 'iconAlt' => 'flipbook-icon-volume-high', 'title' => LocalizationUtility::translate('btnSound', 'flipbook')],
             'btnExpand' => ['icon' => 'flipbook-icon-expand', 'title' => LocalizationUtility::translate('btnExpand', 'flipbook')],
             'btnExpandLightbox' => ['icon' => 'flipbook-icon-expand', 'title' => LocalizationUtility::translate('btnExpandLightbox', 'flipbook')],
@@ -238,8 +239,14 @@ class InlineJsViewHelper extends AbstractTagBasedViewHelper
             'email' => []
         ];
 
+        $searchEnabled = (int)($this->settings['search'] ?? 0) === 1;
+
         foreach ($buttons as $button => $value) {
-            if ($this->settings[$button] === 'enabled') {
+            if ($button === 'btnClose'
+                || $button === 'btnToc'
+                || ($button === 'btnThumbs' && $searchEnabled)
+                || ($this->settings[$button] ?? '') === 'enabled'
+            ) {
                 $content .= $button . ': {';
 
                 $content .= 'enabled: true,';
