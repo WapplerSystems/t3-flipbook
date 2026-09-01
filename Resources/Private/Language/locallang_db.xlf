@@ -296,6 +296,9 @@
             <trans-unit id="flexform.sheet.options.imageTitle">
                 <source>Title (caption of the preview image)</source>
             </trans-unit>
+            <trans-unit id="flexform.sheet.pluginSettings.search">
+                <source>Enable search in the book (PDF mode only)</source>
+            </trans-unit>
 
         </body>
     </file>
