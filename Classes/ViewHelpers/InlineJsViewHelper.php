@@ -130,7 +130,7 @@ class InlineJsViewHelper extends AbstractTagBasedViewHelper
 
         $content = rtrim($content, ',');
         $content .= "
-            }
+            };
         ";
 
         return "<script>" . $content . "</script>";
@@ -244,6 +244,7 @@ class InlineJsViewHelper extends AbstractTagBasedViewHelper
         foreach ($buttons as $button => $value) {
             if ($button === 'btnClose'
                 || $button === 'btnToc'
+                || ($button === 'btnSearch' && $searchEnabled)
                 || ($button === 'btnThumbs' && $searchEnabled)
                 || ($this->settings[$button] ?? '') === 'enabled'
             ) {
