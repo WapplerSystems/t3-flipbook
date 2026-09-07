@@ -54,10 +54,10 @@ class InlineJsViewHelper extends AbstractTagBasedViewHelper
                 " . $this->renderTrueFalseOptions() . "
             ";
 
-        $content .= 'lightBox: true,';
-
         if ((int)($this->settings['fullbook'] ?? 0) === 1) {
-            $content .= 'lightBoxOpened: true,';
+            $content .= 'lightBox: false,';
+        } else {
+            $content .= 'lightBox: true,';
         }
 
         $content .= $this->createAssets();
