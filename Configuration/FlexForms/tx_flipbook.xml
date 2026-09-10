@@ -10,7 +10,7 @@
                 <type>array</type>
                 <el>
                     <settings.fullbook type="array">
-                        <label>Full-Width Book</label>
+                        <label>Direkt geöffnet anzeigen (kein Klick zum Öffnen nötig)</label>
                         <config type="array">
                             <type>check</type>
                         </config>
@@ -23,6 +23,14 @@
                             <eval>trim</eval>
                         </config>
                     </settings.header>
+                    <settings.imageTitle>
+                        <label>Title</label>
+                        <config>
+                            <type>input</type>
+                            <size>48</size>
+                            <eval>trim</eval>
+                        </config>
+                    </settings.imageTitle>
                     <settings.download>
                         <label>LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.options.download</label>
                         <config>
@@ -136,7 +144,11 @@
                         <label>LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.pdf.file</label>
                         <displayCond>FIELD:settings.mode:=:pdf</displayCond>
                         <config>
-                            <type>link</type>
+                            <type>group</type>
+                            <allowed>sys_file</allowed>
+                            <maxitems>1</maxitems>
+                            <minitems>0</minitems>
+                            <size>1</size>
                         </config>
                     </settings.pdfUrl>
                 </el>
@@ -185,6 +197,12 @@
                 <sheetTitle>LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.pluginSettings</sheetTitle>
                 <type>array</type>
                 <el>
+                    <settings.search type="array">
+                        <label>Suche im Flipbook aktivieren (nur im PDF-Modus)</label>
+                        <config type="array">
+                            <type>check</type>
+                        </config>
+                    </settings.search>
                     <settings.hideMenu>
                         <label>LLL:EXT:flipbook/Resources/Private/Language/hideMenu
                             </label>

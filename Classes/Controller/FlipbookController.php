@@ -3,13 +3,13 @@
 namespace WapplerSystems\Flipbook\Controller;
 
 use Psr\Http\Message\ResponseInterface;
+use TYPO3\CMS\Core\LinkHandling\LinkService;
 use TYPO3\CMS\Core\Resource\FileReference;
 use TYPO3\CMS\Core\Resource\FileRepository;
 use TYPO3\CMS\Core\Resource\ResourceFactory;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Extbase\Configuration\ConfigurationManagerInterface;
 use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
-use TYPO3\CMS\Frontend\ContentObject\ContentObjectRenderer;
 
 class FlipbookController extends ActionController
 {
@@ -74,38 +74,47 @@ class FlipbookController extends ActionController
      */
     public function showAction(): ResponseInterface
     {
-        if ($this->settings['mode'] === 'pdf') {
+        if (($this->settings['mode'] ?? '') === 'pdf') {
 
-            if ($this->settings['pdfUrl'] !== '') {
+            if (($this->settings['pdfUrl'] ?? '') !== '') {
 
-                $instructions = [
-                    'parameter' => $this->settings['pdfUrl'],
-                ];
-
-                $contentObject = GeneralUtility::makeInstance(ContentObjectRenderer::class);
-                $url = $contentObject->createUrl($instructions);
-                $this->view->assign('pdfUrl', $url);
-
+                $pdfValue = trim((string)$this->settings['pdfUrl']);
                 $factory = GeneralUtility::makeInstance(ResourceFactory::class);
-                $file = $factory->getFileObjectFromCombinedIdentifier($url);
+                $file = null;
 
-                $this->view->assign('files', [$file]);
+                if (str_starts_with($pdfValue, 't3://')) {
+                    // Legacy format stored via type=link: t3://file?uid=925
+                    $linkService = GeneralUtility::makeInstance(LinkService::class);
+                    $linkData = $linkService->resolve($pdfValue);
+                    $file = $linkData['file'] ?? null;
+                } elseif (is_numeric($pdfValue)) {
+                    // Current format stored via type=group: plain sys_file UID
+                    $file = $factory->getFileObject((int)$pdfValue);
+                }
+
+                if ($file !== null) {
+                    $this->view->assign('pdfUrl', $file->getPublicUrl());
+                    $this->view->assign('files', [$file]);
+                }
             }
 
         } else {
 
             /** @var string $bigImageFolder */
-            $bigImageFolder = $this->settings['folder'];
+            $bigImageFolder = $this->settings['folder'] ?? '';
             /** @var ResourceFactory $factory */
             $factory = GeneralUtility::makeInstance(ResourceFactory::class);
-            $folder = $factory->getFolderObjectFromCombinedIdentifier($bigImageFolder);
 
-            $files = $folder->getFiles();
-            $imageFiles = array_filter($files, function($file) {
-                return in_array($file->getExtension(), ['jpg','jpeg','png','gif','webp']);
-            });
+            if ($bigImageFolder !== '') {
+                $folder = $factory->getFolderObjectFromCombinedIdentifier($bigImageFolder);
 
-            $this->view->assign('files', $imageFiles);
+                $files = $folder->getFiles();
+                $imageFiles = array_filter($files, function($file) {
+                    return in_array($file->getExtension(), ['jpg','jpeg','png','gif','webp']);
+                });
+
+                $this->view->assign('files', $imageFiles);
+            }
 
         }
 
@@ -115,11 +124,11 @@ class FlipbookController extends ActionController
             $this->view->assign('thumbfolder', $thumbFolder);
         }
         /** preview image */
-        if ($this->settings['preview'] === '1') {
+        if (($this->settings['preview'] ?? '') === '1') {
             /** @var FileRepository $fileRepository */
             $fileRepository = GeneralUtility::makeInstance(FileRepository::class);
             /** @var FileReference $preview */
-            $preview = $fileRepository->findByRelation('tt_content', 'settings.preview', $this->configurationManager->getContentObject()->data['uid']);
+            $preview = $fileRepository->findByRelation('tt_content', 'settings.preview', $this->request->getAttribute('currentContentObject')->data['uid']);
             $this->view->assign('preview', $preview[0]);
         }
         if (!is_array($this->settings['toc'] ?? false)) {
