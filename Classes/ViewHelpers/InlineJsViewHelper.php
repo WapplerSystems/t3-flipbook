@@ -100,6 +100,8 @@ class InlineJsViewHelper extends AbstractTagBasedViewHelper
 
         $content .= $this->renderNotEmptyOptions();
 
+        $content .= $this->renderRenderingOptions();
+
         $content .= $this->renderButtons();
 
         $content .= $this->renderToc();
@@ -353,6 +355,37 @@ class InlineJsViewHelper extends AbstractTagBasedViewHelper
                 $content .= $option . ': "' . $this->settings[$option] . '",';
             }
         }
+        return $content;
+    }
+
+    /**
+     * View mode and page resolution. The page images are rendered by pdf.js in the browser,
+     * pageTextureSize is the rendered page height in pixels.
+     *
+     * @return string
+     */
+    private function renderRenderingOptions(): string
+    {
+        $content = '';
+
+        $viewMode = $this->settings['viewMode'] ?? '';
+        if (in_array($viewMode, ['webgl', '3d', '2d', 'swipe'], true)) {
+            $content .= 'viewMode: "' . $viewMode . '",';
+        }
+
+        $pageTextureSize = (int)($this->settings['pageTextureSize'] ?? 0);
+        if ($pageTextureSize > 0) {
+            $content .= 'pageTextureSize: ' . $pageTextureSize . ',';
+            // the webgl mode would otherwise switch to a 1024px texture for books smaller than 1024 CSS pixels,
+            // which looks blurry on high-dpi displays
+            $content .= 'pageTextureSizeSmall: ' . $pageTextureSize . ',';
+        }
+
+        $pageTextureSizeMobile = (int)($this->settings['pageTextureSizeMobile'] ?? 0);
+        if ($pageTextureSizeMobile > 0) {
+            $content .= 'pageTextureSizeMobile: ' . $pageTextureSizeMobile . ',';
+        }
+
         return $content;
     }
 

@@ -21,6 +21,9 @@ plugin.tx_flipbook {
         zipUrl = {$plugin.tx_flipbook.settings.zipUrl}
         pdfPageScale = {$plugin.tx_flipbook.settings.pdfPageScale}
         skin = {$plugin.tx_flipbook.settings.skin}
+        viewMode = {$plugin.tx_flipbook.settings.viewMode}
+        pageTextureSize = {$plugin.tx_flipbook.settings.pageTextureSize}
+        pageTextureSizeMobile = {$plugin.tx_flipbook.settings.pageTextureSizeMobile}
         assets {
             preloader = {$plugin.tx_flipbook.settings.assets.preloader}
             left = {$plugin.tx_flipbook.settings.assets.left}
