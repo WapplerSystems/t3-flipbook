@@ -24,6 +24,7 @@ plugin.tx_flipbook {
         viewMode = {$plugin.tx_flipbook.settings.viewMode}
         pageTextureSize = {$plugin.tx_flipbook.settings.pageTextureSize}
         pageTextureSizeMobile = {$plugin.tx_flipbook.settings.pageTextureSizeMobile}
+        pageTextureSizeMax = {$plugin.tx_flipbook.settings.pageTextureSizeMax}
         assets {
             preloader = {$plugin.tx_flipbook.settings.assets.preloader}
             left = {$plugin.tx_flipbook.settings.assets.left}

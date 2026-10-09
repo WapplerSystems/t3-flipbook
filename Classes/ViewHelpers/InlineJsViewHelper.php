@@ -386,6 +386,12 @@ class InlineJsViewHelper extends AbstractTagBasedViewHelper
             $content .= 'pageTextureSizeMobile: ' . $pageTextureSizeMobile . ',';
         }
 
+        // upper limit for rendering the pages in their displayed size, see flipbook.adaptive-texture.js
+        $pageTextureSizeMax = (int)($this->settings['pageTextureSizeMax'] ?? 0);
+        if ($pageTextureSizeMax > 0) {
+            $content .= 'pageTextureSizeMax: ' . $pageTextureSizeMax . ',';
+        }
+
         return $content;
     }
 

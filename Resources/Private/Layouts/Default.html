@@ -1,6 +1,9 @@
 <div class="tx-flipbook">
 
     <f:asset.script identifier="flipbook" src="EXT:flipbook/Resources/Public/JavaScript/flipbook.min.js"  />
+    <f:if condition="{settings.mode} == 'pdf'">
+        <f:asset.script identifier="flipbook-adaptive-texture" src="EXT:flipbook/Resources/Public/JavaScript/flipbook.adaptive-texture.js"  />
+    </f:if>
     <f:asset.script identifier="flipbook-starter" src="EXT:flipbook/Resources/Public/JavaScript/flipbook.starter.js"  />
 
 

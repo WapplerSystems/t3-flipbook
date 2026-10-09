@@ -38,6 +38,8 @@ plugin.tx_flipbook {
         pageTextureSize =
         # cat=rflipmobile/settings/0005; type=int+; label=Page texture size on mobile devices: height of the rendered page images in pixels, empty uses the page texture size
         pageTextureSizeMobile =
+        # cat=rflipbasic/settings/0033; type=int+; label=Maximum page texture size: in 2d and 3d view the pages are rendered in their displayed size up to this height in pixels (on mobile devices at most the page texture size on mobile devices), empty or 0 always uses the page texture size
+        pageTextureSizeMax =
 
         assets {
             # cat=rflipassets/settings/10; type=string; label=Preloader
