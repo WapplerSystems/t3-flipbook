@@ -10,11 +10,19 @@
                 <type>array</type>
                 <el>
                     <settings.fullbook type="array">
-                        <label>Full-Width Book</label>
+                        <label>LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.options.fullbook</label>
+                        <onChange>reload</onChange>
                         <config type="array">
                             <type>check</type>
                         </config>
                     </settings.fullbook>
+                    <settings.wide type="array">
+                        <label>LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.options.wide</label>
+                        <displayCond>FIELD:settings.fullbook:=:1</displayCond>
+                        <config type="array">
+                            <type>check</type>
+                        </config>
+                    </settings.wide>
                     <settings.header type="array">
                         <label>LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.options.header</label>
                         <config type="array">

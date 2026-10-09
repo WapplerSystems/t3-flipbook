@@ -7,7 +7,7 @@
 
         <f:if condition="{settings.fullbook}">
             <f:then>
-                <div id="container_{uid}" class="fullbook-container"></div>
+                <div id="container_{uid}" class="fullbook-container{f:if(condition: settings.wide, then: ' flipbook-wide')}"></div>
             </f:then>
             <f:else>
                 <f:if condition="{settings.header}">
