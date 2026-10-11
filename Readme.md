@@ -49,3 +49,27 @@ Refresh your website to see the PDF displayed as an interactive flipbook!
 ## Convert lots of photos into a flipbook
 The same goes for Folders to Flipbook. The only difference is that you should create a folder where you can upload the photos and select **Create Flipbook from folders[folders]** in **Select a plug-in mode**.
 
+
+## Changelog
+
+### 12.0.5
+
+* No more "Undefined array key" warnings when settings are missing ([#12](https://github.com/WapplerSystems/t3-flipbook/issues/12)).
+* PDF mode without a file no longer throws an exception; no preview image without a file ([#4](https://github.com/WapplerSystems/t3-flipbook/issues/4)).
+* `t3://file?uid=…` in the PDF and download fields is resolved to the public URL; download buttons are only shown when a URL is set ([#9](https://github.com/WapplerSystems/t3-flipbook/issues/9)).
+* External PDF URLs are passed through.
+
+### 12.0.4
+
+* Correct icon for the "last page" button ([#7](https://github.com/WapplerSystems/t3-flipbook/issues/7), [#8](https://github.com/WapplerSystems/t3-flipbook/pull/8)).
+* README: the flipbook is a content element, not a page type; jQuery constants ([#6](https://github.com/WapplerSystems/t3-flipbook/pull/6), [#10](https://github.com/WapplerSystems/t3-flipbook/issues/10)).
+
+## Successor for TYPO3 13 and 14
+
+Version 12 only receives bug fixes. For TYPO3 13.4 and 14 use
+**PDF Flip Book (`ws_pdflip`)**:
+
+* TER: https://extensions.typo3.org/extension/ws_pdflip
+* Composer: `composer require wapplersystems/pdflip`
+* Extension: https://github.com/WapplerSystems/t3-pdflip
+* Open-source flip book library it is built on: https://github.com/WapplerSystems/pdflip
