@@ -3,7 +3,10 @@
 namespace WapplerSystems\Flipbook\ViewHelpers;
 
 use TYPO3\CMS\Core\Resource\Exception\InvalidFileException;
+use TYPO3\CMS\Core\LinkHandling\LinkService;
 use TYPO3\CMS\Core\Resource\File;
+use TYPO3\CMS\Core\Resource\FileInterface;
+use TYPO3\CMS\Frontend\ContentObject\ContentObjectRenderer;
 use TYPO3\CMS\Core\Utility\DebugUtility;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Core\Utility\PathUtility;
@@ -31,7 +34,8 @@ class InlineJsViewHelper extends AbstractTagBasedViewHelper
     public function initializeArguments()
     {
         $this->registerArgument('uid', 'int', 'Uid of the Content Element', true);
-        $this->registerArgument('files', 'array', 'Files');
+        $this->registerArgument('files', 'array', 'Files', false, []);
+        $this->registerArgument('pdfUrl', 'string', 'URL of the PDF when it is not a file in the file system', false, '');
         $this->registerArgument('settings', 'array', 'Settings', true);
         $this->registerArgument('thumbfolder', Folder::class, 'Thumbnails folder');
 
@@ -48,7 +52,7 @@ class InlineJsViewHelper extends AbstractTagBasedViewHelper
     {
         $this->settings = $this->arguments['settings'];
         $uid = $this->arguments['uid'];
-        $files = $this->arguments['files'];
+        $files = $this->arguments['files'] ?? [];
         $thumbfolder = $this->arguments['thumbfolder'];
         $content = '';
 
@@ -59,7 +63,7 @@ class InlineJsViewHelper extends AbstractTagBasedViewHelper
                 " . $this->renderTrueFalseOptions() . "
             ";
 
-        if ((int)$this->settings['fullbook'] === 1) {
+        if ((int)($this->settings['fullbook'] ?? '') === 1) {
             $content .= 'lightBox: false,';
         } else {
             $content .= 'lightBox: true,';
@@ -67,11 +71,14 @@ class InlineJsViewHelper extends AbstractTagBasedViewHelper
 
         $content .= $this->createAssets();
 
-        switch ($this->settings['mode']) {
+        switch (($this->settings['mode'] ?? '')) {
             case 'pdf':
-                $content .= 'pdfUrl: "' . $files[0]->getPublicUrl() . '",';
-                if (!empty($this->settings['pdfPageScale']))
-                    $content .= 'pdfPageScale: ' . (float)$this->settings['pdfPageScale'] . ',';
+                $pdfUrl = !empty($files[0]) ? $files[0]->getPublicUrl() : (string)($this->arguments['pdfUrl'] ?? '');
+                if ($pdfUrl !== '') {
+                    $content .= 'pdfUrl: "' . $pdfUrl . '",';
+                }
+                if (!empty(($this->settings['pdfPageScale'] ?? '')))
+                    $content .= 'pdfPageScale: ' . (float)($this->settings['pdfPageScale'] ?? '') . ',';
 
                 break;
 
@@ -107,25 +114,25 @@ class InlineJsViewHelper extends AbstractTagBasedViewHelper
 
         $content .= $this->renderToc();
 
-        if ($this->settings['pageShadow'] === 'pageShadow') {
+        if (($this->settings['pageShadow'] ?? '') === 'pageShadow') {
             $content .= 'pageShadow:true,';
         } else {
             $content .= 'pageShadow:false,';
         }
 
-        if ($this->settings['pointLight'] === 'pointLight') {
+        if (($this->settings['pointLight'] ?? '') === 'pointLight') {
             $content .= 'pointLight:true,';
         } else {
             $content .= 'pointLight:false,';
         }
 
-        if ($this->settings['directionalLight'] === 'directionalLight') {
+        if (($this->settings['directionalLight'] ?? '') === 'directionalLight') {
             $content .= 'directionalLight:true,';
         } else {
             $content .= 'directionalLight:false,';
         }
 
-        if ($this->settings['ambientLight'] === 'ambientLight') {
+        if (($this->settings['ambientLight'] ?? '') === 'ambientLight') {
             $content .= 'ambientLight:true,';
         } else {
             $content .= 'ambientLight:false,';
@@ -183,7 +190,7 @@ class InlineJsViewHelper extends AbstractTagBasedViewHelper
         if (count($this->settings['toc'] ?? []) > 0) {
             $content .= 'tableOfContent:[';
 
-            foreach ($this->settings['toc'] as $toc) {
+            foreach (($this->settings['toc'] ?? '') as $toc) {
                 $content .= '{title:"' . $toc['field_toc_entry']['field_toc_label'] . '", page:' . $toc['field_toc_entry']['field_toc_page'] . '},';
             }
 
@@ -213,8 +220,8 @@ class InlineJsViewHelper extends AbstractTagBasedViewHelper
             'btnToc' => ['icon' => 'flipbook-icon-list', 'title' => LocalizationUtility::translate('btnToc', 'flipbook')],
             'btnThumbs' => ['icon' => 'flipbook-icon-table-cells-large', 'title' => LocalizationUtility::translate('btnThumbs', 'flipbook')],
             'btnShare' => ['icon' => 'flipbook-icon-link', 'title' => LocalizationUtility::translate('btnShare', 'flipbook')],
-            'btnDownloadPages' => ['icon' => 'flipbook-icon-download', 'title' => LocalizationUtility::translate('btnDownloadPages', 'flipbook'), 'url' => $this->settings['zipUrl']],
-            'btnDownloadPdf' => ['icon' => 'flipbook-icon-file-pdf', 'title' => LocalizationUtility::translate('btnDownloadPdf', 'flipbook'), 'url' => $this->settings['download']],
+            'btnDownloadPages' => ['icon' => 'flipbook-icon-download', 'title' => LocalizationUtility::translate('btnDownloadPages', 'flipbook'), 'url' => $this->resolveUrl((string)($this->settings['zipUrl'] ?? ''))],
+            'btnDownloadPdf' => ['icon' => 'flipbook-icon-file-pdf', 'title' => LocalizationUtility::translate('btnDownloadPdf', 'flipbook'), 'url' => $this->resolveUrl((string)($this->settings['download'] ?? ''))],
             'btnSound' => ['icon' => 'flipbook-icon-volume-xmark', 'iconAlt' => 'flipbook-icon-volume-high', 'title' => LocalizationUtility::translate('btnSound', 'flipbook')],
             'btnExpand' => ['icon' => 'flipbook-icon-expand', 'title' => LocalizationUtility::translate('btnExpand', 'flipbook')],
             'btnExpandLightbox' => ['icon' => 'flipbook-icon-expand', 'title' => LocalizationUtility::translate('btnExpandLightbox', 'flipbook')],
@@ -231,7 +238,9 @@ class InlineJsViewHelper extends AbstractTagBasedViewHelper
         ];
 
         foreach ($buttons as $button => $value) {
-            if ($this->settings[$button] === 'enabled') {
+            // download buttons without a URL lead nowhere
+            $missingUrl = array_key_exists('url', $value) && $value['url'] === '';
+            if (($this->settings[$button] ?? '') === 'enabled' && !$missingUrl) {
                 $content .= $button . ': {';
 
                 $content .= 'enabled: true,';
@@ -258,6 +267,26 @@ class InlineJsViewHelper extends AbstractTagBasedViewHelper
         }
 
         return $content;
+    }
+
+    /**
+     * Turns typolink values (t3://file?uid=…, t3://page?uid=…) into URLs; other values stay as they are.
+     */
+    private function resolveUrl(string $value): string
+    {
+        $value = trim($value);
+        if (!str_starts_with($value, 't3://')) {
+            return $value;
+        }
+        try {
+            $linkData = GeneralUtility::makeInstance(LinkService::class)->resolve($value);
+            if (($linkData['file'] ?? null) instanceof FileInterface) {
+                return (string)$linkData['file']->getPublicUrl();
+            }
+            return GeneralUtility::makeInstance(ContentObjectRenderer::class)->createUrl(['parameter' => $value]);
+        } catch (\Throwable) {
+            return '';
+        }
     }
 
     /**
@@ -336,8 +365,8 @@ class InlineJsViewHelper extends AbstractTagBasedViewHelper
         ];
 
         foreach ($notEmptyOptions as $option) {
-            if (!empty($this->settings[$option])) {
-                $content .= $option . ': "' . $this->settings[$option] . '",';
+            if (!empty(($this->settings[$option] ?? ''))) {
+                $content .= $option . ': "' . ($this->settings[$option] ?? '') . '",';
             }
         }
         return $content;
@@ -376,7 +405,7 @@ class InlineJsViewHelper extends AbstractTagBasedViewHelper
         ];
 
         foreach ($enabledOptions as $option) {
-            if ($this->settings[$option] === 'enabled') {
+            if (($this->settings[$option] ?? '') === 'enabled') {
                 $content .= $option . ": true,";
             } else {
                 $content .= $option . ": false,";

@@ -25,14 +25,16 @@
                                 </figure>
                             </f:then>
                             <f:else>
-                                <f:alias map="{file: '{files -> f:first()}'}">
-                                    <figure>
-                                        <f:image image="{file}" id="container_{uid}" class="rflip-border img-fluid" maxWidth="{settings.previewMaxWidth}" height="{settings.previewMaxHeight}" alt="{file.alternative}"/>
-                                        <f:if condition="{file.description}">
-                                            <figcaption>{file.description}</figcaption>
-                                        </f:if>
-                                    </figure>
-                                </f:alias>
+                                <f:if condition="{files.0}">
+                                    <f:alias map="{file: '{files -> f:first()}'}">
+                                        <figure>
+                                            <f:image image="{file}" id="container_{uid}" class="rflip-border img-fluid" maxWidth="{settings.previewMaxWidth}" height="{settings.previewMaxHeight}" alt="{file.alternative}"/>
+                                            <f:if condition="{file.description}">
+                                                <figcaption>{file.description}</figcaption>
+                                            </f:if>
+                                        </figure>
+                                    </f:alias>
+                                </f:if>
 
                             </f:else>
 
@@ -49,7 +51,7 @@
             </f:else>
         </f:if>
 
-        <f:render partial="InlineJs" arguments="{uid:uid, files:files, settings:settings, thumbfolder:thumbfolder}" section="main"/>
+        <f:render partial="InlineJs" arguments="{uid:uid, files:files, pdfUrl:pdfUrl, settings:settings, thumbfolder:thumbfolder}" section="main"/>
 
         <f:if condition="{settings.fullbook}">
             <style>
