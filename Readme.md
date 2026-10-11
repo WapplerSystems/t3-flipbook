@@ -1,6 +1,15 @@
 
 
 # Flipbook
+
+> [!IMPORTANT]
+> **Successor available:** for new projects use
+> [**PDF Flip Book (`ws_pdflip`)**](https://extensions.typo3.org/extension/ws_pdflip) for TYPO3 13.4 and 14:
+> `composer require wapplersystems/pdflip` — source: [WapplerSystems/t3-pdflip](https://github.com/WapplerSystems/t3-pdflip).
+> It is based on the open-source library [pdflip](https://github.com/WapplerSystems/pdflip) (pdf.js, no jQuery)
+> and adds search, selectable text, clickable PDF links, a lightbox gallery and accessible controls.
+> Flip books from an image folder are not supported there — it works with PDF files.
+
 The Flipbook for PDFs TYPO3 extension allows you to create an interactive flipbook view of your PDF documents directly on your website.
 
 ## Convert PDF into a flipbook
