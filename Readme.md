@@ -44,3 +44,34 @@ Refresh your website to see the PDF displayed as an interactive flipbook!
 ## Convert lots of photos into a flipbook
 The same goes for Folders to Flipbook. The only difference is that you should create a folder where you can upload the photos and select **Create Flipbook from folders[folders]** in **Select a plug-in mode**.
 
+
+## Options
+
+* **Show the book opened (without lightbox):** the book is shown in the content element instead of a preview image that opens the lightbox.
+  **Show wide** then adds the CSS class `flipbook-wide` to the book container, the width is up to the theme.
+* **Title:** caption of the preview image, the description of the image is used if it is empty.
+* **Enable search in the book:** adds a search button to the menu (PDF mode only).
+
+The PDF file is selected from the file list. Values of older versions stored as `t3://file?uid=…` or as a path like
+`fileadmin/book.pdf` still work. External URLs are not supported.
+
+## Page rendering in PDF mode
+
+The pages are rendered by pdf.js in the browser. The TypoScript constants `plugin.tx_flipbook.settings.*` control the view
+mode and the resolution of the rendered pages. If they are empty, the defaults of the flipbook library are used.
+
+| Constant | Empty | Recommended | Description |
+|---|---|---|---|
+| `viewMode` | `webgl` | `2d` | `2d` renders the text sharper than `webgl` |
+| `pageTextureSize` | `2048` | `2048` | Height of the rendered pages in pixels |
+| `pageTextureSizeMobile` | `pageTextureSize` | `1024` | Height of the rendered pages on mobile devices |
+| `pageTextureSizeMax` | off | `4096` | In the `2d` and `3d` view the pages are rendered in their displayed height times the device pixel ratio, up to this height (on mobile devices up to `pageTextureSizeMobile`), and rendered again after zooming or resizing |
+
+```typoscript
+plugin.tx_flipbook.settings {
+    viewMode = 2d
+    pageTextureSize = 2048
+    pageTextureSizeMobile = 1024
+    pageTextureSizeMax = 4096
+}
+```

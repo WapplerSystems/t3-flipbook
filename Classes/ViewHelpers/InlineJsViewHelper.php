@@ -43,7 +43,7 @@ class InlineJsViewHelper extends AbstractTagBasedViewHelper
     {
         $this->settings = $this->arguments['settings'];
         $uid = $this->arguments['uid'];
-        $files = $this->arguments['files'];
+        $files = $this->arguments['files'] ?? [];
         $thumbfolder = $this->arguments['thumbfolder'];
         $content = '';
 
@@ -62,7 +62,7 @@ class InlineJsViewHelper extends AbstractTagBasedViewHelper
 
         $content .= $this->createAssets();
 
-        switch ($this->settings['mode']) {
+        switch ($this->settings['mode'] ?? '') {
             case 'pdf':
                 if (!empty($files[0])) {
                     $content .= 'pdfUrl: "' . $files[0]->getPublicUrl() . '",';
@@ -100,29 +100,31 @@ class InlineJsViewHelper extends AbstractTagBasedViewHelper
 
         $content .= $this->renderNotEmptyOptions();
 
+        $content .= $this->renderRenderingOptions();
+
         $content .= $this->renderButtons();
 
         $content .= $this->renderToc();
 
-        if ($this->settings['pageShadow'] === 'pageShadow') {
+        if (($this->settings['pageShadow'] ?? '') === 'pageShadow') {
             $content .= 'pageShadow:true,';
         } else {
             $content .= 'pageShadow:false,';
         }
 
-        if ($this->settings['pointLight'] === 'pointLight') {
+        if (($this->settings['pointLight'] ?? '') === 'pointLight') {
             $content .= 'pointLight:true,';
         } else {
             $content .= 'pointLight:false,';
         }
 
-        if ($this->settings['directionalLight'] === 'directionalLight') {
+        if (($this->settings['directionalLight'] ?? '') === 'directionalLight') {
             $content .= 'directionalLight:true,';
         } else {
             $content .= 'directionalLight:false,';
         }
 
-        if ($this->settings['ambientLight'] === 'ambientLight') {
+        if (($this->settings['ambientLight'] ?? '') === 'ambientLight') {
             $content .= 'ambientLight:true,';
         } else {
             $content .= 'ambientLight:false,';
@@ -130,7 +132,7 @@ class InlineJsViewHelper extends AbstractTagBasedViewHelper
 
         $content = rtrim($content, ',');
         $content .= "
-            }
+            };
         ";
 
         return "<script>" . $content . "</script>";
@@ -213,16 +215,17 @@ class InlineJsViewHelper extends AbstractTagBasedViewHelper
         $buttons = [
             'currentPage' => ['title' => LocalizationUtility::translate('currentPage', 'flipbook')],
             'btnNext' => ['icon' => 'flipbook-icon-chevron-right', 'title' => LocalizationUtility::translate('btnNext', 'flipbook')],
-            'btnLast' => ['icon' => 'flipbook-icon-backward-step', 'title' => LocalizationUtility::translate('btnLast', 'flipbook')],
+            'btnLast' => ['icon' => 'flipbook-icon-forward-step', 'title' => LocalizationUtility::translate('btnLast', 'flipbook')],
             'btnPrev' => ['icon' => 'flipbook-icon-chevron-left', 'title' => LocalizationUtility::translate('btnPrev', 'flipbook')],
             'btnFirst' => ['icon' => 'flipbook-icon-backward-step', 'title' => LocalizationUtility::translate('btnFirst', 'flipbook')],
             'btnZoomIn' => ['icon' => 'flipbook-icon-plus', 'title' => LocalizationUtility::translate('btnZoomIn', 'flipbook')],
             'btnZoomOut' => ['icon' => 'flipbook-icon-minus', 'title' => LocalizationUtility::translate('btnZoomOut', 'flipbook')],
             'btnToc' => ['icon' => 'flipbook-icon-list', 'title' => LocalizationUtility::translate('btnToc', 'flipbook')],
+            'btnSearch' => ['icon' => 'flipbook-icon-magnifying-glass', 'title' => LocalizationUtility::translate('btnSearch', 'flipbook')],
             'btnThumbs' => ['icon' => 'flipbook-icon-table-cells-large', 'title' => LocalizationUtility::translate('btnThumbs', 'flipbook')],
             'btnShare' => ['icon' => 'flipbook-icon-link', 'title' => LocalizationUtility::translate('btnShare', 'flipbook')],
-            'btnDownloadPages' => ['icon' => 'flipbook-icon-download', 'title' => LocalizationUtility::translate('btnDownloadPages', 'flipbook'), 'url' => $this->settings['zipUrl']],
-            'btnDownloadPdf' => ['icon' => 'flipbook-icon-file-pdf', 'title' => LocalizationUtility::translate('btnDownloadPdf', 'flipbook'), 'url' => $this->settings['download']],
+            'btnDownloadPages' => ['icon' => 'flipbook-icon-download', 'title' => LocalizationUtility::translate('btnDownloadPages', 'flipbook'), 'url' => $this->settings['zipUrl'] ?? ''],
+            'btnDownloadPdf' => ['icon' => 'flipbook-icon-file-pdf', 'title' => LocalizationUtility::translate('btnDownloadPdf', 'flipbook'), 'url' => $this->settings['download'] ?? ''],
             'btnSound' => ['icon' => 'flipbook-icon-volume-xmark', 'iconAlt' => 'flipbook-icon-volume-high', 'title' => LocalizationUtility::translate('btnSound', 'flipbook')],
             'btnExpand' => ['icon' => 'flipbook-icon-expand', 'title' => LocalizationUtility::translate('btnExpand', 'flipbook')],
             'btnExpandLightbox' => ['icon' => 'flipbook-icon-expand', 'title' => LocalizationUtility::translate('btnExpandLightbox', 'flipbook')],
@@ -238,8 +241,12 @@ class InlineJsViewHelper extends AbstractTagBasedViewHelper
             'email' => []
         ];
 
+        $searchEnabled = (int)($this->settings['search'] ?? 0) === 1;
+
         foreach ($buttons as $button => $value) {
-            if ($this->settings[$button] === 'enabled') {
+            if (($this->settings[$button] ?? '') === 'enabled'
+                || ($button === 'btnSearch' && $searchEnabled)
+            ) {
                 $content .= $button . ': {';
 
                 $content .= 'enabled: true,';
@@ -348,6 +355,43 @@ class InlineJsViewHelper extends AbstractTagBasedViewHelper
                 $content .= $option . ': "' . $this->settings[$option] . '",';
             }
         }
+        return $content;
+    }
+
+    /**
+     * View mode and page resolution. The page images are rendered by pdf.js in the browser,
+     * pageTextureSize is the rendered page height in pixels.
+     *
+     * @return string
+     */
+    private function renderRenderingOptions(): string
+    {
+        $content = '';
+
+        $viewMode = $this->settings['viewMode'] ?? '';
+        if (in_array($viewMode, ['webgl', '3d', '2d', 'swipe'], true)) {
+            $content .= 'viewMode: "' . $viewMode . '",';
+        }
+
+        $pageTextureSize = (int)($this->settings['pageTextureSize'] ?? 0);
+        if ($pageTextureSize > 0) {
+            $content .= 'pageTextureSize: ' . $pageTextureSize . ',';
+            // the webgl mode would otherwise switch to a 1024px texture for books smaller than 1024 CSS pixels,
+            // which looks blurry on high-dpi displays
+            $content .= 'pageTextureSizeSmall: ' . $pageTextureSize . ',';
+        }
+
+        $pageTextureSizeMobile = (int)($this->settings['pageTextureSizeMobile'] ?? 0);
+        if ($pageTextureSizeMobile > 0) {
+            $content .= 'pageTextureSizeMobile: ' . $pageTextureSizeMobile . ',';
+        }
+
+        // upper limit for rendering the pages in their displayed size, see flipbook.adaptive-texture.js
+        $pageTextureSizeMax = (int)($this->settings['pageTextureSizeMax'] ?? 0);
+        if ($pageTextureSizeMax > 0) {
+            $content .= 'pageTextureSizeMax: ' . $pageTextureSizeMax . ',';
+        }
+
         return $content;
     }
 

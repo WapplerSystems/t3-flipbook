@@ -23,6 +23,9 @@
             <trans-unit id="btnToc">
                 <source>Table of content</source>
             </trans-unit>
+            <trans-unit id="btnSearch">
+                <source>Search</source>
+            </trans-unit>
             <trans-unit id="btnThumbs">
                 <source>Pages</source>
             </trans-unit>
