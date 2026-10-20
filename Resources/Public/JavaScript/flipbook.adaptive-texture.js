@@ -6,7 +6,7 @@
  * when zooming on high-dpi displays makes it blurry. The pages are rendered in the displayed
  * height times the device pixel ratio instead, rounded up to steps of 256 pixels and limited
  * to pageTextureSizeMax (and to pageTextureSizeMobile on mobile devices), and rendered again
- * after zooming or resizing. Without pageTextureSizeMax nothing changes.
+ * after zooming or resizing. The library is only patched when a book sets pageTextureSizeMax.
  *
  * The book keeps its layout in pageTextureSize units, only the page canvases change their size.
  *
@@ -15,7 +15,7 @@
  * when updating the library.
  */
 (function () {
-  if (typeof FLIPBOOK === 'undefined' || !FLIPBOOK.Main) {
+  if (typeof FLIPBOOK === 'undefined' || !FLIPBOOK.Main || typeof jQuery === 'undefined' || !jQuery.fn.flipBook) {
     return;
   }
 
@@ -161,25 +161,44 @@
     });
   }
 
-  // flipbook.book3.min.js is loaded on demand, patch it before the book is created
-  var loadScript = FLIPBOOK.Main.prototype.loadScript;
-  FLIPBOOK.Main.prototype.loadScript = function (src, callback) {
-    return loadScript.call(this, src, function () {
-      patchBook3();
-      if (callback) {
-        callback.apply(this, arguments);
-      }
-    });
-  };
+  var installed = false;
 
-  var onZoom = FLIPBOOK.Main.prototype.onZoom;
-  FLIPBOOK.Main.prototype.onZoom = function () {
-    var result = onZoom.apply(this, arguments);
-    if (this.Book && this.Book.scheduleTextureSizeUpdate) {
-      this.Book.scheduleTextureSizeUpdate();
+  function install() {
+    if (installed) {
+      return;
     }
-    return result;
-  };
+    installed = true;
 
-  patchBook3();
+    // flipbook.book3.min.js is loaded on demand, patch it before the book is created
+    var loadScript = FLIPBOOK.Main.prototype.loadScript;
+    FLIPBOOK.Main.prototype.loadScript = function (src, callback) {
+      return loadScript.call(this, src, function () {
+        patchBook3();
+        if (callback) {
+          callback.apply(this, arguments);
+        }
+      });
+    };
+
+    var onZoom = FLIPBOOK.Main.prototype.onZoom;
+    FLIPBOOK.Main.prototype.onZoom = function () {
+      var result = onZoom.apply(this, arguments);
+      if (this.Book && this.Book.scheduleTextureSizeUpdate) {
+        this.Book.scheduleTextureSizeUpdate();
+      }
+      return result;
+    };
+
+    patchBook3();
+  }
+
+  var flipBook = jQuery.fn.flipBook;
+  jQuery.fn.flipBook = function (options) {
+    if (options && options.pageTextureSizeMax > 0) {
+      install();
+    }
+    return flipBook.apply(this, arguments);
+  };
+  // the library reads its defaults from jQuery.fn.flipBook.options
+  jQuery.extend(jQuery.fn.flipBook, flipBook);
 })();
