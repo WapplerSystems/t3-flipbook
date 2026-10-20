@@ -3,18 +3,23 @@
 namespace WapplerSystems\Flipbook\Controller;
 
 use Psr\Http\Message\ResponseInterface;
-use TYPO3\CMS\Core\LinkHandling\LinkService;
-use TYPO3\CMS\Core\Resource\Exception\ResourceDoesNotExistException;
-use TYPO3\CMS\Core\Resource\File;
 use TYPO3\CMS\Core\Resource\FileReference;
 use TYPO3\CMS\Core\Resource\FileRepository;
 use TYPO3\CMS\Core\Resource\ResourceFactory;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Extbase\Configuration\ConfigurationManagerInterface;
 use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
+use WapplerSystems\Flipbook\Service\PdfFileResolver;
 
 class FlipbookController extends ActionController
 {
+    protected PdfFileResolver $pdfFileResolver;
+
+    public function injectPdfFileResolver(PdfFileResolver $pdfFileResolver): void
+    {
+        $this->pdfFileResolver = $pdfFileResolver;
+    }
+
     /**
      * Injects the Configuration Manager and is initializing the framework settings
      */
@@ -80,26 +85,9 @@ class FlipbookController extends ActionController
 
             if (($this->settings['pdfUrl'] ?? '') !== '') {
 
-                $pdfValue = trim((string)$this->settings['pdfUrl']);
                 $factory = GeneralUtility::makeInstance(ResourceFactory::class);
-                $file = null;
-
-                try {
-                    if (str_starts_with($pdfValue, 't3://')) {
-                        // Legacy format stored via type=link: t3://file?uid=925
-                        $linkService = GeneralUtility::makeInstance(LinkService::class);
-                        $linkData = $linkService->resolve($pdfValue);
-                        $file = $linkData['file'] ?? null;
-                    } else {
-                        // Current format stored via type=group: plain sys_file UID.
-                        // Legacy values stored via type=link can also be a path like fileadmin/book.pdf.
-                        $file = $factory->retrieveFileOrFolderObject($pdfValue);
-                    }
-                } catch (ResourceDoesNotExistException) {
-                    $file = null;
-                }
-
-                if ($file instanceof File) {
+                $file = $this->pdfFileResolver->resolve((string)$this->settings['pdfUrl']);
+                if ($file !== null) {
                     $this->view->assign('files', [$file]);
                 }
             }

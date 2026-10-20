@@ -53,7 +53,10 @@ The same goes for Folders to Flipbook. The only difference is that you should cr
 * **Enable search in the book:** adds a search button to the menu (PDF mode only).
 
 The PDF file is selected from the file list. Values of older versions stored as `t3://file?uid=…` or as a path like
-`fileadmin/book.pdf` still work. External URLs are not supported.
+`fileadmin/book.pdf` still work in the frontend, but the backend shows the field empty and saving the content element
+removes the PDF. Run the upgrade wizard **Flipbook: store the sys_file uid in the PDF field** after the update, it
+replaces these values with the uid of the file and lists the content elements whose value is not a file.
+External URLs are not supported.
 
 ## Page rendering in PDF mode
 
