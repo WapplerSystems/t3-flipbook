@@ -241,7 +241,8 @@ class InlineJsViewHelper extends AbstractTagBasedViewHelper
             'email' => []
         ];
 
-        $searchEnabled = (int)($this->settings['search'] ?? 0) === 1;
+        // the search needs the text layer of a pdf
+        $searchEnabled = ($this->settings['mode'] ?? '') === 'pdf' && (int)($this->settings['search'] ?? 0) === 1;
 
         foreach ($buttons as $button => $value) {
             if (($this->settings[$button] ?? '') === 'enabled'

@@ -207,6 +207,7 @@
                 <el>
                     <settings.search type="array">
                         <label>LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.pluginSettings.search</label>
+                        <displayCond>FIELD:sDEF.settings.mode:=:pdf</displayCond>
                         <config type="array">
                             <type>check</type>
                         </config>
