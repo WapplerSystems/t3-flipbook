@@ -293,6 +293,18 @@
             <trans-unit id="flexform.sheet.socialshare.email.false">
                 <source>Disabled</source>
             </trans-unit>
+            <trans-unit id="flexform.sheet.options.imageTitle">
+                <source>Title (caption of the preview image)</source>
+            </trans-unit>
+            <trans-unit id="flexform.sheet.pluginSettings.search">
+                <source>Enable search in the book (PDF mode only)</source>
+            </trans-unit>
+            <trans-unit id="flexform.sheet.options.fullbook">
+                <source>Show the book opened (without lightbox)</source>
+            </trans-unit>
+            <trans-unit id="flexform.sheet.options.wide">
+                <source>Show wide (adds the CSS class flipbook-wide, the theme defines the width)</source>
+            </trans-unit>
 
         </body>
     </file>

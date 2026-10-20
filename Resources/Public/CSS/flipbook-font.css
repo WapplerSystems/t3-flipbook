@@ -1,9 +1,9 @@
 @font-face {
   font-display: block;
   font-family: "flipbook";
-  src: url("../Fonts/flipbook.eot?5c30daafbecd126176dc34008f8737b9#iefix") format("embedded-opentype"),
-url("../Fonts/flipbook.woff2?5c30daafbecd126176dc34008f8737b9") format("woff2"),
-url("../Fonts/flipbook.woff?5c30daafbecd126176dc34008f8737b9") format("woff");
+  src: url("../Fonts/flipbook.eot?2b1ca5cd9e0ad4e4c39cbbe6845eafaa#iefix") format("embedded-opentype"),
+url("../Fonts/flipbook.woff2?2b1ca5cd9e0ad4e4c39cbbe6845eafaa") format("woff2"),
+url("../Fonts/flipbook.woff?2b1ca5cd9e0ad4e4c39cbbe6845eafaa") format("woff");
 }
 
 span[class^="flipbook-icon-"]::before, span[class*=" flipbook-icon-"]::before {
@@ -83,4 +83,7 @@ span[class^="flipbook-icon-"]::before, span[class*=" flipbook-icon-"]::before {
 }
 .flipbook-icon-xmark::before {
   content: "\f116";
+}
+.flipbook-icon-magnifying-glass::before {
+  content: "\f117";
 }
