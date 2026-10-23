@@ -213,8 +213,7 @@
                         </config>
                     </settings.search>
                     <settings.hideMenu>
-                        <label>LLL:EXT:flipbook/Resources/Private/Language/hideMenu
-                            </label>
+                        <label>LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.pluginSettings.hideMenu</label>
                         <config>
                             <type>select</type>
                             <renderType>selectSingle</renderType>
@@ -235,8 +234,7 @@
                         </config>
                     </settings.hideMenu>
                     <settings.sideNavigationButtons>
-                        <label>LLL:EXT:flipbook/Resources/Private/Language/nButtons
-                            </label>
+                        <label>LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.pluginSettings.sideNavigationButtons</label>
                         <config>
                             <type>select</type>
                             <renderType>selectSingle</renderType>
@@ -257,8 +255,7 @@
                         </config>
                     </settings.sideNavigationButtons>
                     <settings.pdfPageScale>
-                        <label>LLL:EXT:flipbook/Resources/Private/Language/ageScale
-                            </label>
+                        <label>LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.pluginSettings.pdfPageScale</label>
                         <config>
                             <type>input</type>
                             <size>48</size>
@@ -287,8 +284,7 @@
                         </config>
                     </settings.skin>
                     <settings.startPage>
-                        <label>LLL:EXT:flipbook/Resources/Private/Language/tartPage
-                            </label>
+                        <label>LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.pluginSettings.startPage</label>
                         <config>
                             <type>input</type>
                             <size>48</size>
@@ -317,8 +313,7 @@
                         </config>
                     </settings.sounds>
                     <settings.pageWidth>
-                        <label>LLL:EXT:flipbook/Resources/Private/Language/ageWidth
-                            </label>
+                        <label>LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.pluginSettings.pageWidth</label>
                         <config>
                             <type>input</type>
                             <size>48</size>
@@ -326,8 +321,7 @@
                         </config>
                     </settings.pageWidth>
                     <settings.pageHeight>
-                        <label>LLL:EXT:flipbook/Resources/Private/Language/geHeight
-                            </label>
+                        <label>LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.pluginSettings.pageHeight</label>
                         <config>
                             <type>input</type>
                             <size>48</size>
@@ -335,8 +329,7 @@
                         </config>
                     </settings.pageHeight>
                     <settings.thumbnailWidth>
-                        <label>LLL:EXT:flipbook/Resources/Private/Language/ailWidth
-                            </label>
+                        <label>LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.pluginSettings.thumbnailWidth</label>
                         <config>
                             <type>input</type>
                             <size>48</size>
@@ -344,8 +337,7 @@
                         </config>
                     </settings.thumbnailWidth>
                     <settings.thumbnailHeight>
-                        <label>LLL:EXT:flipbook/Resources/Private/Language/ilHeight
-                            </label>
+                        <label>LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.pluginSettings.thumbnailHeight</label>
                         <config>
                             <type>input</type>
                             <size>48</size>
@@ -353,8 +345,7 @@
                         </config>
                     </settings.thumbnailHeight>
                     <settings.contentOnStart>
-                        <label>LLL:EXT:flipbook/Resources/Private/Language/tOnStart
-                            </label>
+                        <label>LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.pluginSettings.contentOnStart</label>
                         <config>
                             <type>select</type>
                             <renderType>selectSingle</renderType>
@@ -375,8 +366,7 @@
                         </config>
                     </settings.contentOnStart>
                     <settings.thumbnailsOnStart>
-                        <label>LLL:EXT:flipbook/Resources/Private/Language/sOnStart
-                            </label>
+                        <label>LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.pluginSettings.thumbnailsOnStart</label>
                         <config>
                             <type>select</type>
                             <renderType>selectSingle</renderType>
@@ -397,8 +387,7 @@
                         </config>
                     </settings.thumbnailsOnStart>
                     <settings.singlePageMode>
-                        <label>LLL:EXT:flipbook/Resources/Private/Language/PageMode
-                            </label>
+                        <label>LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.pluginSettings.singlePageMode</label>
                         <config>
                             <type>select</type>
                             <renderType>selectSingle</renderType>
@@ -427,8 +416,7 @@
                 <type>array</type>
                 <el>
                     <settings.singlePageModeIfMobile>
-                        <label>LLL:EXT:flipbook/Resources/Private/Language/IfMobile
-                            </label>
+                        <label>LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.mobileSettings.singlePageModeIfMobile</label>
                         <config>
                             <type>select</type>
                             <renderType>selectSingle</renderType>
@@ -449,8 +437,7 @@
                         </config>
                     </settings.singlePageModeIfMobile>
                     <settings.pdfBrowserViewerIfMobile>
-                        <label>LLL:EXT:flipbook/Resources/Private/Language/IfMobile
-                            </label>
+                        <label>LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.mobileSettings.pdfBrowserViewerIfMobile</label>
                         <config>
                             <type>select</type>
                             <renderType>selectSingle</renderType>
@@ -471,8 +458,7 @@
                         </config>
                     </settings.pdfBrowserViewerIfMobile>
                     <settings.btnTocIfMobile>
-                        <label>LLL:EXT:flipbook/Resources/Private/Language/IfMobile
-                            </label>
+                        <label>LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.mobileSettings.btnTocIfMobile</label>
                         <config>
                             <type>select</type>
                             <renderType>selectSingle</renderType>
@@ -493,8 +479,7 @@
                         </config>
                     </settings.btnTocIfMobile>
                     <settings.btnThumbsIfMobile>
-                        <label>LLL:EXT:flipbook/Resources/Private/Language/IfMobile
-                            </label>
+                        <label>LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.mobileSettings.btnThumbsIfMobile</label>
                         <config>
                             <type>select</type>
                             <renderType>selectSingle</renderType>
@@ -515,8 +500,7 @@
                         </config>
                     </settings.btnThumbsIfMobile>
                     <settings.btnShareIfMobile>
-                        <label>LLL:EXT:flipbook/Resources/Private/Language/IfMobile
-                            </label>
+                        <label>LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.mobileSettings.btnShareIfMobile</label>
                         <config>
                             <type>select</type>
                             <renderType>selectSingle</renderType>
@@ -537,8 +521,7 @@
                         </config>
                     </settings.btnShareIfMobile>
                     <settings.btnDownloadPagesIfMobile>
-                        <label>LLL:EXT:flipbook/Resources/Private/Language/IfMobile
-                            </label>
+                        <label>LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.mobileSettings.btnDownloadPagesIfMobile</label>
                         <config>
                             <type>select</type>
                             <renderType>selectSingle</renderType>
@@ -559,8 +542,7 @@
                         </config>
                     </settings.btnDownloadPagesIfMobile>
                     <settings.btnDownloadPdfIfMobile>
-                        <label>LLL:EXT:flipbook/Resources/Private/Language/IfMobile
-                            </label>
+                        <label>LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.mobileSettings.btnDownloadPdfIfMobile</label>
                         <config>
                             <type>select</type>
                             <renderType>selectSingle</renderType>
@@ -581,8 +563,7 @@
                         </config>
                     </settings.btnDownloadPdfIfMobile>
                     <settings.btnSoundIfMobile>
-                        <label>LLL:EXT:flipbook/Resources/Private/Language/IfMobile
-                            </label>
+                        <label>LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.mobileSettings.btnSoundIfMobile</label>
                         <config>
                             <type>select</type>
                             <renderType>selectSingle</renderType>
@@ -603,8 +584,7 @@
                         </config>
                     </settings.btnSoundIfMobile>
                     <settings.btnExpandIfMobile>
-                        <label>LLL:EXT:flipbook/Resources/Private/Language/IfMobile
-                            </label>
+                        <label>LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.mobileSettings.btnExpandIfMobile</label>
                         <config>
                             <type>select</type>
                             <renderType>selectSingle</renderType>
@@ -625,8 +605,7 @@
                         </config>
                     </settings.btnExpandIfMobile>
                     <settings.btnPrintIfMobile>
-                        <label>LLL:EXT:flipbook/Resources/Private/Language/IfMobile
-                            </label>
+                        <label>LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.mobileSettings.btnPrintIfMobile</label>
                         <config>
                             <type>select</type>
                             <renderType>selectSingle</renderType>
