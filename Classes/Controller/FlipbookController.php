@@ -45,27 +45,27 @@ class FlipbookController extends ActionController
                     continue;
                 }
 
-                if (!$originalSettings[$key] && isset($value)) {
+                if (empty($originalSettings[$key]) && isset($value)) {
                     $originalSettings[$key] = $value;
                 }
             }
             if (isset($tsSettings['img.'])) {
                 foreach ($tsSettings['img.'] as $key => $value) {
-                    if (!$originalSettings['img'][$key] && isset($value)) {
+                    if (empty($originalSettings['img'][$key]) && isset($value)) {
                         $originalSettings['img'][$key] = $value;
                     }
                 }
             }
             if (isset($tsSettings['assets.'])) {
                 foreach ($tsSettings['assets.'] as $key => $value) {
-                    if (!$originalSettings['assets'][$key] && isset($value)) {
+                    if (empty($originalSettings['assets'][$key]) && isset($value)) {
                         $originalSettings['assets'][$key] = $value;
                     }
                 }
             }
             if (isset($tsSettings['deepLinking.'])) {
                 foreach ($tsSettings['deepLinking.'] as $key => $value) {
-                    if (!$originalSettings['deepLinking'][$key] && isset($value)) {
+                    if (empty($originalSettings['deepLinking'][$key]) && isset($value)) {
                         $originalSettings['deepLinking'][$key] = $value;
                     }
                 }
