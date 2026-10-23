@@ -54,7 +54,7 @@ class InlineJsViewHelper extends AbstractTagBasedViewHelper
                 " . $this->renderTrueFalseOptions() . "
             ";
 
-        if ((int)$this->settings['fullbook'] === 1) {
+        if ((int)($this->settings['fullbook'] ?? '') === 1) {
             $content .= 'lightBox: false,';
         } else {
             $content .= 'lightBox: true,';
@@ -429,7 +429,7 @@ class InlineJsViewHelper extends AbstractTagBasedViewHelper
         ];
 
         foreach ($enabledOptions as $option) {
-            if ($this->settings[$option] === 'enabled') {
+            if (($this->settings[$option] ?? '') === 'enabled') {
                 $content .= $option . ": true,";
             } else {
                 $content .= $option . ": false,";
