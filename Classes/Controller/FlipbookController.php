@@ -27,10 +27,12 @@ class FlipbookController extends ActionController
     {
         parent::injectConfigurationManager($configurationManager);
 
-        $tsSettings = $this->settings;
-        $originalSettings = $this->configurationManager->getConfiguration(
-            ConfigurationManagerInterface::CONFIGURATION_TYPE_SETTINGS
-        );
+        // $this->settings already contains the FlexForm values, empty fields included, so the
+        // TypoScript settings have to be read from the plain TypoScript setup
+        $tsSettings = $this->configurationManager->getConfiguration(
+            ConfigurationManagerInterface::CONFIGURATION_TYPE_FULL_TYPOSCRIPT
+        )['plugin.']['tx_flipbook.']['settings.'] ?? [];
+        $originalSettings = $this->settings;
 
         if (isset($tsSettings['overrideFlexformSettingsIfEmpty']) && $tsSettings['overrideFlexformSettingsIfEmpty'] == 1) {
             // if flexform setting is empty and value is available in TS
@@ -42,6 +44,10 @@ class FlipbookController extends ActionController
                     continue;
                 }
                 if ($key === 'deepLinking.') {
+                    continue;
+                }
+                // other nested TypoScript settings are not taken over
+                if (str_ends_with((string)$key, '.')) {
                     continue;
                 }
 
